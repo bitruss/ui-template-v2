@@ -1,7 +1,7 @@
 <script setup>
-import TopbarNavLayout from '../layouts/TopbarNavLayout.vue'
+import TopbarNavLayout from "../layouts/TopbarNavLayout.vue";
 </script>
 
 <template>
-   <TopbarNavLayout>HomePage</TopbarNavLayout>
+  <TopbarNavLayout>HomePage</TopbarNavLayout>
 </template>
