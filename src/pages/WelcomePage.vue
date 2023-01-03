@@ -1,35 +1,15 @@
 <script setup>
-import SidebarNavLayout from "../layouts/SidebarNavLayout.vue";
+import SidebarLayout from "../layouts/sidebar/SidebarLayout.vue";
+import BreadCrumb from "../components/breadcrumb/BreadCrumb.vue";
+
+const pages = [
+  { name: "baidu.com", href: "https://baidu.com", active: false },
+  { name: "aaa", href: "#", active: true },
+];
 </script>
 
 <template>
-  <SidebarNavLayout>
-    <div>xxxxx</div>
-    <div>xxxxx</div>
-    <div>xxxxx</div>
-    <div>xxxxx</div>
-    <div>xxxxx</div>
-    <div>xxxxx</div>
-    <div>xxxxx</div>
-    <div>xxxxx</div>
-    <div>xxxxx</div>
-    <div>xxxxx</div>
-    <div>xxxxx</div>
-    <div>xxxxx</div>
-    <div>xxxxx</div>
-    <div>xxxxx</div>
-    <div>xxxxx</div>
-    <div>xxxxx</div>
-    <div>xxxxx</div>
-    <div>xxxxx</div>
-    <div>xxxxx</div>
-    <div>xxxxx</div>
-    <div>xxxxx</div>
-    <div>xxxxx</div>
-    <div>xxxxx</div>
-    <div>xxxxx</div>
-    <div>xxxxx</div>
-    <div>xxxxx</div>
-    
-  </SidebarNavLayout>
+  <SidebarLayout>
+    <BreadCrumb :pages="pages"></BreadCrumb>
+  </SidebarLayout>
 </template>
