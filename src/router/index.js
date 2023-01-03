@@ -13,6 +13,13 @@ const router = createRouter({
       name: 'register',
       component: () => import('../pages/auth/RegisterPage.vue')
     },
+
+    {
+      path: '/example/form/style1',
+      name: 'example_form_style1',
+      component: () => import('../pages/example/form/Style1Page.vue')
+    },
+
     {
       path: '/',
       name: 'home',

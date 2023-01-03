@@ -1,5 +1,5 @@
 import { reactive } from "vue";
-import { CalendarIcon, ChartBarIcon, FolderIcon, HomeIcon, InboxIcon, UsersIcon } from "@heroicons/vue/24/outline";
+import { CalendarIcon, ChartBarIcon, FolderIcon, HomeIcon, InboxIcon, UsersIcon ,ClipboardDocumentListIcon} from "@heroicons/vue/24/outline";
 
 ///////////do your configs here///////
 
@@ -7,83 +7,21 @@ import { CalendarIcon, ChartBarIcon, FolderIcon, HomeIcon, InboxIcon, UsersIcon 
 
 ///menu config
 let menu_config = [
-  { name: "Dashboard", icon: HomeIcon, href: "/" },
+  { name: "Welcome", icon: HomeIcon, href: "/" },
   {
-    name: "Team",
-    icon: UsersIcon,
-    current: false,
-    open: true,
-    children: [
-      {
-        name: "Overview",
-        href: "#",
-        open: false,
-        children: [
-          {
-            name: "x",
-            href: "#",
-            open: false,
-            children: [
-              { name: "11x", href: "/"},
-              { name: "11xxx", href: "#" },
-              { name: "11xxxxx", href: "#" },
-              { name: "11xxxxxxx", href: "#" },
-            ],
-          },
-          { name: "xxx", href: "#",current: true },
-          { name: "xxxxx", href: "#" },
-          { name: "xxxxxxx", href: "#" },
-        ],
-      },
-      { name: "Members", href: "#" },
-      { name: "Calendar", href: "#" },
-      { name: "Settings", href: "#" },
-    ],
-  },
-  {
-    name: "Projects",
+    name: "Examples",
     icon: FolderIcon,
     current: false,
     children: [
-      { name: "Overview", href: "#" },
-      { name: "Members", href: "#" },
-      { name: "Calendar", href: "#" },
-      { name: "Settings", href: "#" },
+      { name: "Form",icon:ClipboardDocumentListIcon, 
+        children:[
+          { name: "style1", href: "/example/form/style1" },
+          { name: "Calendar", href: "#" },
+          { name: "Settings", href: "#" },
+        ]
+      }
     ],
-  },
-  {
-    name: "Calendar",
-    icon: CalendarIcon,
-    current: false,
-    children: [
-      { name: "Overview", href: "#" },
-      { name: "Members", href: "#" },
-      { name: "Calendar", href: "#" },
-      { name: "Settings", href: "#" },
-    ],
-  },
-  {
-    name: "Documents",
-    icon: InboxIcon,
-    current: false,
-    children: [
-      { name: "Overview", href: "#" },
-      { name: "Members", href: "#" },
-      { name: "Calendar", href: "#" },
-      { name: "Settings", href: "#" },
-    ],
-  },
-  {
-    name: "Reports",
-    icon: ChartBarIcon,
-    current: false,
-    children: [
-      { name: "Overview", href: "#" },
-      { name: "Members", href: "#" },
-      { name: "Calendar", href: "#" },
-      { name: "Settings", href: "#" },
-    ],
-  },
+  }
 ];
 
 ///////////////////////////

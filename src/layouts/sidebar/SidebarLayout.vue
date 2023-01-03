@@ -48,7 +48,7 @@ const sidebarOpen = ref(false);
     </TransitionRoot>
 
     <!-- Static sidebar for desktop -->
-    <div class="hidden md:fixed md:inset-y-0 md:flex md:w-64 md:flex-col">
+    <div class="hidden md:fixed md:inset-y-0 md:flex md:w-64   lg:w-80 md:flex-col">
       <!-- Sidebar component, swap this element with another sidebar if you like -->
       <div class="flex min-h-0 flex-1 flex-col border-r border-gray-200 bg-white">
         <div class="flex flex-1 flex-col overflow-y-auto pt-5 pb-4">
@@ -61,7 +61,7 @@ const sidebarOpen = ref(false);
         </div>
       </div>
     </div>
-    <div class="flex flex-1 flex-col md:pl-64">
+    <div class="flex flex-1 flex-col md:pl-64 lg:pl-80">
       <div class="sticky top-0 z-10 flex h-16 flex-shrink-0 bg-white shadow">
         <button type="button" class="border-r border-gray-200 px-4 text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 md:hidden" @click="sidebarOpen = true">
           <span class="sr-only">Open sidebar</span>
@@ -78,7 +78,7 @@ const sidebarOpen = ref(false);
 
       <main class="flex-1">
         <div class="py-6">
-          <div class="mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
+          <div class="mx-auto px-4 sm:px-6 md:px-8">
             <slot></slot>
           </div>
         </div>
