@@ -1,7 +1,6 @@
 <script setup>
 import SidebarLayout from "../../../layouts/sidebar/SidebarLayout.vue";
 import BreadCrumb from "../../../components/breadcrumb/BreadCrumb.vue";
-import GridLayout from "../../../layouts/grid/GridLayout.vue";
 
 const breadcrumb_list = [
   { name: "example", href: "#", active: false },
@@ -13,8 +12,7 @@ const breadcrumb_list = [
 <template>
   <SidebarLayout>
     <BreadCrumb :pages="breadcrumb_list"></BreadCrumb>
-    <GridLayout :cols=1  :xl-cols=1>
-       
+     <div class="mt-5 grid grid-cols-1 xl:grid-cols-2  "> 
       <div class="overflow-hidden rounded-lg bg-white shadow">
         <div class="px-4 py-5 sm:p-6">
           <form class="space-y-8 divide-y divide-gray-200">
@@ -91,6 +89,6 @@ const breadcrumb_list = [
           </form>
         </div>
       </div>
-    </GridLayout>
+    </div>
   </SidebarLayout>
 </template>
