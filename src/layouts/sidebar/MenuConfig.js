@@ -11,9 +11,9 @@ let menu_config = [
   {
     name: "Examples",
     icon: FolderIcon,
-    current: false,
+    open: true,
     children: [
-      { name: "Form",icon:ClipboardDocumentListIcon, 
+      { name: "Form",icon:ClipboardDocumentListIcon, open:true,
         children:[
           { name: "style1", href: "/example/form/style1" },
           { name: "Calendar", href: "#" },
@@ -24,7 +24,10 @@ let menu_config = [
   }
 ];
 
-///////////////////////////
+///////////end of menu configs////////////////
+
+
+
 let m_counter = 0;
 function assign_menu_id(mconfig, p_mid) {
   mconfig.forEach(function (item, index) {
@@ -69,12 +72,35 @@ function clear_all_active(menu_config){
       });
 }
 
+function clear_all_open(menu_config){
+  menu_config.forEach(function (item, index) {
+      item.open=false;
+      if (item.children) {
+        clear_all_open(item.children)
+      }
+    });
+}
+
 function set_active(mid) {
   let item = find_item(mid, r_menu_config);
   if (item != null) {
     clear_all_active(r_menu_config);
+    clear_all_open(r_menu_config)
     item.current = true;
+    set_open(mid)
   }
 }
+
+function set_open(mid) {
+  let item = find_item(mid, r_menu_config);
+  if (item != null) {
+    item.open = true;
+  }
+  if (item.p_mid!=0){
+    set_open(item.p_mid)
+  }
+}
+
+
 
 export { r_menu_config, set_active };
