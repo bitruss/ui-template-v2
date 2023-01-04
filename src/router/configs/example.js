@@ -45,6 +45,11 @@ var example_router = [
     name: "example_input_simple",
     component: () => import("../../pages/example/input/SimplePage.vue"),
   },
+  {
+    path: "/example/input/error",
+    name: "example_input_error",
+    component: () => import("../../pages/example/input/ErrorPage.vue"),
+  },
 
 
 ];

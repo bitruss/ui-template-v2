@@ -1,5 +1,5 @@
 <script setup>
-import { EnvelopeIcon,BarsArrowUpIcon,UsersIcon } from "@heroicons/vue/24/outline";
+import { EnvelopeIcon, BarsArrowUpIcon, UsersIcon } from "@heroicons/vue/24/outline";
 
 import SidebarLayout from "../../../layouts/sidebar/SidebarLayout.vue";
 import BreadCrumb from "../../../components/core/breadcrumb/BreadCrumb.vue";
@@ -7,7 +7,7 @@ import BreadCrumb from "../../../components/core/breadcrumb/BreadCrumb.vue";
 const breadcrumb_list = [
   { name: "example", href: "#", active: false },
   { name: "input", href: "#", active: false },
-  { name: "style1", href: "#", active: true },
+  { name: "simple", href: "#", active: true },
 ];
 </script>
 
@@ -53,23 +53,6 @@ const breadcrumb_list = [
             <div class="mt-1">
               <input type="email" name="email" id="email" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="you@example.com" aria-describedby="email-optional" />
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="mt-5 grid grid-cols-1 xl:grid-cols-2">
-      <div class="overflow-hidden rounded-lg bg-white shadow">
-        <div class="px-4 py-5 sm:p-6">
-          <div>
-            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-            <div class="relative mt-1 rounded-md shadow-sm">
-              <input type="email" name="email" id="email" class="block w-full rounded-md border-red-300 pr-10 text-red-900 placeholder-red-300 focus:border-red-500 focus:outline-none focus:ring-red-500 sm:text-sm" placeholder="you@example.com" value="adamwathan" aria-invalid="true" aria-describedby="email-error" />
-              <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
-                <ExclamationCircleIcon class="h-5 w-5 text-red-500" aria-hidden="true" />
-              </div>
-            </div>
-            <p class="mt-2 text-sm text-red-600" id="email-error">Your password must be less than 4 characters.</p>
           </div>
         </div>
       </div>
@@ -324,14 +307,46 @@ const breadcrumb_list = [
     <div class="mt-5 grid grid-cols-1 xl:grid-cols-2">
       <div class="overflow-hidden rounded-lg bg-white shadow">
         <div class="px-4 py-5 sm:p-6">
+          <label for="search" class="block text-sm font-medium text-gray-700 mb-3">Multi-mini form</label>
+
           <div class="isolate -space-y-px rounded-md shadow-sm">
             <div class="relative rounded-md rounded-b-none border border-gray-300 px-3 py-2 focus-within:z-10 focus-within:border-indigo-600 focus-within:ring-1 focus-within:ring-indigo-600">
               <label for="name" class="block text-xs font-medium text-gray-900">Name</label>
               <input type="text" name="name" id="name" class="block w-full border-0 p-0 text-gray-900 placeholder-gray-500 focus:ring-0 sm:text-sm" placeholder="Jane Smith" />
             </div>
+
+            <div class="relative border border-gray-300 px-3 py-2 focus-within:z-10 focus-within:border-indigo-600 focus-within:ring-1 focus-within:ring-indigo-600">
+              <label for="name" class="block text-xs font-medium text-gray-900">Name</label>
+              <input type="text" name="name" id="name" class="block w-full border-0 p-0 text-gray-900 placeholder-gray-500 focus:ring-0 sm:text-sm" placeholder="Jane Smith" />
+            </div>
+
             <div class="relative rounded-md rounded-t-none border border-gray-300 px-3 py-2 focus-within:z-10 focus-within:border-indigo-600 focus-within:ring-1 focus-within:ring-indigo-600">
               <label for="job-title" class="block text-xs font-medium text-gray-900">Job Title</label>
               <input type="text" name="job-title" id="job-title" class="block w-full border-0 p-0 text-gray-900 placeholder-gray-500 focus:ring-0 sm:text-sm" placeholder="Head of Tomfoolery" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-5 grid grid-cols-1 xl:grid-cols-2">
+      <div class="overflow-hidden rounded-lg bg-white shadow">
+        <div class="px-4 py-5 sm:p-6">
+          <label for="search" class="block text-sm font-medium text-gray-700 mb-3">Multi-compressed form</label>
+          <div class="-space-y-px rounded-md shadow-sm">
+            <div>
+              <label for="email-address" class="sr-only">Email address</label>
+              <input id="email-address" name="email" type="email" autocomplete="email" required="" class="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" placeholder="Email address" />
+            </div>
+
+            <div>
+              <label for="email-address" class="sr-only">Email address</label>
+              <input id="email-address" name="email" type="text" required="" class="relative block w-full appearance-none rounded-none border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" placeholder="mid address" />
+            </div>
+
+            <div>
+              <label for="password" class="sr-only">Password</label>
+              <input id="password" name="password" type="password" autocomplete="current-password" required="" class="relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" placeholder="Password" />
             </div>
           </div>
         </div>

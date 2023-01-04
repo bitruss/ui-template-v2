@@ -1,6 +1,6 @@
 <script setup>
 import SidebarLayout from "../layouts/sidebar/SidebarLayout.vue";
-import BreadCrumb from "../components/breadcrumb/BreadCrumb.vue";
+import BreadCrumb from "../components/core/breadcrumb/BreadCrumb.vue";
 
 const pages = [
   { name: "welcome", href: "#", active: true },

@@ -1,5 +1,4 @@
-
-import { CalendarIcon, CommandLineIcon, FolderIcon, HomeIcon, InboxIcon, UsersIcon ,ClipboardDocumentListIcon} from "@heroicons/vue/24/outline";
+import { CalendarIcon, ViewfinderCircleIcon, CommandLineIcon, FolderIcon, HomeIcon, InboxIcon, UsersIcon, ClipboardDocumentListIcon } from "@heroicons/vue/24/outline";
 
 let example = [
   {
@@ -7,6 +6,30 @@ let example = [
     icon: FolderIcon,
     open: true,
     children: [
+      {
+        name: "Select",
+        icon: ViewfinderCircleIcon,
+        open: false,
+        children: [
+          {
+            name: "simple",
+            children: [
+              { name: "simple_plain", href: "/example/select/simple/simple_plain_select" },
+              { name: "simple_secondary", href: "/example/select/simple/simple_secondary_select" },
+              { name: "simple_status", href: "/example/select/simple/simple_status_select" },
+            ],
+          },
+        ],
+      },
+      {
+        name: "Input",
+        icon: CommandLineIcon,
+        open: false,
+        children: [
+          { name: "simple", href: "/example/input/simple" },
+          { name: "error", href: "/example/input/error" },
+        ],
+      },
       {
         name: "Form",
         icon: ClipboardDocumentListIcon,
@@ -16,24 +39,6 @@ let example = [
           { name: "style2", href: "/example/form/style2" },
           { name: "style3", href: "/example/form/style3" },
           { name: "style4", href: "/example/form/style4" },
-        ],
-      },
-      {
-        name: "Select",
-        icon: CommandLineIcon,
-        open: false,
-        children: [
-          { name: "simple_plain", href: "/example/select/simple/simple_plain_select" },
-          { name: "simple_secondary", href: "/example/select/simple/simple_secondary_select" },
-          { name: "simple_status", href: "/example/select/simple/simple_status_select" },
-        ],
-      },
-      {
-        name: "Input",
-        icon: CommandLineIcon,
-        open: false,
-        children: [
-          { name: "simple", href: "/example/input/simple" },
         ],
       },
     ],
