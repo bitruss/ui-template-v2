@@ -1,6 +1,10 @@
-# my-project
+# ui-template-v2
 
 This template should help get you started developing with Vue 3 in Vite.
+
+## what is this project for ?
+
+This template project is a basic project where you can clone / start your own project 
 
 ## Recommended IDE Setup
 
