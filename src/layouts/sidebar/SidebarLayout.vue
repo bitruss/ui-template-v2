@@ -8,7 +8,7 @@ import { Dialog, DialogPanel, TransitionChild, TransitionRoot } from "@headlessu
 import SidebarMenu from "./SidebarMenu.vue";
 import { Bars3Icon, XMarkIcon, CalendarIcon, ChartBarIcon, FolderIcon, HomeIcon, InboxIcon, UsersIcon } from "@heroicons/vue/24/outline";
 
-import {r_menu_config} from "./MenuConfig"
+import {r_menu_config} from "./MenuConfig.vue"
  
 const sidebarOpen = ref(false);
 </script>

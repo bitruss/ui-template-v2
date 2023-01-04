@@ -1,31 +1,18 @@
+
+<script>
 import { reactive } from "vue";
-import { CalendarIcon, ChartBarIcon, FolderIcon, HomeIcon, InboxIcon, UsersIcon ,ClipboardDocumentListIcon} from "@heroicons/vue/24/outline";
+
+import example from "./configs/example";
+import index from "./configs/index"
 
 ///////////do your configs here///////
 
-///lan constants
-
 ///menu config
-let menu_config = [
-  { name: "Welcome", icon: HomeIcon, href: "/" },
-  {
-    name: "Examples",
-    icon: FolderIcon,
-    open: true,
-    children: [
-      { name: "Form",icon:ClipboardDocumentListIcon, open:true,
-        children:[
-          { name: "style1", href: "/example/form/style1" },
-          { name: "Calendar", href: "#" },
-          { name: "Settings", href: "#" },
-        ]
-      }
-    ],
-  }
-];
+let menu_config = [...index,...example];
 
 ///////////end of menu configs////////////////
 
+export default menu_config
 
 
 let m_counter = 0;
@@ -104,3 +91,5 @@ function set_open(mid) {
 
 
 export { r_menu_config, set_active };
+
+</script>

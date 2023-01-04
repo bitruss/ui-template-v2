@@ -6,7 +6,7 @@ export default {
 
 <script setup>
 import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/vue";
-import { set_active } from "./MenuConfig";
+import { set_active } from "./MenuConfig.vue";
 
 defineProps(["navigation"]);
 </script>
