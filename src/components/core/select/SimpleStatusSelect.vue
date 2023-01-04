@@ -23,7 +23,7 @@ watch(selected, (new_selected) => {
           </template>
           <template v-else>
             <span :aria-label="selected.active ? 'active' : 'inactive'" :class="[selected.active ? 'bg-green-400' : 'bg-gray-200', 'inline-block h-2 w-2 flex-shrink-0 rounded-full']" />
-            <span class="ml-3 block truncate">{{ selected.text }}</span>
+            <span class="ml-3 block truncate">{{ selected.name }}</span>
           </template>
         </span>
         <span class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
@@ -38,7 +38,7 @@ watch(selected, (new_selected) => {
               <div class="flex items-center">
                 <span :class="[option.active ? 'bg-green-400' : 'bg-gray-200', 'inline-block h-2 w-2 flex-shrink-0 rounded-full']" aria-hidden="true" />
                 <span :class="[selected ? 'font-semibold' : 'font-normal', 'ml-3 block truncate']">
-                  {{ option.text }}
+                  {{ option.name }}
                   <span class="sr-only"> is {{ option.active ? "active" : "inactive" }}</span>
                 </span>
               </div>

@@ -2,7 +2,7 @@
 import { EnvelopeIcon,BarsArrowUpIcon,UsersIcon } from "@heroicons/vue/24/outline";
 
 import SidebarLayout from "../../../layouts/sidebar/SidebarLayout.vue";
-import BreadCrumb from "../../../components/breadcrumb/BreadCrumb.vue";
+import BreadCrumb from "../../../components/core/breadcrumb/BreadCrumb.vue";
 
 const breadcrumb_list = [
   { name: "example", href: "#", active: false },

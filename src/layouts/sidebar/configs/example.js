@@ -23,7 +23,8 @@ let example = [
         icon: CommandLineIcon,
         open: false,
         children: [
-          { name: "simple", href: "/example/select/simple/simple_status_select" },
+          { name: "simple_plain", href: "/example/select/simple/simple_plain_select" },
+          { name: "simple_status", href: "/example/select/simple/simple_status_select" },
         ],
       },
       {
