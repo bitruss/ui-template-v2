@@ -1,3 +1,5 @@
-import validator from "./validator"
+import validator_util from "./validator";
 
-export default validator
+export  {
+    validator_util as validator  
+};

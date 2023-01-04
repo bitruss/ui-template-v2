@@ -12,8 +12,8 @@ const breadcrumb_list = [
 <template>
   <SidebarLayout>
     <BreadCrumb :pages="breadcrumb_list"></BreadCrumb>
-     <div class="mt-5 grid grid-cols-1 xl:grid-cols-2  "> 
-      <div class="overflow-hidden rounded-lg bg-white shadow">
+    <div class="mt-5 grid grid-cols-12">
+      <div class="overflow-hidden rounded-lg bg-white shadow col-span-12 xl:col-span-8">
         <div class="px-4 py-5 sm:p-6">
           <form class="space-y-8 divide-y divide-gray-200">
             <div class="space-y-8 divide-y divide-gray-200 sm:space-y-5">
