@@ -33,6 +33,12 @@ var example_router = [
     name: "example_select_simple_simple_status_select",
     component: () => import("../../pages/example/select/simple/SimpleStatusSelectPage.vue"),
   },
+  //select
+  {
+    path: "/example/select/simple/simple_secondary_select",
+    name: "example_select_simple_simple_secondary_select",
+    component: () => import("../../pages/example/select/simple/SimpleSecondarySelectPage.vue"),
+  },
   //input
   {
     path: "/example/input/simple",

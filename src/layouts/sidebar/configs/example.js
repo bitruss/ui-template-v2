@@ -24,6 +24,7 @@ let example = [
         open: false,
         children: [
           { name: "simple_plain", href: "/example/select/simple/simple_plain_select" },
+          { name: "simple_secondary", href: "/example/select/simple/simple_secondary_select" },
           { name: "simple_status", href: "/example/select/simple/simple_status_select" },
         ],
       },
