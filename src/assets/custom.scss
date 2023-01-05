@@ -3,15 +3,15 @@
 //err,warning,success,info,primary,secondary => red,yello,green,blue,purple,gray
 
 ////
-.pl-14{
+.pl-14 {
     padding-left: 3.25rem;
 }
 
-.pl-15{
+.pl-15 {
     padding-left: 3.5rem;
 }
 
-.pl-18{
+.pl-18 {
     padding-left: 5rem;
 }
 
@@ -24,11 +24,40 @@ label {
     margin-bottom: 3px;
 }
 
+legend {
+    @extend .flex;
+    @extend .text-sm;
+    @extend .font-medium;
+    @extend .text-gray-700;
+}
+
 
 p {
     @extend .text-gray-500;
     @extend .text-sm;
 }
+
+///
+.focus\:primary {
+    @extend .focus\:border-indigo-500;
+    @extend .focus\:ring-indigo-500;
+}
+
+.focus\:err {
+    @extend .focus\:ring-red-500;
+    @extend .focus\:border-red-500;
+}
+
+
+///
+.focus-within-border\:primary {
+    @extend .focus-within\:z-10;
+    @extend .focus-within\:border-indigo-600;
+    @extend .focus-within\:ring-1;
+    @extend .focus-within\:ring-indigo-600;
+}
+
+
 
 //input
 [type=text],
@@ -51,8 +80,7 @@ select {
     @extend .rounded-md;
     @extend .border-gray-300;
     @extend .shadow-sm;
-    @extend .focus\:border-indigo-500;
-    @extend .focus\:ring-indigo-500;
+    @extend .focus\:primary;
     @extend .sm\:text-sm;
 
     &.disabled {
@@ -61,18 +89,18 @@ select {
         @extend .disabled\:bg-gray-50;
         @extend .disabled\:text-gray-500;
     }
+
+    @extend .focus\:z-10;
 }
 
 input.err {
     @extend .border-red-300;
-    @extend .focus\:ring-red-500;
-    @extend .focus\:border-red-500;
     @extend .text-red-900;
+    @extend .focus\:err
 }
 
-
 .err,
-svg.text-err, 
+svg.text-err,
 .text-err {
     @extend .text-red-500;
 }
@@ -97,7 +125,8 @@ svg.text-err,
             @extend .text-gray-400;
         }
 
-        svg.err,svg.text-err{
+        svg.err,
+        svg.text-err {
             @extend .text-red-500;
         }
 
@@ -123,7 +152,8 @@ svg.text-err,
             @extend .text-gray-400;
         }
 
-        svg.err,svg.text-err{
+        svg.err,
+        svg.text-err {
             @extend .text-red-500;
         }
 
@@ -148,7 +178,7 @@ svg.text-err,
 
     }
 }
- 
+
 
 //box
 .box {

@@ -23,8 +23,8 @@ const selected = ref(null); //if no selected item yet
 <template>
   <SidebarLayout>
     <BreadCrumb :pages="breadcrumb_list"></BreadCrumb>
-    <div class="mt-5 grid grid-cols-1 xl:grid-cols-2">
-      <div class="box">
+    <div class="mt-5 grid grid-cols-12">
+      <div class="box col-span-12 lg:col-span-6">
         <label>SimpleSecondarySelect</label>
         <SimpleSecondarySelect :options="options" v-model="selected" :placeholder="'please select'"></SimpleSecondarySelect>
         <p class="mt-2">{{ selected ? selected : "not selected" }}</p>
