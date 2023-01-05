@@ -1,14 +1,20 @@
-import { createApp } from 'vue'
-import { createPinia } from 'pinia'
+import { createApp } from "vue";
+import { createPinia } from "pinia";
 
-import App from './App.vue'
-import router from './router/Router.vue'
+import App from "./App.vue";
+import router from "./router/Router.vue";
 
-import './assets/main.css'
+import VueTippy from "vue-tippy";
 
-const app = createApp(App)
+import "./assets/main.scss";
+import 'tippy.js/dist/tippy.css' // optional for styling
 
-app.use(createPinia())
-app.use(router)
+const app = createApp(App);
 
-app.mount('#app')
+app.use(createPinia());
+app.use(router);
+app.use(VueTippy, {
+  defaultProps: { placement: "right" },
+});
+
+app.mount("#app");

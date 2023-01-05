@@ -23,13 +23,13 @@ const breadcrumb_list = [
             </div>
 
             <div>
-              <label for="username" class="mt-6 block text-sm font-medium text-gray-700">Username</label>
+              <label for="username" class="mt-6 flex text-sm font-medium text-gray-700">Username</label>
               <div class="mt-1 flex rounded-md shadow-sm">
                 <span class="inline-flex items-center rounded-l-md border border-r-0 border-gray-300 bg-gray-50 px-3 text-gray-500 sm:text-sm">workcation.com/</span>
                 <input type="text" name="username" id="username" autocomplete="username" class="block w-full min-w-0 flex-1 rounded-none rounded-r-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
               </div>
 
-              <label for="about" class="mt-6 block text-sm font-medium text-gray-700">About</label>
+              <label for="about" class="mt-6 flex text-sm font-medium text-gray-700">About</label>
               <div class="mt-1">
                 <textarea id="about" name="about" rows="3" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
               </div>
@@ -37,7 +37,7 @@ const breadcrumb_list = [
             </div>
 
             <div>
-              <label for="photo" class="mt-6 block text-sm font-medium text-gray-700">Photo</label>
+              <label for="photo" class="mt-6 flex text-sm font-medium text-gray-700">Photo</label>
               <div class="mt-1 flex items-center">
                 <span class="h-12 w-12 overflow-hidden rounded-full bg-gray-100">
                   <svg class="h-full w-full text-gray-300" fill="currentColor" viewBox="0 0 24 24">
@@ -47,7 +47,7 @@ const breadcrumb_list = [
                 <button type="button" class="ml-5 rounded-md border border-gray-300 bg-white py-2 px-3 text-sm font-medium leading-4 text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Change</button>
               </div>
 
-              <label for="cover-photo" class="mt-6 block text-sm font-medium text-gray-700">Cover photo</label>
+              <label for="cover-photo" class="mt-6 flex text-sm font-medium text-gray-700">Cover photo</label>
               <div class="mt-1 flex justify-center rounded-md border-2 border-dashed border-gray-300 px-6 pt-5 pb-6">
                 <div class="space-y-1 text-center">
                   <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
@@ -72,28 +72,28 @@ const breadcrumb_list = [
               </div>
               <div class="mt-6 grid grid-cols-6 gap-y-6 gap-x-8">
                 <div class="col-span-6 lg:col-span-3">
-                  <label for="first-name" class="block text-sm font-medium text-gray-700">First name</label>
+                  <label for="first-name" class="flex text-sm font-medium text-gray-700">First name</label>
                   <div class="mt-1">
                     <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
                   </div>
                 </div>
 
                 <div class="col-span-6 lg:col-span-3">
-                  <label for="last-name" class="block text-sm font-medium text-gray-700">Last name</label>
+                  <label for="last-name" class="flex text-sm font-medium text-gray-700">Last name</label>
                   <div class="mt-1">
                     <input type="text" name="last-name" id="last-name" autocomplete="family-name" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
                   </div>
                 </div>
 
                 <div class="col-span-6 lg:col-span-3">
-                  <label for="email" class="block text-sm font-medium text-gray-700">Email address</label>
+                  <label for="email" class="flex text-sm font-medium text-gray-700">Email address</label>
                   <div class="mt-1">
                     <input id="email" name="email" type="email" autocomplete="email" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
                   </div>
                 </div>
 
                 <div class="col-span-6 lg:col-span-3">
-                  <label for="country" class="block text-sm font-medium text-gray-700">Country</label>
+                  <label for="country" class="flex text-sm font-medium text-gray-700">Country</label>
                   <div class="mt-1">
                     <select id="country" name="country" autocomplete="country-name" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                       <option>United States</option>
@@ -104,28 +104,28 @@ const breadcrumb_list = [
                 </div>
 
                 <div class="col-span-6">
-                  <label for="street-address" class="block text-sm font-medium text-gray-700">Street address</label>
+                  <label for="street-address" class="flex text-sm font-medium text-gray-700">Street address</label>
                   <div class="mt-1">
                     <input type="text" name="street-address" id="street-address" autocomplete="street-address" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
                   </div>
                 </div>
 
                 <div class="col-span-6 lg:col-span-2">
-                  <label for="city" class="block text-sm font-medium text-gray-700">City</label>
+                  <label for="city" class="flex text-sm font-medium text-gray-700">City</label>
                   <div class="mt-1">
                     <input type="text" name="city" id="city" autocomplete="address-level2" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
                   </div>
                 </div>
 
                 <div class="col-span-6 lg:col-span-2">
-                  <label for="region" class="block text-sm font-medium text-gray-700">State / Province</label>
+                  <label for="region" class="flex text-sm font-medium text-gray-700">State / Province</label>
                   <div class="mt-1">
                     <input type="text" name="region" id="region" autocomplete="address-level1" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
                   </div>
                 </div>
 
                 <div class="col-span-6 lg:col-span-2">
-                  <label for="postal-code" class="block text-sm font-medium text-gray-700">ZIP / Postal code</label>
+                  <label for="postal-code" class="flex text-sm font-medium text-gray-700">ZIP / Postal code</label>
                   <div class="mt-1">
                     <input type="text" name="postal-code" id="postal-code" autocomplete="postal-code" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
                   </div>

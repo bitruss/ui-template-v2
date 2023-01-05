@@ -1,5 +1,11 @@
 var example_router = [
 
+  {
+    path: "/example/tippy",
+    name: "example_tippy",
+    component: () => import("../../pages/example/tippy/TippyPage.vue"),
+  },
+
   //form
   {
     path: "/example/form/style1",

@@ -1,5 +1,5 @@
 <script setup>
-import { EnvelopeIcon, BarsArrowUpIcon, UsersIcon } from "@heroicons/vue/24/outline";
+import { EnvelopeIcon, BarsArrowUpIcon, UsersIcon, QuestionMarkCircleIcon } from "@heroicons/vue/24/outline";
 
 import SidebarLayout from "../../../layouts/sidebar/SidebarLayout.vue";
 import BreadCrumb from "../../../components/core/breadcrumb/BreadCrumb.vue";
@@ -15,212 +15,152 @@ const breadcrumb_list = [
   <SidebarLayout>
     <BreadCrumb :pages="breadcrumb_list"></BreadCrumb>
 
-    <div class="mt-5 grid grid-cols-1 xl:grid-cols-2">
-      <div class="overflow-hidden rounded-lg bg-white shadow">
-        <div class="px-4 py-5 sm:p-6">
-          <div>
-            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-            <div class="mt-1">
-              <input type="email" name="email" id="email" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="you@example.com" />
-            </div>
+    <div class="mt-5 grid grid-cols-12">
+      <div class="box col-span-12 lg:col-span-6">
+        <label for="email">Email1</label>
+        <input type="email" name="email" id="email" class="mt-1" placeholder="you@example.com" />
+      </div>
+    </div>
+
+    <div class="mt-5 grid grid-cols-12">
+      <div class="box col-span-12 lg:col-span-6">
+        <label for="email">Email2</label>
+        <input type="email" name="email" id="email" class="mt-1" placeholder="you@example.com" />
+        <p class="mt-2">We'll only use this for spam.</p>
+      </div>
+    </div>
+
+    <div class="mt-5 grid grid-cols-12">
+      <div class="box col-span-12 lg:col-span-6">
+        <div class="flex justify-between">
+          <label for="email">Email3</label>
+          <p id="email-optional">Optional</p>
+        </div>
+        <input type="email" name="email" id="email" class="mt-1" placeholder="you@example.com" />
+      </div>
+    </div>
+
+    <div class="mt-5 grid grid-cols-12">
+      <div class="box col-span-12 lg:col-span-6">
+        <label for="email">Email4</label>
+        <input type="email" name="email" id="email" value="you@example.com" disabled="" class="disabled mt-1" placeholder="you@example.com" />
+      </div>
+    </div>
+
+    <div class="mt-5 grid grid-cols-12">
+      <div class="box col-span-12 lg:col-span-6">
+        <label for="email">Email5</label>
+        <div class="input-wrap mt-1">
+          <div class="prefix">
+            <EnvelopeIcon class="h-5 w-5 text-gray-400" aria-hidden="true" />
+          </div>
+          <input type="email" name="email" id="email" class="pl-10" placeholder="you@example.com" />
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-5 grid grid-cols-12">
+      <div class="box col-span-12 lg:col-span-6">
+        <label>Account number</label>
+        <div class="input-wrap mt-1">
+          <input type="text" name="account-number" id="account-number" placeholder="000-00-0000" />
+          <div class="suffix">
+            <QuestionMarkCircleIcon class="h-5 w-5" />
           </div>
         </div>
       </div>
     </div>
 
-    <div class="mt-5 grid grid-cols-1 xl:grid-cols-2">
-      <div class="overflow-hidden rounded-lg bg-white shadow">
-        <div class="px-4 py-5 sm:p-6">
-          <div>
-            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-            <div class="mt-1">
-              <input type="email" name="email" id="email" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="you@example.com" aria-describedby="email-description" />
-            </div>
-            <p class="mt-2 text-sm text-gray-500" id="email-description">We'll only use this for spam.</p>
+     
+
+    <div class="mt-5 grid grid-cols-12">
+      <div class="box col-span-12 lg:col-span-6">
+        <label for="company-website" class="block text-sm font-medium text-gray-700">Company Website</label>
+        <div class="input-wrap mt-1">
+          <div class="prefix">http://</div>
+          <input type="text" name="company-website" id="company-website" class="pl-14" placeholder="www.example.com" />
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-5 grid grid-cols-12">
+      <div class="box col-span-12 lg:col-span-6">
+        <label for="price">Price</label>
+        <div class="input-wrap mt-1">
+          <div class="prefix">$</div>
+          <input type="text" name="price" id="price" class="pl-7 pr-12" placeholder="0.00" />
+          <div class="suffix">USD</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-5 grid grid-cols-12">
+      <div class="box col-span-12 lg:col-span-6">
+        <label for="phone-number">Phone Number</label>
+        <div class="input-wrap">
+          <div class="prefix">
+            <select id="country" name="country" autocomplete="country">
+              <option>US</option>
+              <option>CA</option>
+              <option>EU</option>
+            </select>
+          </div>
+          <input type="text" name="phone-number" id="phone-number" class="pl-18" placeholder="+1 (555) 987-6543" />
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-5 grid grid-cols-12">
+      <div class="box col-span-12 lg:col-span-6">
+        <label for="price">Price</label>
+        <div class="input-wrap">
+          <span class="prefix">$</span>
+          <input type="text" name="price" id="price" class="pl-7 pr-12" placeholder="0.00" />
+          <div class="suffix">
+            <select id="currency" name="currency">
+              <option>USD</option>
+              <option>CAD</option>
+              <option>EUR</option>
+            </select>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="mt-5 grid grid-cols-1 xl:grid-cols-2">
-      <div class="overflow-hidden rounded-lg bg-white shadow">
-        <div class="px-4 py-5 sm:p-6">
-          <div>
-            <div class="flex justify-between">
-              <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-              <span class="text-sm text-gray-500" id="email-optional">Optional</span>
-            </div>
-            <div class="mt-1">
-              <input type="email" name="email" id="email" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="you@example.com" aria-describedby="email-optional" />
-            </div>
+    <div class="mt-5 grid grid-cols-12">
+      <div class="box col-span-12 lg:col-span-6">
+        <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+        <div class="mt-1 input-wrap">
+          <input type="text" name="name" id="name" class="bg-gray-50" placeholder="Jane Smith" />
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-5 grid grid-cols-12">
+      <div class="box col-span-12 lg:col-span-6">
+        <label>Quick search</label>
+        <div class="input-wrap">
+          <input type="text" name="search" id="search" />
+          <div class="suffix">
+            <kbd>⌘K</kbd>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="mt-5 grid grid-cols-1 xl:grid-cols-2">
-      <div class="overflow-hidden rounded-lg bg-white shadow">
-        <div class="px-4 py-5 sm:p-6">
-          <div>
-            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-            <div class="mt-1">
-              <input type="email" name="email" id="email" value="you@example.com" disabled="" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 disabled:cursor-not-allowed disabled:border-gray-200 disabled:bg-gray-50 disabled:text-gray-500 sm:text-sm" placeholder="you@example.com" />
-            </div>
-          </div>
+    <div class="mt-5 grid grid-cols-12">
+      <div class="box col-span-12 lg:col-span-6">
+        <label for="search">Multi-compressed form</label>
+        <div class="-space-y-px rounded-md shadow-sm">
+          <input id="email-address" name="email" type="email" autocomplete="email" required="" class="relative rounded-md rounded-b-none focus:z-10" placeholder="Email address" />
+          <input id="email-address" name="email" type="text" required="" class="relative rounded-b-none rounded-t-none focus:z-10" placeholder="mid address" />
+          <input id="password" name="password" type="password" autocomplete="current-password" required="" class="relative rounded-md rounded-t-none focus:z-10" placeholder="Password" />
         </div>
       </div>
     </div>
 
-    <div class="mt-5 grid grid-cols-1 xl:grid-cols-2">
-      <div class="overflow-hidden rounded-lg bg-white shadow">
-        <div class="px-4 py-5 sm:p-6">
-          <div>
-            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-            <div class="relative mt-1 rounded-md shadow-sm">
-              <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                <EnvelopeIcon class="h-5 w-5 text-gray-400" aria-hidden="true" />
-              </div>
-              <input type="email" name="email" id="email" class="block w-full rounded-md border-gray-300 pl-10 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="you@example.com" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="mt-5 grid grid-cols-1 xl:grid-cols-2">
-      <div class="overflow-hidden rounded-lg bg-white shadow">
-        <div class="px-4 py-5 sm:p-6">
-          <div>
-            <label for="account-number" class="block text-sm font-medium text-gray-700">Account number</label>
-            <div class="relative mt-1 rounded-md shadow-sm">
-              <input type="text" name="account-number" id="account-number" class="block w-full rounded-md border-gray-300 pr-10 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="000-00-0000" />
-              <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
-                <QuestionMarkCircleIcon class="h-5 w-5 text-gray-400" aria-hidden="true" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="mt-5 grid grid-cols-1 xl:grid-cols-2">
-      <div class="overflow-hidden rounded-lg bg-white shadow">
-        <div class="px-4 py-5 sm:p-6">
-          <div>
-            <label for="company-website" class="block text-sm font-medium text-gray-700">Company Website</label>
-            <div class="mt-1 flex rounded-md shadow-sm">
-              <span class="inline-flex items-center rounded-l-md border border-r-0 border-gray-300 bg-gray-50 px-3 text-gray-500 sm:text-sm">http://</span>
-              <input type="text" name="company-website" id="company-website" class="block w-full min-w-0 flex-1 rounded-none rounded-r-md border-gray-300 px-3 py-2 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="www.example.com" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="mt-5 grid grid-cols-1 xl:grid-cols-2">
-      <div class="overflow-hidden rounded-lg bg-white shadow">
-        <div class="px-4 py-5 sm:p-6">
-          <div>
-            <label for="company-website" class="block text-sm font-medium text-gray-700">Company Website</label>
-            <div class="relative mt-1 rounded-md shadow-sm">
-              <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                <span class="text-gray-500 sm:text-sm">http://</span>
-              </div>
-              <input type="text" name="company-website" id="company-website" class="block w-full rounded-md border-gray-300 pl-16 focus:border-indigo-500 focus:ring-indigo-500 sm:pl-14 sm:text-sm" placeholder="www.example.com" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="mt-5 grid grid-cols-1 xl:grid-cols-2">
-      <div class="overflow-hidden rounded-lg bg-white shadow">
-        <div class="px-4 py-5 sm:p-6">
-          <div>
-            <label for="price" class="block text-sm font-medium text-gray-700">Price</label>
-            <div class="relative mt-1 rounded-md shadow-sm">
-              <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                <span class="text-gray-500 sm:text-sm">$</span>
-              </div>
-              <input type="text" name="price" id="price" class="block w-full rounded-md border-gray-300 pl-7 pr-12 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="0.00" aria-describedby="price-currency" />
-              <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
-                <span class="text-gray-500 sm:text-sm" id="price-currency">USD</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="mt-5 grid grid-cols-1 xl:grid-cols-2">
-      <div class="overflow-hidden rounded-lg bg-white shadow">
-        <div class="px-4 py-5 sm:p-6">
-          <div>
-            <label for="phone-number" class="block text-sm font-medium text-gray-700">Phone Number</label>
-            <div class="relative mt-1 rounded-md shadow-sm">
-              <div class="absolute inset-y-0 left-0 flex items-center">
-                <label for="country" class="sr-only">Country</label>
-                <select id="country" name="country" autocomplete="country" class="h-full rounded-md border-transparent bg-transparent py-0 pl-3 pr-7 text-gray-500 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
-                  <option>US</option>
-                  <option>CA</option>
-                  <option>EU</option>
-                </select>
-              </div>
-              <input type="text" name="phone-number" id="phone-number" class="block w-full rounded-md border-gray-300 pl-16 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="+1 (555) 987-6543" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="mt-5 grid grid-cols-1 xl:grid-cols-2">
-      <div class="overflow-hidden rounded-lg bg-white shadow">
-        <div class="px-4 py-5 sm:p-6">
-          <div>
-            <label for="price" class="block text-sm font-medium text-gray-700">Price</label>
-            <div class="relative mt-1 rounded-md shadow-sm">
-              <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                <span class="text-gray-500 sm:text-sm">$</span>
-              </div>
-              <input type="text" name="price" id="price" class="block w-full rounded-md border-gray-300 pl-7 pr-12 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="0.00" />
-              <div class="absolute inset-y-0 right-0 flex items-center">
-                <label for="currency" class="sr-only">Currency</label>
-                <select id="currency" name="currency" class="h-full rounded-md border-transparent bg-transparent py-0 pl-2 pr-7 text-gray-500 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
-                  <option>USD</option>
-                  <option>CAD</option>
-                  <option>EUR</option>
-                </select>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="mt-5 grid grid-cols-1 xl:grid-cols-2">
-      <div class="overflow-hidden rounded-lg bg-white shadow">
-        <div class="px-4 py-5 sm:p-6">
-          <div>
-            <label for="email" class="block text-sm font-medium text-gray-700">Search candidates</label>
-            <div class="mt-1 flex rounded-md shadow-sm">
-              <div class="relative flex flex-grow items-stretch focus-within:z-10">
-                <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                  <UsersIcon class="h-5 w-5 text-gray-400" aria-hidden="true" />
-                </div>
-                <input type="email" name="email" id="email" class="block w-full rounded-none rounded-l-md border-gray-300 pl-10 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="John Smith" />
-              </div>
-              <button type="button" class="relative -ml-px inline-flex items-center space-x-2 rounded-r-md border border-gray-300 bg-gray-50 px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500">
-                <BarsArrowUpIcon class="h-5 w-5 text-gray-400" aria-hidden="true" />
-                <span>Sort</span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="mt-5 grid grid-cols-1 xl:grid-cols-2">
-      <div class="overflow-hidden rounded-lg bg-white shadow">
+    <div class="mt-5 grid grid-cols-12">
+      <div class="overflow-hidden rounded-lg bg-white shadow col-span-12 lg:col-span-6">
         <div class="px-4 py-5 sm:p-6">
           <div>
             <fieldset>
@@ -264,48 +204,8 @@ const breadcrumb_list = [
       </div>
     </div>
 
-    <div class="mt-5 grid grid-cols-1 xl:grid-cols-2">
-      <div class="overflow-hidden rounded-lg bg-white shadow">
-        <div class="px-4 py-5 sm:p-6">
-          <div class="relative rounded-md border border-gray-300 px-3 py-2 shadow-sm focus-within:border-indigo-600 focus-within:ring-1 focus-within:ring-indigo-600">
-            <label for="name" class="absolute -top-2 left-2 -mt-px inline-block bg-white px-1 text-xs font-medium text-gray-900">Name</label>
-            <input type="text" name="name" id="name" class="block w-full border-0 p-0 text-gray-900 placeholder-gray-500 focus:ring-0 sm:text-sm" placeholder="Jane Smith" />
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="mt-5 grid grid-cols-1 xl:grid-cols-2">
-      <div class="overflow-hidden rounded-lg bg-white shadow">
-        <div class="px-4 py-5 sm:p-6">
-          <div>
-            <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
-            <div class="mt-1 border-b border-gray-300 focus-within:border-indigo-600">
-              <input type="text" name="name" id="name" class="block w-full border-0 border-b border-transparent bg-gray-50 focus:border-indigo-600 focus:ring-0 sm:text-sm" placeholder="Jane Smith" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="mt-5 grid grid-cols-1 xl:grid-cols-2">
-      <div class="overflow-hidden rounded-lg bg-white shadow">
-        <div class="px-4 py-5 sm:p-6">
-          <div>
-            <label for="search" class="block text-sm font-medium text-gray-700">Quick search</label>
-            <div class="relative mt-1 flex items-center">
-              <input type="text" name="search" id="search" class="block w-full rounded-md border-gray-300 pr-12 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
-              <div class="absolute inset-y-0 right-0 flex py-1.5 pr-1.5">
-                <kbd class="inline-flex items-center rounded border border-gray-200 px-2 font-sans text-sm font-medium text-gray-400">⌘K</kbd>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="mt-5 grid grid-cols-1 xl:grid-cols-2">
-      <div class="overflow-hidden rounded-lg bg-white shadow">
+    <div class="mt-5 grid grid-cols-12">
+      <div class="overflow-hidden rounded-lg bg-white shadow col-span-12 xl:col-span-6">
         <div class="px-4 py-5 sm:p-6">
           <label for="search" class="block text-sm font-medium text-gray-700 mb-3">Multi-mini form</label>
 
@@ -323,30 +223,6 @@ const breadcrumb_list = [
             <div class="relative rounded-md rounded-t-none border border-gray-300 px-3 py-2 focus-within:z-10 focus-within:border-indigo-600 focus-within:ring-1 focus-within:ring-indigo-600">
               <label for="job-title" class="block text-xs font-medium text-gray-900">Job Title</label>
               <input type="text" name="job-title" id="job-title" class="block w-full border-0 p-0 text-gray-900 placeholder-gray-500 focus:ring-0 sm:text-sm" placeholder="Head of Tomfoolery" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="mt-5 grid grid-cols-1 xl:grid-cols-2">
-      <div class="overflow-hidden rounded-lg bg-white shadow">
-        <div class="px-4 py-5 sm:p-6">
-          <label for="search" class="block text-sm font-medium text-gray-700 mb-3">Multi-compressed form</label>
-          <div class="-space-y-px rounded-md shadow-sm">
-            <div>
-              <label for="email-address" class="sr-only">Email address</label>
-              <input id="email-address" name="email" type="email" autocomplete="email" required="" class="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" placeholder="Email address" />
-            </div>
-
-            <div>
-              <label for="email-address" class="sr-only">Email address</label>
-              <input id="email-address" name="email" type="text" required="" class="relative block w-full appearance-none rounded-none border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" placeholder="mid address" />
-            </div>
-
-            <div>
-              <label for="password" class="sr-only">Password</label>
-              <input id="password" name="password" type="password" autocomplete="current-password" required="" class="relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" placeholder="Password" />
             </div>
           </div>
         </div>

@@ -1,4 +1,4 @@
-import { CalendarIcon, ViewfinderCircleIcon, CommandLineIcon, FolderIcon, HomeIcon, InboxIcon, UsersIcon, ClipboardDocumentListIcon } from "@heroicons/vue/24/outline";
+import { InformationCircleIcon, ViewfinderCircleIcon, CommandLineIcon, FolderIcon, HomeIcon, InboxIcon, UsersIcon, ClipboardDocumentListIcon } from "@heroicons/vue/24/outline";
 
 let example = [
   {
@@ -6,6 +6,12 @@ let example = [
     icon: FolderIcon,
     open: true,
     children: [
+      {
+        name: "Tippy",
+        icon: InformationCircleIcon,
+        open: false,
+        href: "/example/tippy",
+      },
       {
         name: "Select",
         icon: ViewfinderCircleIcon,

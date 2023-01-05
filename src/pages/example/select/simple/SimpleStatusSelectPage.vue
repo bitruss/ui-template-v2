@@ -24,12 +24,10 @@ const selected = ref(options[1]);
   <SidebarLayout>
     <BreadCrumb :pages="breadcrumb_list"></BreadCrumb>
     <div class="mt-5 grid grid-cols-1 xl:grid-cols-2">
-      <div class="rounded-lg bg-white shadow">
-        <div class="px-4 py-5 sm:p-6">
-          <label class="block text-sm font-medium text-gray-700">SimpleStatusSelect</label>
-          <SimpleStatusSelect :options="options" v-model="selected" :placeholder="'please select'"></SimpleStatusSelect>
-          <p class="mt-2 text-sm text-gray-500">{{ selected ? selected : "not selected" }}</p>
-        </div>
+      <div class="box">
+        <label>SimpleStatusSelect</label>
+        <SimpleStatusSelect :options="options" v-model="selected" :placeholder="'please select'"></SimpleStatusSelect>
+        <p class="mt-2">{{ selected ? selected : "not selected" }}</p>
       </div>
     </div>
   </SidebarLayout>
