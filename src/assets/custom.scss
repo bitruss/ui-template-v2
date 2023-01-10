@@ -46,7 +46,6 @@ p {
     @apply focus-within:ring-1;
     @apply focus-within:ring-indigo-600;
 }
-
 ////////// end of primary ////////////////////
 
 
@@ -60,15 +59,39 @@ p {
 input.err {
     @apply focus:ring-red-500;
     @apply focus:border-red-500;
- }
+}
 
  .err,
  svg.text-err,
  .text-err {
      @apply text-red-500;
  }
- 
+
 ////////// end of error ////////////////////
+
+
+/////////// success ////////////////////
+
+.focus\:success {
+    @apply focus:ring-green-600;
+    @apply focus:border-green-600;
+}
+
+input.success {
+    @apply focus:ring-green-600;
+    @apply focus:border-green-600;
+}
+
+ .success,
+ svg.text-success,
+ .text-success {
+     @apply text-green-600;
+ }
+
+
+/////////// end of success /////////////
+
+
 
 //input
 [type=text],
@@ -88,9 +111,7 @@ textarea,
 select {
     @apply block;
     @apply w-full;
-     
     @apply border-gray-300;
-    @apply shadow-sm;
     @apply focus:primary;
     @apply sm:text-sm;
 
@@ -144,7 +165,6 @@ select {
         @apply flex;
         @apply items-center;
         @apply pr-3;
-
         @apply text-sm;
         @apply text-gray-500;
 
@@ -155,6 +175,11 @@ select {
         svg.err,
         svg.text-err {
             @apply text-red-500;
+        }
+
+        svg.success,
+        svg.text-success {
+            @apply text-green-600;
         }
 
         select {

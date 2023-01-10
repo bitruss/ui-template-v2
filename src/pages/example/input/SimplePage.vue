@@ -188,7 +188,7 @@ const breadcrumb_list = [
         <div class="isolate -space-y-px">
           <div class="relative rounded-md rounded-b-none border border-gray-300 px-3 py-2 focus-within-border:primary">
             <label>Name</label>
-            <input type="text" name="name" id="name" class="border-0 p-0 focus:ring-0" placeholder="Jane Smith" />
+            <input type="text" name="name" id="name" class="border-none p-0 focus:ring-0" placeholder="Jane Smith" />
           </div>
 
           <div class="relative border border-gray-300 px-3 py-2 focus-within-border:primary">

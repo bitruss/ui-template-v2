@@ -33,7 +33,9 @@ let example = [
         open: false,
         children: [
           { name: "simple", href: "/example/input/simple" },
-          { name: "error", href: "/example/input/error" },
+          { name: "validator", href: "/example/input/validator" },
+          { name: "checkbox", href: "/example/input/checkbox" },
+          { name: "radio", href: "/example/input/radio" },
         ],
       },
       {

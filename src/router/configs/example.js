@@ -52,12 +52,20 @@ var example_router = [
     component: () => import("../../pages/example/input/SimplePage.vue"),
   },
   {
-    path: "/example/input/error",
-    name: "example_input_error",
-    component: () => import("../../pages/example/input/ErrorPage.vue"),
+    path: "/example/input/validator",
+    name: "example_input_validator",
+    component: () => import("../../pages/example/input/ValidatorPage.vue"),
   },
-
-
+  {
+    path: "/example/input/checkbox",
+    name: "example_input_checkbox",
+    component: () => import("../../pages/example/input/CheckBoxPage.vue"),
+  },
+  {
+    path: "/example/input/radio",
+    name: "example_input_radio",
+    component: () => import("../../pages/example/input/RadioPage.vue"),
+  }
 ];
 
 export default example_router;

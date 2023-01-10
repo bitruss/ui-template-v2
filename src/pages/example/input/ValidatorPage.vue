@@ -3,12 +3,10 @@ import { validator } from "@/utils/index.js";
 
 import { ref, computed } from "vue";
 
-import { ExclamationCircleIcon, InformationCircleIcon } from "@heroicons/vue/24/outline";
+import { ExclamationCircleIcon, InformationCircleIcon,CheckIcon} from "@heroicons/vue/24/outline";
 
 import SidebarLayout from "@/layouts/sidebar/SidebarLayout.vue";
 import BreadCrumb from "@/components/core/breadcrumb/BreadCrumb.vue";
-
-console.log(validator);
 
 const breadcrumb_list = [
   { name: "example", href: "#", active: false },
@@ -37,9 +35,12 @@ let validate_email = computed(() => {
             <InformationCircleIcon class="ml-1 w-5 h-5" v-tippy="{ content: 'display error when email format is wrong' }"></InformationCircleIcon>
           </label>
           <div class="input-wrap">
-            <input type="email" name="email" id="email" placeholder="input your email" v-model="email" :class="validate_email ? '' : 'err'" />
+            <input type="email" name="email" id="email" placeholder="input your email" v-model="email" class="rounded" :class="validate_email ? '' : 'err'" />
             <div :class="validate_email ? 'invisible' : ''" class="suffix">
               <ExclamationCircleIcon class="h-5 w-5 text-err" />
+            </div>
+            <div :class="(validate_email&&email!='') ? 'visible' : 'invisible'" class="suffix">
+              <CheckIcon class="h-5 w-5 text-success" />
             </div>
           </div>
           <p :class="validate_email ? 'invisible' : ''" class="mt-2 text-err">Please input a correct email</p>
