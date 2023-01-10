@@ -1,0 +1,189 @@
+////
+
+//err,warning,success,info,primary,secondary => red,yello,green,blue,purple,gray
+
+////
+.pl-14 {
+    padding-left: 3.25rem;
+}
+
+.pl-15 {
+    padding-left: 3.5rem;
+}
+
+.pl-18 {
+    padding-left: 5rem;
+}
+
+///
+label {
+    @extend .flex;
+    @extend .text-sm;
+    @extend .font-medium;
+    @extend .text-gray-700;
+    margin-bottom: 3px;
+}
+
+legend {
+    @extend .flex;
+    @extend .text-sm;
+    @extend .font-medium;
+    @extend .text-gray-700;
+}
+
+
+p {
+    @extend .text-gray-500;
+    @extend .text-sm;
+}
+
+///
+.focus\:primary {
+    @extend .focus\:border-indigo-500;
+    @extend .focus\:ring-indigo-500;
+}
+
+.focus\:err {
+    @extend .focus\:ring-red-500;
+    @extend .focus\:border-red-500;
+}
+
+
+///
+.focus-within-border\:primary {
+    @extend .focus-within\:z-10;
+    @extend .focus-within\:border-indigo-600;
+    @extend .focus-within\:ring-1;
+    @extend .focus-within\:ring-indigo-600;
+}
+
+//input
+[type=text],
+[type=email],
+[type=url],
+[type=password],
+[type=number],
+[type=date],
+[type=datetime-local],
+[type=month],
+[type=search],
+[type=tel],
+[type=time],
+[type=week],
+[multiple],
+textarea,
+select {
+    @extend .block;
+    @extend .w-full;
+    @extend .rounded-md;
+    @extend .border-gray-300;
+    @extend .shadow-sm;
+    @extend .focus\:primary;
+    @extend .sm\:text-sm;
+
+    &.disabled {
+        @extend .disabled\:cursor-not-allowed;
+        @extend .disabled\:border-gray-200;
+        @extend .disabled\:bg-gray-50;
+        @extend .disabled\:text-gray-500;
+    }
+
+    @extend .focus\:z-10;
+}
+
+input.err {
+    @extend .border-red-300;
+    @extend .text-red-900;
+    @extend .focus\:err
+}
+
+.err,
+svg.text-err,
+.text-err {
+    @extend .text-red-500;
+}
+
+
+.input-wrap {
+
+    @extend .relative;
+
+    .prefix {
+        @extend .absolute;
+        @extend .inset-y-0;
+        @extend .left-0;
+        @extend .flex;
+        @extend .items-center;
+        @extend .pl-3;
+
+        @extend .text-sm;
+        @extend .text-gray-500;
+
+        svg {
+            @extend .text-gray-400;
+        }
+
+        svg.err,
+        svg.text-err {
+            @extend .text-red-500;
+        }
+
+        select {
+            @extend .border-transparent;
+            @extend .bg-transparent;
+            @extend .focus\:ring-0;
+        }
+    }
+
+    .suffix {
+        @extend .absolute;
+        @extend .inset-y-0;
+        @extend .right-0;
+        @extend .flex;
+        @extend .items-center;
+        @extend .pr-3;
+
+        @extend .text-sm;
+        @extend .text-gray-500;
+
+        svg {
+            @extend .text-gray-400;
+        }
+
+        svg.err,
+        svg.text-err {
+            @extend .text-red-500;
+        }
+
+        select {
+            @extend .border-transparent;
+            @extend .bg-transparent;
+            @extend .focus\:ring-0;
+        }
+
+        kbd {
+            @extend .inline-flex;
+            @extend .items-center;
+            @extend .rounded;
+            @extend .border;
+            @extend .border-gray-200;
+            @extend .px-2;
+            @extend .font-sans;
+            @extend .text-sm;
+            @extend .font-medium;
+            @extend .text-gray-400;
+        }
+
+    }
+}
+
+
+//box
+.box {
+    @extend .rounded-lg;
+    @extend .bg-white;
+    @extend .shadow;
+    @extend .px-4;
+    @extend .py-5;
+    @extend .sm\:p-6;
+}

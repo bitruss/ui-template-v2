@@ -1,8 +1,3 @@
-////
-
-//err,warning,success,info,primary,secondary => red,yello,green,blue,purple,gray
-
-////
 .pl-14 {
     padding-left: 3.25rem;
 }
@@ -15,49 +10,66 @@
     padding-left: 5rem;
 }
 
+
 ///
 label {
-    @extend .flex;
-    @extend .text-sm;
-    @extend .font-medium;
-    @extend .text-gray-700;
-    margin-bottom: 3px;
+    @apply flex;
+    @apply text-sm;
+    @apply font-medium;
+    @apply text-gray-700;
+    @apply mb-3;
 }
 
 legend {
-    @extend .flex;
-    @extend .text-sm;
-    @extend .font-medium;
-    @extend .text-gray-700;
+    @apply flex;
+    @apply text-sm;
+    @apply font-medium;
+    @apply text-gray-700;
 }
 
 
 p {
-    @extend .text-gray-500;
-    @extend .text-sm;
+    @apply text-gray-500;
+    @apply text-sm;
 }
 
-///
+////////// primary ////////////////////
+
 .focus\:primary {
-    @extend .focus\:border-indigo-500;
-    @extend .focus\:ring-indigo-500;
+    @apply focus:border-indigo-500;
+    @apply focus:ring-indigo-500;
 }
-
-.focus\:err {
-    @extend .focus\:ring-red-500;
-    @extend .focus\:border-red-500;
-}
-
 
 ///
 .focus-within-border\:primary {
-    @extend .focus-within\:z-10;
-    @extend .focus-within\:border-indigo-600;
-    @extend .focus-within\:ring-1;
-    @extend .focus-within\:ring-indigo-600;
+    @apply focus-within:z-10;
+    @apply focus-within:border-indigo-600;
+    @apply focus-within:ring-1;
+    @apply focus-within:ring-indigo-600;
 }
 
+////////// end of primary ////////////////////
 
+
+////////// error ////////////////////
+
+.focus\:err {
+    @apply focus:ring-red-500;
+    @apply focus:border-red-500;
+}
+
+input.err {
+    @apply focus:ring-red-500;
+    @apply focus:border-red-500;
+ }
+
+ .err,
+ svg.text-err,
+ .text-err {
+     @apply text-red-500;
+ }
+ 
+////////// end of error ////////////////////
 
 //input
 [type=text],
@@ -75,105 +87,92 @@ p {
 [multiple],
 textarea,
 select {
-    @extend .block;
-    @extend .w-full;
-    @extend .rounded-md;
-    @extend .border-gray-300;
-    @extend .shadow-sm;
-    @extend .focus\:primary;
-    @extend .sm\:text-sm;
+    @apply block;
+    @apply w-full;
+    @apply rounded-md;
+    @apply border-gray-300;
+    @apply shadow-sm;
+    @apply focus:primary;
+    @apply sm:text-sm;
 
     &.disabled {
-        @extend .disabled\:cursor-not-allowed;
-        @extend .disabled\:border-gray-200;
-        @extend .disabled\:bg-gray-50;
-        @extend .disabled\:text-gray-500;
+        @apply disabled:cursor-not-allowed;
+        @apply disabled:border-gray-200;
+        @apply disabled:bg-gray-50;
+        @apply disabled:text-gray-500;
     }
 
-    @extend .focus\:z-10;
-}
-
-input.err {
-    @extend .border-red-300;
-    @extend .text-red-900;
-    @extend .focus\:err
-}
-
-.err,
-svg.text-err,
-.text-err {
-    @extend .text-red-500;
+    @apply focus:z-10;
 }
 
 
 .input-wrap {
-
-    @extend .relative;
+    @apply relative;
 
     .prefix {
-        @extend .absolute;
-        @extend .inset-y-0;
-        @extend .left-0;
-        @extend .flex;
-        @extend .items-center;
-        @extend .pl-3;
+        @apply absolute;
+        @apply inset-y-0;
+        @apply left-0;
+        @apply flex;
+        @apply items-center;
+        @apply pl-3;
 
-        @extend .text-sm;
-        @extend .text-gray-500;
+        @apply text-sm;
+        @apply text-gray-500;
 
         svg {
-            @extend .text-gray-400;
+            @apply text-gray-400;
         }
 
         svg.err,
         svg.text-err {
-            @extend .text-red-500;
+            @apply text-red-500;
         }
 
         select {
-            @extend .border-transparent;
-            @extend .bg-transparent;
-            @extend .focus\:ring-0;
+            @apply border-transparent;
+            @apply bg-transparent;
+            @apply focus:ring-0;
         }
     }
 
     .suffix {
-        @extend .absolute;
-        @extend .inset-y-0;
-        @extend .right-0;
-        @extend .flex;
-        @extend .items-center;
-        @extend .pr-3;
+        @apply absolute;
+        @apply inset-y-0;
+        @apply right-0;
+        @apply flex;
+        @apply items-center;
+        @apply pr-3;
 
-        @extend .text-sm;
-        @extend .text-gray-500;
+        @apply text-sm;
+        @apply text-gray-500;
 
         svg {
-            @extend .text-gray-400;
+            @apply text-gray-400;
         }
 
         svg.err,
         svg.text-err {
-            @extend .text-red-500;
+            @apply text-red-500;
         }
 
         select {
-            @extend .border-transparent;
-            @extend .bg-transparent;
-            @extend .focus\:ring-0;
+            @apply border-transparent;
+            @apply bg-transparent;
+            @apply focus:ring-0;
         }
 
         kbd {
-            @extend .inline-flex;
-            @extend .items-center;
-            @extend .rounded;
-            @extend .border;
-            @extend .border-gray-200;
-            @extend .px-2;
-            @extend .font-sans;
-            @extend .text-sm;
-            @extend .font-medium;
-            @extend .text-gray-400;
+            @apply inline-flex;
+            @apply items-center;
+            @apply rounded;
+            @apply border;
+            @apply border-gray-200;
+            @apply px-2;
+            @apply font-sans;
+            @apply text-sm;
+            @apply font-medium;
+            @apply text-gray-400;
         }
 
     }
@@ -182,10 +181,10 @@ svg.text-err,
 
 //box
 .box {
-    @extend .rounded-lg;
-    @extend .bg-white;
-    @extend .shadow;
-    @extend .px-4;
-    @extend .py-5;
-    @extend .sm\:p-6;
+    @apply rounded-lg;
+    @apply bg-white;
+    @apply shadow;
+    @apply px-4;
+    @apply py-5;
+    @apply sm:p-6;
 }
