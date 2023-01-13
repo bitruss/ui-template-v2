@@ -53,21 +53,24 @@ body {
 }
 
  
-// .btn-primary{
-//     // @apply inline-flex;
-//     // @apply items-center;
-//     // @apply rounded-md;
-//     // @apply border;
-//     // @apply border-transparent;
-//     // @apply bg-indigo-600;
-//     // @apply text-white;
-//     // @apply shadow-sm;
-//     // @apply hover:bg-indigo-700;
-//     // @apply focus:outline-none;
-//     // @apply focus:ring-2;
-//     // @apply focus:ring-indigo-500;
-//     // @apply focus:ring-offset-2;
-// }
+.btn-primary{
+    @apply inline-flex;
+    @apply items-center;
+    @apply rounded-md;
+    @apply border;
+    @apply border-transparent;
+    @apply bg-indigo-600;
+    @apply text-white;
+    @apply shadow-sm;
+    @apply hover:bg-indigo-700;
+    @apply focus:outline-none;
+    @apply focus:ring-2;
+    @apply focus:ring-indigo-500;
+    @apply focus:ring-offset-2;
+    @apply px-4;
+    @apply py-2;
+    @apply font-medium;
+}
 
 
 ////////// end of primary ////////////////////
@@ -102,8 +105,8 @@ svg.text-err,
 }
 
 input.success {
-    @apply focus: ring-green-600;
-    @apply focus: border-green-600;
+    @apply focus:ring-green-600;
+    @apply focus:border-green-600;
 }
 
 .success,
@@ -137,13 +140,13 @@ select {
     @apply w-full;
     @apply border-gray-300;
     @apply focus:primary;
-    @apply sm: text-sm;
+    @apply sm:text-sm;
 
     &.disabled {
-        @apply disabled: cursor-not-allowed;
-        @apply disabled: border-gray-200;
-        @apply disabled: bg-gray-50;
-        @apply disabled: text-gray-500;
+        @apply disabled:cursor-not-allowed;
+        @apply disabled:border-gray-200;
+        @apply disabled:bg-gray-50;
+        @apply disabled:text-gray-500;
     }
 
     @apply focus:z-10;
@@ -178,7 +181,7 @@ select {
         select {
             @apply border-transparent;
             @apply bg-transparent;
-            @apply focus: ring-0;
+            @apply focus:ring-0;
         }
     }
 
@@ -209,7 +212,7 @@ select {
         select {
             @apply border-transparent;
             @apply bg-transparent;
-            @apply focus: ring-0;
+            @apply focus:ring-0;
         }
 
         kbd {
@@ -236,5 +239,5 @@ select {
     @apply shadow;
     @apply px-4;
     @apply py-5;
-    @apply sm: p-6;
+    @apply sm:p-6;
 }
