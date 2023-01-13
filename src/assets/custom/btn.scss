@@ -1,0 +1,239 @@
+.btn-primary {
+    @apply inline-flex;
+    @apply items-center;
+    @apply rounded-md;
+    @apply border;
+    @apply border-transparent;
+    @apply bg-indigo-600;
+    @apply text-white;
+    @apply shadow-sm;
+    @apply hover:bg-indigo-700;
+    @apply focus:outline-none;
+    @apply focus:ring-2;
+    @apply focus:ring-indigo-500;
+    @apply focus:ring-offset-2;
+    @apply px-4;
+    @apply py-2;
+    @apply font-medium;
+    @apply text-sm;
+}
+
+.btn-secondary {
+    @apply inline-flex;
+    @apply items-center;
+    @apply rounded-md;
+    @apply border;
+    @apply border-gray-300;
+    @apply bg-white;
+    @apply hover:bg-gray-50;
+    @apply text-gray-700;
+    @apply shadow-sm;
+    @apply hover:bg-gray-50;
+    @apply focus:outline-none;
+    @apply focus:ring-2;
+    @apply focus:ring-indigo-500;
+    @apply focus:ring-offset-2;
+    @apply px-4;
+    @apply py-2;
+    @apply font-medium;
+    @apply text-sm;
+}
+
+.btn-info {
+    @apply inline-flex;
+    @apply items-center;
+    @apply rounded-md;
+    @apply border;
+    @apply border-transparent;
+    @apply bg-indigo-100;
+    @apply text-indigo-700;
+    @apply hover:bg-indigo-200;
+    @apply focus:outline-none;
+    @apply focus:ring-2;
+    @apply focus:ring-indigo-500;
+    @apply focus:ring-offset-2;
+    @apply px-4;
+    @apply py-2;
+    @apply font-medium;
+    @apply text-sm;
+}
+
+.btn-primary,
+.btn-secondary,
+.btn-info {
+    &.rounded-full {
+        @apply px-4;
+        @apply py-2;
+        border-radius: 9999px;
+    }
+
+    &.rounded-full.no-text {
+        @apply px-2;
+        @apply py-2;
+    }
+
+    .prefix-icon {
+        @apply -ml-1;
+        @apply mr-3;
+        @apply h-4;
+        @apply w-4;
+    }
+
+    .icon {
+        @apply h-4;
+        @apply w-4;
+    }
+
+    .suffix-icon {
+        @apply ml-3;
+        @apply -mr-1;
+        @apply h-4;
+        @apply w-4;
+    }
+
+    &.sm {
+        @apply px-2.5;
+        @apply py-1.5;
+        @apply text-xs;
+
+        &.rounded-full {
+            @apply px-3;
+            @apply py-1.5;
+            border-radius: 9999px;
+        }
+
+        &.rounded-full.no-text {
+            @apply px-1;
+            @apply py-1;
+            border-radius: 9999px;
+        }
+
+        .prefix-icon {
+            @apply -ml-0.5;
+            @apply mr-2;
+            @apply h-4;
+            @apply w-4;
+        }
+
+        .icon {
+            @apply h-3;
+            @apply w-3;
+        }
+
+        .suffix-icon {
+            @apply ml-2;
+            @apply -mr-0.5;
+            @apply h-4;
+            @apply w-4;
+        }
+    }
+
+    &.md {
+        @apply px-3;
+        @apply py-2;
+        @apply text-sm;
+        @apply leading-4;
+
+        &.rounded-full {
+            @apply px-3.5;
+            @apply py-2;
+            border-radius: 9999px;
+        }
+
+        &.rounded-full.no-text {
+            @apply px-1.5;
+            @apply py-1.5;
+        }
+
+        .prefix-icon {
+            @apply -ml-1;
+            @apply mr-2;
+            @apply h-4;
+            @apply w-4;
+        }
+
+        .icon {
+            @apply h-3.5;
+            @apply w-3.5;
+        }
+
+        .suffix-icon {
+            @apply ml-2;
+            @apply -mr-1;
+            @apply h-4;
+            @apply w-4;
+        }
+    }
+
+    &.lg {
+        @apply px-4;
+        @apply py-2;
+        @apply text-base;
+
+        &.rounded-full {
+            @apply px-5;
+            @apply py-2;
+            border-radius: 9999px;
+        }
+
+        &.rounded-full.no-text {
+            @apply px-2;
+            @apply py-2;
+        }
+
+        .prefix-icon {
+            @apply -ml-1;
+            @apply mr-3;
+            @apply h-5;
+            @apply w-5;
+        }
+
+        .icon {
+            @apply h-5;
+            @apply w-5;
+        }
+
+        .suffix-icon {
+            @apply ml-3;
+            @apply -mr-1;
+            @apply h-5;
+            @apply w-5;
+        }
+    }
+
+    &.xl {
+        @apply px-6;
+        @apply py-3;
+        @apply text-base;
+
+        &.rounded-full {
+            @apply px-6;
+            @apply py-3;
+            border-radius: 9999px;
+        }
+
+        &.rounded-full.no-text {
+            @apply px-3;
+            @apply py-3;
+        }
+
+        .prefix-icon {
+            @apply -ml-2;
+            @apply mr-4;
+            @apply h-6;
+            @apply w-6;
+        }
+
+        .icon {
+            @apply h-6;
+            @apply w-6;
+        }
+
+        .suffix-icon {
+            @apply ml-3;
+            @apply -mr-1;
+            @apply h-6;
+            @apply w-6;
+        }
+    }
+}
