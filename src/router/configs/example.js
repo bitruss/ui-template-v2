@@ -65,7 +65,14 @@ var example_router = [
     path: "/example/input/radio",
     name: "example_input_radio",
     component: () => import("../../pages/example/input/RadioPage.vue"),
+  },
+  //button
+  {
+    path: "/example/button/main",
+    name: "example_input_main",
+    component: () => import("../../pages/example/button/MainButtonPage.vue"),
   }
+
 ];
 
 export default example_router;
