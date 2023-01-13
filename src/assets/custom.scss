@@ -52,8 +52,8 @@ body {
     @apply focus-within:ring-indigo-600;
 }
 
- 
-.btn-primary{
+
+.btn-primary {
     @apply inline-flex;
     @apply items-center;
     @apply rounded-md;
@@ -71,6 +71,8 @@ body {
     @apply py-2;
     @apply font-medium;
 }
+
+
 
 
 ////////// end of primary ////////////////////
@@ -150,8 +152,6 @@ select {
     }
 
     @apply focus:z-10;
-
-
 }
 
 
