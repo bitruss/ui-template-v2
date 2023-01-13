@@ -20,7 +20,7 @@ defineProps(["navigation"]);
       </router-link>
     </div>
     <Disclosure as="div" v-else class="space-y-1" v-slot="{ open }" :defaultOpen="item.open">
-      <DisclosureButton :class="[item.current ? 'bg-gray-100' : 'hover:bg-gray-50', ' text-gray-900 group w-full flex items-center pl-2 pr-1 py-2 text-left text-sm   rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500']">
+      <DisclosureButton :class="[item.current ? 'bg-gray-100' : 'hover:bg-gray-50', ' text-gray-900 group w-full flex items-center pl-2 pr-1 py-2 text-left text-sm rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500']">
         <component :is="item.icon" class="mr-3 h-6 w-6 flex-shrink-0 text-gray-900" aria-hidden="true" />
         <span class="flex-1">{{ item.name }}</span>
         <svg :class="[open ? 'text-gray-400 rotate-90' : 'text-gray-300', 'ml-3 h-5 w-5 flex-shrink-0 transform transition-colors duration-150 ease-in-out group-hover:text-gray-400']" viewBox="0 0 20 20" aria-hidden="true">
@@ -29,7 +29,7 @@ defineProps(["navigation"]);
       </DisclosureButton>
       <DisclosurePanel class="space-y-1">
         <template v-for="subItem in item.children" :key="subItem.name">
-          <router-link v-if="!subItem.children" @click="set_active(subItem.mid)" :to="subItem.href" :class="[subItem.current ? 'bg-gray-100' : 'hover:bg-gray-50', 'group flex w-full items-center rounded-md py-2 pl-11 pr-2 text-sm   text-gray-900']">
+          <router-link v-if="!subItem.children" @click="set_active(subItem.mid)" :to="subItem.href" :class="[subItem.current ? 'bg-gray-100' : 'hover:bg-gray-50', 'group flex w-full items-center rounded-md py-2 pl-11 pr-2 text-sm text-gray-900']">
             <component :is="subItem.icon" :class="['text-gray-900  mr-3 flex-shrink-0 h-6 w-6']" aria-hidden="true" />
             {{ subItem.name }}</router-link
           >

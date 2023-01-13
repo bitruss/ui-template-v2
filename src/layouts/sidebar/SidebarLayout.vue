@@ -6,7 +6,7 @@ import AuthMenu from "../topbar/AuthMenu.vue";
 import { ref } from "vue";
 import { Dialog, DialogPanel, TransitionChild, TransitionRoot } from "@headlessui/vue";
 import SidebarMenu from "./SidebarMenu.vue";
-import { Bars3Icon, XMarkIcon, CalendarIcon, ChartBarIcon, FolderIcon, HomeIcon, InboxIcon, UsersIcon } from "@heroicons/vue/24/outline";
+import { Bars3Icon, XMarkIcon} from "@heroicons/vue/24/outline";
 
 import { r_menu_config } from "./MenuConfig.vue";
 
@@ -18,7 +18,7 @@ const sidebarOpen = ref(false);
     <TransitionRoot as="template" :show="sidebarOpen">
       <Dialog as="div" class="relative z-40 lg:hidden" @close="sidebarOpen = false">
         <TransitionChild as="template" enter="transition-opacity ease-linear duration-300" enter-from="opacity-0" enter-to="opacity-100" leave="transition-opacity ease-linear duration-300" leave-from="opacity-100" leave-to="opacity-0">
-          <div class="fixed inset-0 bg-gray-600 bg-opacity-75" />
+          <div class="fixed inset-0 bg-gray-600 bg-opacity-75"></div>
         </TransitionChild>
 
         <div class="fixed inset-0 z-40 flex">
