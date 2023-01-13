@@ -16,7 +16,7 @@ const sidebarOpen = ref(false);
 <template>
   <div class="min-h-full">
     <TransitionRoot as="template" :show="sidebarOpen">
-      <Dialog as="div" class="relative z-40 md:hidden" @close="sidebarOpen = false">
+      <Dialog as="div" class="relative z-40 lg:hidden" @close="sidebarOpen = false">
         <TransitionChild as="template" enter="transition-opacity ease-linear duration-300" enter-from="opacity-0" enter-to="opacity-100" leave="transition-opacity ease-linear duration-300" leave-from="opacity-100" leave-to="opacity-0">
           <div class="fixed inset-0 bg-gray-600 bg-opacity-75" />
         </TransitionChild>
@@ -48,7 +48,7 @@ const sidebarOpen = ref(false);
     </TransitionRoot>
 
     <!-- Static sidebar for desktop -->
-    <div class="hidden md:fixed md:inset-y-0 md:flex ml-8 md:w-50 lg:w-60 md:flex-col">
+    <div class="hidden lg:fixed lg:inset-y-0 lg:flex ml-8 md:w-50 lg:w-60 lg:flex-col">
       <!-- Sidebar component, swap this element with another sidebar if you like -->
       <div class="flex min-h-0 flex-1 flex-col">
         <div class="flex flex-1 flex-col overflow-y-auto pt-5 pb-4">
@@ -61,9 +61,9 @@ const sidebarOpen = ref(false);
         </div>
       </div>
     </div>
-    <div class="flex flex-1 flex-col md:pl-56 md:pr-8 lg:pl-80">
+    <div class="flex flex-1 flex-col lg:pr-8 lg:pl-80">
       <div class="sticky top-0 z-10 flex h-16 flex-shrink-0 bg-white">
-        <button type="button" class="px-4 text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 md:hidden" @click="sidebarOpen = true">
+        <button type="button" class="px-4 text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 lg:hidden" @click="sidebarOpen = true">
           <span class="sr-only">Open sidebar</span>
           <Bars3Icon class="h-6 w-6" aria-hidden="true" />
         </button>
@@ -79,7 +79,7 @@ const sidebarOpen = ref(false);
       <main class="flex-1">
         <div class="mx-auto px-4 sm:px-6">
           <div class="grid grid-cols-12">
-            <div class="col-span-12 xl:col-span-12 md:pt-0 sm:pt-5">
+            <div class="col-span-12 xl:col-span-12 lg:pt-0 pt-5">
               <slot></slot>
             </div>
           </div>
