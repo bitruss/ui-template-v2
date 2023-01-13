@@ -8,8 +8,8 @@ import { Dialog, DialogPanel, TransitionChild, TransitionRoot } from "@headlessu
 import SidebarMenu from "./SidebarMenu.vue";
 import { Bars3Icon, XMarkIcon, CalendarIcon, ChartBarIcon, FolderIcon, HomeIcon, InboxIcon, UsersIcon } from "@heroicons/vue/24/outline";
 
-import {r_menu_config} from "./MenuConfig.vue"
- 
+import { r_menu_config } from "./MenuConfig.vue";
+
 const sidebarOpen = ref(false);
 </script>
 
@@ -48,9 +48,9 @@ const sidebarOpen = ref(false);
     </TransitionRoot>
 
     <!-- Static sidebar for desktop -->
-    <div class="hidden md:fixed md:inset-y-0 md:flex md:w-64   lg:w-80 md:flex-col">
+    <div class="hidden md:fixed md:inset-y-0 md:flex ml-8 md:w-50 lg:w-60 md:flex-col">
       <!-- Sidebar component, swap this element with another sidebar if you like -->
-      <div class="flex min-h-0 flex-1 flex-col border-r border-gray-200 bg-white">
+      <div class="flex min-h-0 flex-1 flex-col">
         <div class="flex flex-1 flex-col overflow-y-auto pt-5 pb-4">
           <div class="flex flex-shrink-0 items-center px-4">
             <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="Your Company" />
@@ -61,9 +61,9 @@ const sidebarOpen = ref(false);
         </div>
       </div>
     </div>
-    <div class="flex flex-1 flex-col md:pl-64 lg:pl-80">
-      <div class="sticky top-0 z-10 flex h-16 flex-shrink-0 bg-white shadow">
-        <button type="button" class="border-r border-gray-200 px-4 text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 md:hidden" @click="sidebarOpen = true">
+    <div class="flex flex-1 flex-col md:pl-56 md:pr-8 lg:pl-80">
+      <div class="sticky top-0 z-10 flex h-16 flex-shrink-0 bg-white">
+        <button type="button" class="px-4 text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 md:hidden" @click="sidebarOpen = true">
           <span class="sr-only">Open sidebar</span>
           <Bars3Icon class="h-6 w-6" aria-hidden="true" />
         </button>
@@ -77,9 +77,11 @@ const sidebarOpen = ref(false);
       </div>
 
       <main class="flex-1">
-        <div class="py-6">
-          <div class="mx-auto px-4 sm:px-6 md:px-8">
-            <slot></slot>
+        <div class="mx-auto px-4 sm:px-6">
+          <div class="grid grid-cols-12">
+            <div class="col-span-12 xl:col-span-12 md:pt-0 sm:pt-5">
+              <slot></slot>
+            </div>
           </div>
         </div>
       </main>

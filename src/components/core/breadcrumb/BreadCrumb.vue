@@ -13,7 +13,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <nav class="flex" aria-label="Breadcrumb">
+  <!-- <nav class="flex" aria-label="Breadcrumb">
     <ol role="list" class="flex space-x-4 rounded-md bg-white px-6 shadow">
       <li class="flex">
         <div class="flex items-center">
@@ -32,5 +32,5 @@ const props = defineProps({
         </div>
       </li>
     </ol>
-  </nav>
+  </nav> -->
 </template>
