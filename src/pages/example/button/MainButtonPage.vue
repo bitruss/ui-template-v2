@@ -6,8 +6,8 @@ import { EnvelopeIcon as EnvelopeOutlineIcon } from "@heroicons/vue/24/outline";
 
 const breadcrumb_list = [
   { name: "example", href: "#", active: false },
-  { name: "form", href: "#", active: false },
-  { name: "style1", href: "#", active: true },
+  { name: "button", href: "#", active: false },
+  { name: "main", href: "#", active: true },
 ];
 </script>
 

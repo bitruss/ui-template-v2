@@ -9,7 +9,6 @@
         </div>
         <div class="mt-8 md:order-1 md:mt-0">
         </div>
-        
       </div>
     </footer>
   </template>

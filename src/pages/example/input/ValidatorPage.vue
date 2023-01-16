@@ -1,19 +1,8 @@
 <script setup>
 import { validator } from "@/utils/index.js";
-
 import { ref, computed } from "vue";
-
-import { ExclamationCircleIcon, InformationCircleIcon,CheckIcon} from "@heroicons/vue/24/outline";
-
+import { ExclamationCircleIcon, InformationCircleIcon, CheckIcon } from "@heroicons/vue/24/outline";
 import SidebarLayout from "@/layouts/sidebar/SidebarLayout.vue";
-import BreadCrumb from "@/components/core/breadcrumb/BreadCrumb.vue";
-
-const breadcrumb_list = [
-  { name: "example", href: "#", active: false },
-  { name: "input", href: "#", active: false },
-  { name: "error", href: "#", active: true },
-];
-
 ///
 let email = ref("");
 let validate_email = computed(() => {
@@ -24,28 +13,29 @@ let validate_email = computed(() => {
 
 <template>
   <SidebarLayout>
-    <BreadCrumb :pages="breadcrumb_list"></BreadCrumb>
+    <div class="space-y-8 divide-y divide-gray-200 divide-gray-200">
+      <div>
+        <h1 class="text-3xl leading-6">Examples of input</h1>
+        <p class="mt-3">Different types of input with code</p>
+      </div>
 
-    <div class="mt-5 grid grid-cols-12">
-      <div class="box col-span-12 lg:col-span-6">
-        <!---->
+      <div class="pt-5 lg:grid lg:grid-cols-3 lg:gap-4">
         <div>
-          <label for="email">
-            Email
-            <InformationCircleIcon class="ml-1 w-5 h-5" v-tippy="{ content: 'display error when email format is wrong' }"></InformationCircleIcon>
-          </label>
+          <label for="username" class="flex">Email validator</label>
+          <p>show green when correct, show red when err, show default if empty</p>
+        </div>
+        <div class="lg:col-span-2 mt-2">
           <div class="input-wrap">
             <input type="email" name="email" id="email" placeholder="input your email" v-model="email" class="rounded" :class="validate_email ? '' : 'err'" />
             <div :class="validate_email ? 'invisible' : ''" class="suffix">
               <ExclamationCircleIcon class="h-5 w-5 text-err" />
             </div>
-            <div :class="(validate_email&&email!='') ? 'visible' : 'invisible'" class="suffix">
+            <div :class="validate_email && email != '' ? 'visible' : 'invisible'" class="suffix">
               <CheckIcon class="h-5 w-5 text-success" />
             </div>
           </div>
           <p :class="validate_email ? 'invisible' : ''" class="mt-2 text-err">Please input a correct email</p>
         </div>
-        <!---->
       </div>
     </div>
   </SidebarLayout>
