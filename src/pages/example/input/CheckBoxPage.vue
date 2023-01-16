@@ -24,11 +24,11 @@ import SidebarLayout from "@/layouts/sidebar/SidebarLayout.vue";
         <div class="lg:col-span-2 mt-2">
           <div>
             <label class="mr-1"><input type="checkbox" class="mr-2" />checkbox 1</label>
-            <span>this is the description of checkbox 1</span>
+            <p>this is the description of checkbox 1</p>
           </div>
           <div class="mt-3">
             <label class="mr-1"><input type="checkbox" class="mr-2" />checkbox 2</label>
-            <span>this is the description of checkbox 2</span>
+            <p>this is the description of checkbox 2</p>
           </div>
         </div>
       </div>

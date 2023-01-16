@@ -24,11 +24,11 @@ import SidebarLayout from "@/layouts/sidebar/SidebarLayout.vue";
         <div class="lg:col-span-2 mt-2">
           <div>
             <label class="mr-1"><input type="radio" name="radio" class="mr-2" />radio 1</label>
-            <span>this is the description of radio 1</span>
+            <p>this is the description of radio 1</p>
           </div>
           <div class="mt-3">
             <label class="mr-1"><input type="radio" name="radio" class="mr-2" />radio 2</label>
-            <span>this is the description of radio 2</span>
+            <p>this is the description of radio 2</p>
           </div>
         </div>
       </div>

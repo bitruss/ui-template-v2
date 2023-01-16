@@ -11,9 +11,12 @@ legend {
     @apply text-gray-900;
 }
 
-p,
-span {
+p {
     @apply text-gray-500;
+    @apply text-sm;
+}
+
+span {
     @apply text-sm;
 }
 
