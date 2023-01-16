@@ -1,0 +1,15 @@
+.box {
+    @apply rounded-lg;
+    @apply bg-white;
+    @apply shadow;
+    @apply px-4;
+    @apply py-5;
+    @apply sm:p-6;
+}
+
+.focus-within-border\:primary {
+    @apply focus-within:z-10;
+    @apply focus-within:border-indigo-600;
+    @apply focus-within:ring-1;
+    @apply focus-within:ring-indigo-600;
+}

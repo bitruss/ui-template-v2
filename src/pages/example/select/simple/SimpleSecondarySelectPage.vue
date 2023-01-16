@@ -1,14 +1,8 @@
 <script setup>
 import { ref } from "vue";
 import SidebarLayout from "../../../../layouts/sidebar/SidebarLayout.vue";
-import BreadCrumb from "../../../../components/core/breadcrumb/BreadCrumb.vue";
-import SimpleSecondarySelect from "../../../../components/core/select/SimpleSecondarySelect.vue";
 
-const breadcrumb_list = [
-  { name: "example", href: "#", active: false },
-  { name: "select", href: "#", active: false },
-  { name: "simple_secondary_select", href: "#", active: true },
-];
+import SimpleSecondarySelect from "../../../../components/core/select/SimpleSecondarySelect.vue";
 
 var options = [
   { name: "txt1", secondary: "s-1" },
@@ -22,11 +16,9 @@ const selected = ref(null); //if no selected item yet
 
 <template>
   <SidebarLayout>
-    <BreadCrumb :pages="breadcrumb_list"></BreadCrumb>
-
     <div class="space-y-8 divide-y divide-gray-200 divide-gray-200">
       <div>
-        <h1 class="text-xl leading-6">SimpleSecondarySelect</h1>
+        <h1 class="text-2xl leading-6">SimpleSecondarySelect</h1>
         <p class="mt-3">Select with a secondary label</p>
       </div>
 

@@ -1,0 +1,75 @@
+.text-sm {
+    font-size: 0.75rem;
+    line-height: inherit;
+}
+
+.text-sm {
+    font-size: 0.875rem;
+    line-height: inherit;
+}
+
+.text-md {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+.text-lg {
+    font-size: 1.125rem;
+    line-height: inherit;
+}
+
+.text-xl {
+    font-size: 1.25rem;
+    line-height: inherit;
+}
+
+.text-2xl {
+    font-size: 1.5rem;
+    line-height: inherit;
+}
+
+.text-3xl {
+    font-size: 1.875rem;
+    line-height: inherit;
+}
+
+.text-4xl {
+    font-size: 2.25rem;
+    line-height: inherit;
+}
+
+.text-5xl {
+    font-size: 3rem;
+    line-height: inherit;
+}
+
+.text-6xl {
+    font-size: 3.75rem;
+    line-height: inherit;
+}
+
+.text-7xl {
+    font-size: 4.5rem;
+    line-height: inherit;
+}
+
+.text-8xl {
+    font-size: 6rem;
+    line-height: inherit;
+}
+
+.text-8xl {
+    font-size: 8rem;
+    line-height: inherit;
+}
+
+/////////////////colors//////////////////
+svg.text-err,
+.text-err {
+    @apply text-red-500;
+}
+
+svg.text-success,
+.text-success {
+    @apply text-green-600;
+}

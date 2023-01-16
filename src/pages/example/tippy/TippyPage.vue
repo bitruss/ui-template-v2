@@ -2,40 +2,69 @@
 import { InformationCircleIcon } from "@heroicons/vue/24/outline";
 
 import SidebarLayout from "@/layouts/sidebar/SidebarLayout.vue";
-import BreadCrumb from "@/components/core/breadcrumb/BreadCrumb.vue";
-
-const breadcrumb_list = [
-  { name: "example", href: "#", active: false },
-  { name: "tippy", href: "#", active: false },
-];
 </script>
 
 <template>
   <SidebarLayout>
-    <BreadCrumb :pages="breadcrumb_list"></BreadCrumb>
+    <div class="space-y-8 divide-y divide-gray-200 divide-gray-200">
+      <div>
+        <h1 class="text-2xl leading-6">Examples of Tippy</h1>
+        <p class="mt-3">Different types tippy</p>
+      </div>
 
-    <div class="mt-5 grid grid-cols-12">
-      <div class="overflow-hidden rounded-lg bg-white shadow col-span-12 lg:col-span-8 2xl:col-span-6">
-        <div class="px-4 py-5 sm:p-6">
-          <div>
-            <label class="text-lg">tippy style1<InformationCircleIcon class="m-1 w-5 h-5" v-tippy="{ content: 'tippy on the right' }"></InformationCircleIcon></label>
-            <p class="mt-1">Default tippy on the right</p>
-          </div>
+      <div class="pt-5 lg:grid lg:grid-cols-3 lg:gap-4">
+        <div>
+          <label>tippy inside label default style</label>
+          <p>Default tippy with default icon and different directions</p>
+        </div>
+        <div class="lg:col-span-2 mt-2">
+          <label>default tippy<InformationCircleIcon class="ml-1 icon" v-tippy="{ placement: 'top', content: 'Look at me on the top!' }"></InformationCircleIcon></label>
+          <label>default tippy<InformationCircleIcon class="ml-1 icon" v-tippy="{ placement: 'right', content: 'Look at me on the right!' }"></InformationCircleIcon></label>
+          <label>default tippy<InformationCircleIcon class="ml-1 icon" v-tippy="{ placement: 'left', content: 'Look at me on the left!' }"></InformationCircleIcon></label>
+          <label>default tippy<InformationCircleIcon class="ml-1 icon" v-tippy="{ placement: 'bottom', content: 'Look at me on the bottom!' }"></InformationCircleIcon></label>
+        </div>
+      </div>
 
-          <div>
-            <label class="mt-8">tippy style2<InformationCircleIcon class="ml-1 w-5 h-5" v-tippy="{ placement: 'top', content: 'Look at me on the top!' }"></InformationCircleIcon></label>
-            <p class="mt-1">Tippy on the top</p>
-          </div>
+      <div class="pt-5 lg:grid lg:grid-cols-3 lg:gap-4">
+        <div>
+          <label>tippy inside p tag style5</label>
+          <p>Default tippy on the bottom inside p tag</p>
+        </div>
+        <div class="lg:col-span-2 mt-2">
+          <p>
+            this is a long text <InformationCircleIcon class="icon inline sm" v-tippy="{ placement: 'bottom', content: 'tippy on the bottom' }"></InformationCircleIcon>
+            , with a information tippy inside the text
+          </p>
+        </div>
+      </div>
 
-          <div>
-            <label class="mt-8">tippy style3<InformationCircleIcon class="ml-1 w-5 h-5" v-tippy="{ placement: 'left', content: 'tippy on the left' }"></InformationCircleIcon></label>
-            <p class="mt-1">Tippy on the left</p>
-          </div>
+      <div class="pt-5 lg:grid lg:grid-cols-3 lg:gap-4">
+        <div>
+          <label>tippy inside label sm size icon</label>
+          <p>Default tippy on the right with small icon</p>
+        </div>
+        <div class="lg:col-span-2 mt-2">
+          <label class="text-sm" >tippy style1<InformationCircleIcon class="ml-1 icon sm" v-tippy="{ placement: 'right', content: 'tippy on the right' }"></InformationCircleIcon></label>
+        </div>
+      </div>
 
-          <div>
-            <label class="mt-8">tippy style4<InformationCircleIcon class="ml-1 w-5 h-5" v-tippy="{ placement: 'bottom', content: 'tippy on the bottom' }"></InformationCircleIcon></label>
-            <p class="mt-1">Tippy on the bottom</p>
-          </div>
+      <div class="pt-5 lg:grid lg:grid-cols-3 lg:gap-4">
+        <div>
+          <label>tippy inside label large size icon</label>
+          <p>Default tippy on the left with large icon</p>
+        </div>
+        <div class="lg:col-span-2 mt-2">
+          <label class="text-lg">tippy style3<InformationCircleIcon class="ml-1 icon lg" v-tippy="{ placement: 'left', content: 'tippy on the left' }"></InformationCircleIcon></label>
+        </div>
+      </div>
+
+      <div class="pt-5 lg:grid lg:grid-cols-3 lg:gap-4">
+        <div>
+          <label>tippy inside label super large size icon</label>
+          <p>Default tippy on the bottom with super large icon</p>
+        </div>
+        <div class="lg:col-span-2 mt-2">
+          <label class="text-xl">tippy style4<InformationCircleIcon class="ml-1 icon xl" v-tippy="{ placement: 'bottom', content: 'tippy on the bottom' }"></InformationCircleIcon></label>
         </div>
       </div>
     </div>

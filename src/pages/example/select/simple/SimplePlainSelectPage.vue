@@ -1,14 +1,8 @@
 <script setup>
 import { ref } from "vue";
 import SidebarLayout from "../../../../layouts/sidebar/SidebarLayout.vue";
-import BreadCrumb from "../../../../components/core/breadcrumb/BreadCrumb.vue";
-import SimplePlainSelect from "../../../../components/core/select/SimplePlainSelect.vue";
 
-const breadcrumb_list = [
-  { name: "example", href: "#", active: false },
-  { name: "form", href: "#", active: false },
-  { name: "simple_status_select", href: "#", active: true },
-];
+import SimplePlainSelect from "../../../../components/core/select/SimplePlainSelect.vue";
 
 var options = ["xx1", "xx2", "xx3"];
 
@@ -18,11 +12,9 @@ const selected = ref("xx2");
 
 <template>
   <SidebarLayout>
-    <BreadCrumb :pages="breadcrumb_list"></BreadCrumb>
-
     <div class="space-y-8 divide-y divide-gray-200 divide-gray-200">
       <div>
-        <h1 class="text-xl leading-6">SimplePlainSelect</h1>
+        <h1 class="text-2xl leading-6">SimplePlainSelect</h1>
         <p class="mt-3">demo of a simple plain select</p>
       </div>
 

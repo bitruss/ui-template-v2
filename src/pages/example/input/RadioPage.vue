@@ -6,25 +6,27 @@ import { ref, computed } from "vue";
 import { ExclamationCircleIcon, InformationCircleIcon, CheckIcon } from "@heroicons/vue/24/outline";
 
 import SidebarLayout from "@/layouts/sidebar/SidebarLayout.vue";
-import BreadCrumb from "@/components/core/breadcrumb/BreadCrumb.vue";
-
-const breadcrumb_list = [
-  { name: "example", href: "#", active: false },
-  { name: "input", href: "#", active: false },
-  { name: "radio", href: "#", active: true },
-];
 </script>
 
 <template>
   <SidebarLayout>
-    <BreadCrumb :pages="breadcrumb_list"></BreadCrumb>
-    <div class="mt-5 grid grid-cols-12">
-      <div class="box col-span-12 lg:col-span-6">
-        <label for="email">Radio with different size</label>
-        <input type="radio" name="radio-size" class="sm mr-3" />
-        <input type="radio" name="radio-size" class="mr-3" />
-        <input type="radio" name="radio-size" class="lg mr-3" />
-        <input type="radio" name="radio-size" class="xl mr-3" />
+    <div class="space-y-8 divide-y divide-gray-200 divide-gray-200">
+      <div>
+        <h1 class="text-2xl leading-6">Examples of Radio input</h1>
+        <p class="mt-3">Different types of radio styles</p>
+      </div>
+
+      <div class="pt-5 lg:grid lg:grid-cols-3 lg:gap-4">
+        <div>
+          <label for="username" class="flex">Sizes</label>
+          <p>Radio with different size</p>
+        </div>
+        <div class="lg:col-span-2 mt-2">
+          <input type="radio" name="radio-size" class="sm mr-3" />
+          <input type="radio" name="radio-size" class="mr-3" />
+          <input type="radio" name="radio-size" class="lg mr-3" />
+          <input type="radio" name="radio-size" class="xl mr-3" />
+        </div>
       </div>
     </div>
   </SidebarLayout>

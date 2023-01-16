@@ -1,23 +1,15 @@
 <script setup>
 import SidebarLayout from "../../../layouts/sidebar/SidebarLayout.vue";
-import BreadCrumb from "../../../components/core/breadcrumb/BreadCrumb.vue";
+
 import { EnvelopeIcon, PlusIcon } from "@heroicons/vue/24/solid";
 import { EnvelopeIcon as EnvelopeOutlineIcon } from "@heroicons/vue/24/outline";
-
-const breadcrumb_list = [
-  { name: "example", href: "#", active: false },
-  { name: "button", href: "#", active: false },
-  { name: "main", href: "#", active: true },
-];
 </script>
 
 <template>
   <SidebarLayout>
-    <BreadCrumb :pages="breadcrumb_list"></BreadCrumb>
-
     <div class="space-y-8 divide-y divide-gray-200 divide-gray-200">
       <div>
-        <h1 class="text-xl leading-6">Buttons with different styles</h1>
+        <h1 class="text-2xl leading-6">Buttons with different styles</h1>
         <p class="mt-3">primary->purple,info->blue,secondary->gray</p>
       </div>
 

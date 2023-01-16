@@ -1,14 +1,8 @@
 <script setup>
 import { ref } from "vue";
 import SidebarLayout from "../../../../layouts/sidebar/SidebarLayout.vue";
-import BreadCrumb from "../../../../components/core/breadcrumb/BreadCrumb.vue";
-import SimpleStatusSelect from "../../../../components/core/select/SimpleStatusSelect.vue";
 
-const breadcrumb_list = [
-  { name: "example", href: "#", active: false },
-  { name: "form", href: "#", active: false },
-  { name: "simple_status_select", href: "#", active: true },
-];
+import SimpleStatusSelect from "../../../../components/core/select/SimpleStatusSelect.vue";
 
 var options = [
   { name: "txt1", active: false },
@@ -22,11 +16,9 @@ const selected = ref(options[1]);
 
 <template>
   <SidebarLayout>
-    <BreadCrumb :pages="breadcrumb_list"></BreadCrumb>
-
     <div class="space-y-8 divide-y divide-gray-200 divide-gray-200">
       <div>
-        <h1 class="text-xl leading-6">SimpleStatusSelect</h1>
+        <h1 class="text-2xl leading-6">SimpleStatusSelect</h1>
         <p class="mt-3">demo of a simple select with status</p>
       </div>
 
