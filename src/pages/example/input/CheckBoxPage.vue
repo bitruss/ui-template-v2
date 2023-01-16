@@ -18,6 +18,39 @@ import SidebarLayout from "@/layouts/sidebar/SidebarLayout.vue";
 
       <div class="pt-5 lg:grid lg:grid-cols-3 lg:gap-4">
         <div>
+          <label for="username" class="flex">Label checkbox</label>
+          <p>Checkbox with Label</p>
+        </div>
+        <div class="lg:col-span-2 mt-2">
+          <div>
+            <label class="mr-1"><input type="checkbox" class="mr-2" />checkbox 1</label>
+            <span>this is the description of checkbox 1</span>
+          </div>
+          <div class="mt-3">
+            <label class="mr-1"><input type="checkbox" class="mr-2" />checkbox 2</label>
+            <span>this is the description of checkbox 2</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-5 lg:grid lg:grid-cols-3 lg:gap-4">
+        <div>
+          <label for="username" class="flex">Label checkbox list</label>
+          <p>Checkbox with Label</p>
+        </div>
+        <div class="lg:col-span-2 mt-2">
+          <div class="grid grid-cols-2 md:grid-cols-3">
+            <label class="mt-3 col-span-1"><input type="checkbox" class="mr-2" />check 1 one </label>
+            <label class="mt-3 col-span-1"><input type="checkbox" class="mr-2" />check 2 two</label>
+            <label class="mt-3 col-span-1"><input type="checkbox" class="mr-2" />check 3 three</label>
+            <label class="mt-3 col-span-1"><input type="checkbox" class="mr-2" />check 4 four</label>
+            <label class="mt-3 col-span-1"><input type="checkbox" class="mr-2" />check 5 five</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-5 lg:grid lg:grid-cols-3 lg:gap-4">
+        <div>
           <label for="username" class="flex">Sizes</label>
           <p>Checkbox with different size</p>
         </div>

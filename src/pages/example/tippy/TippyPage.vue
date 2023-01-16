@@ -27,6 +27,16 @@ import SidebarLayout from "@/layouts/sidebar/SidebarLayout.vue";
 
       <div class="pt-5 lg:grid lg:grid-cols-3 lg:gap-4">
         <div>
+          <label>tippy inside a button</label>
+          <p>tippy text inside button</p>
+        </div>
+        <div class="lg:col-span-2 mt-2">
+          <button type="button" class="btn-secondary m-2 sm"><span v-tippy="{ placement: 'bottom', content: 'tippy on button' }">Button</span></button>
+        </div>
+      </div>
+
+      <div class="pt-5 lg:grid lg:grid-cols-3 lg:gap-4">
+        <div>
           <label>tippy inside p tag style5</label>
           <p>Default tippy on the bottom inside p tag</p>
         </div>
@@ -44,7 +54,7 @@ import SidebarLayout from "@/layouts/sidebar/SidebarLayout.vue";
           <p>Default tippy on the right with small icon</p>
         </div>
         <div class="lg:col-span-2 mt-2">
-          <label class="text-sm" >tippy style1<InformationCircleIcon class="ml-1 icon sm" v-tippy="{ placement: 'right', content: 'tippy on the right' }"></InformationCircleIcon></label>
+          <label class="text-sm">tippy style1<InformationCircleIcon class="ml-1 icon sm" v-tippy="{ placement: 'right', content: 'tippy on the right' }"></InformationCircleIcon></label>
         </div>
       </div>
 
