@@ -71,6 +71,12 @@ var example_router = [
     path: "/example/button/main",
     name: "example_input_main",
     component: () => import("../../pages/example/button/MainButtonPage.vue"),
+  },
+  //modal
+  {
+    path: "/example/modal/simple",
+    name: "example_modal_simple",
+    component: () => import("../../pages/example/modal/ModalSimplePage.vue"),
   }
 
 ];

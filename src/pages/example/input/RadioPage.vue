@@ -18,7 +18,7 @@ import SidebarLayout from "@/layouts/sidebar/SidebarLayout.vue";
 
       <div class="pt-5 lg:grid lg:grid-cols-3 lg:gap-4">
         <div>
-          <label for="username" class="flex">Label checkbox</label>
+          <label for="username" class="flex">Label radio</label>
           <p>Checkbox with Label</p>
         </div>
         <div class="lg:col-span-2 mt-2">
@@ -30,6 +30,18 @@ import SidebarLayout from "@/layouts/sidebar/SidebarLayout.vue";
             <label class="mr-1"><input type="radio" name="radio" class="mr-2" />radio 2</label>
             <p>this is the description of radio 2</p>
           </div>
+        </div>
+      </div>
+
+      <div class="pt-5 lg:grid lg:grid-cols-3 lg:gap-4">
+        <div>
+          <label for="username" class="flex">Label simplelist</label>
+          <p>Checkbox with Label</p>
+        </div>
+        <div class="lg:col-span-2 mt-2">
+          <label class="mr-2 mt-2"><input type="radio" name="radio" class="mr-2" />Email</label>
+          <label class="mr-2 mt-2"><input type="radio" name="radio" class="mr-2" />Phone(SMS)</label>
+          <label class="mr-2 mt-2"><input type="radio" name="radio" class="mr-2" />Push Notification</label>
         </div>
       </div>
 

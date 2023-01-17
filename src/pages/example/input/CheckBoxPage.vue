@@ -36,6 +36,18 @@ import SidebarLayout from "@/layouts/sidebar/SidebarLayout.vue";
       <div class="pt-5 lg:grid lg:grid-cols-3 lg:gap-4">
         <div>
           <label for="username" class="flex">Label checkbox list</label>
+          <p>Checkbox list with Label</p>
+        </div>
+        <div class="lg:col-span-2 mt-2">
+          <label class="mr-2 mt-2"><input type="checkbox" class="mr-2" />Email</label>
+          <label class="mr-2 mt-2"><input type="checkbox" class="mr-2" />Phone(SMS)</label>
+          <label class="mr-2 mt-2"><input type="checkbox" class="mr-2" />Push Notification</label>
+        </div>
+      </div>
+
+      <div class="pt-5 lg:grid lg:grid-cols-3 lg:gap-4">
+        <div>
+          <label for="username" class="flex">Label checkbox list</label>
           <p>Checkbox with Label</p>
         </div>
         <div class="lg:col-span-2 mt-2">

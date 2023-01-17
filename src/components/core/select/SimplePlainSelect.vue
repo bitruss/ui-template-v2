@@ -4,7 +4,6 @@ import { Listbox, ListboxButton, ListboxLabel, ListboxOption, ListboxOptions } f
 import { CheckIcon, ChevronUpDownIcon } from "@heroicons/vue/20/solid";
 
 const props = defineProps(["options", "modelValue", "placeholder"]);
-
 const selected = ref(props.modelValue);
 
 const emit = defineEmits(["update:modelValue"]);
