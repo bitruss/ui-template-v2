@@ -16,9 +16,9 @@ import SidebarLayout from "../../../layouts/sidebar/SidebarLayout.vue";
           <p>a default simple card</p>
         </div>
         <div class="lg:col-span-2">
-          <div class="card inline-flex mr-6 mt-2">card simple</div>
-          <div class="card inline-flex mr-6 mt-2 click">card with hover pointer</div>
-          <div class="card inline-flex mr-6 mt-2 shadow">card with shadow</div>
+          <div class="card inline-flex mr-6 mt-2 auto-fit">card simple</div>
+          <div class="card inline-flex mr-6 mt-2 click auto-fit">card with hover pointer</div>
+          <div class="card inline-flex mr-6 mt-2 shadow auto-fit">card with shadow</div>
         </div>
       </div>
     </div>

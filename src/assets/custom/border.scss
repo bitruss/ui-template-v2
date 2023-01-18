@@ -2,12 +2,7 @@
     @apply rounded-lg;
     @apply border-gray-300;
     @apply bg-white;
-    @apply px-3;
-    @apply py-2;
-    @apply md:px-4;
-    @apply md:py-3;
     @apply border;
-    @apply max-w-fit;
 
     &.click {
         @apply focus-within:ring-2;
@@ -15,6 +10,13 @@
         @apply focus-within:ring-offset-2;
         @apply hover:border-gray-400;
         @apply cursor-pointer;
+    }
+
+    &.auto-fit {
+        @apply px-3;
+        @apply py-2;
+        @apply md:px-4;
+        @apply md:py-3;
     }
 }
 

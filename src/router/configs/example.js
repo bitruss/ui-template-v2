@@ -85,10 +85,15 @@ var example_router = [
   },
   //icon
   {
-    path: "/example/icon/simple",
-    name: "example_icon_simple",
-    component: () => import("../../pages/example/icon/SimpleIconPage.vue"),
+    path: "/example/icon/outline",
+    name: "example_icon_outline",
+    component: () => import("../../pages/example/icon/OutlineIconPage.vue"),
   },
+  {
+    path: "/example/icon/solid",
+    name: "example_icon_solid",
+    component: () => import("../../pages/example/icon/SolidIconPage.vue"),
+  }
 ];
 
 export default example_router;

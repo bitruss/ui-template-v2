@@ -71,7 +71,10 @@ let example = [
         name: "Icon",
         icon: PhotoIcon,
         open: false,
-        children: [{ name: "simple", href: "/example/icon/simple" }],
+        children: [
+          { name: "outline", href: "/example/icon/outline" },
+          { name: "solid", href: "/example/icon/solid" }
+        ],
       }
     ],
   },
