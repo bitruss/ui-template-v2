@@ -1,10 +1,21 @@
-.box {
+.card {
     @apply rounded-lg;
+    @apply border-gray-300;
     @apply bg-white;
-    @apply shadow;
-    @apply px-4;
-    @apply py-5;
-    @apply sm:p-6;
+    @apply px-3;
+    @apply py-2;
+    @apply md:px-4;
+    @apply md:py-3;
+    @apply border;
+    @apply max-w-fit;
+
+    &.click {
+        @apply focus-within:ring-2;
+        @apply focus-within:ring-indigo-500;
+        @apply focus-within:ring-offset-2;
+        @apply hover:border-gray-400;
+        @apply cursor-pointer;
+    }
 }
 
 .focus-within-border\:primary {

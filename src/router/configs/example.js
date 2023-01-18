@@ -1,5 +1,4 @@
 var example_router = [
-
   {
     path: "/example/tippy",
     name: "example_tippy",
@@ -77,8 +76,19 @@ var example_router = [
     path: "/example/modal/simple",
     name: "example_modal_simple",
     component: () => import("../../pages/example/modal/ModalSimplePage.vue"),
-  }
-
+  },
+  //card
+  {
+    path: "/example/card/simple",
+    name: "example_card_simple",
+    component: () => import("../../pages/example/card/SimpleCardPage.vue"),
+  },
+  //icon
+  {
+    path: "/example/icon/simple",
+    name: "example_icon_simple",
+    component: () => import("../../pages/example/icon/SimpleIconPage.vue"),
+  },
 ];
 
 export default example_router;

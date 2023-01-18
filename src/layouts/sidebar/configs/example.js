@@ -1,4 +1,4 @@
-import {PlayIcon, WindowIcon, InformationCircleIcon,CubeIcon, ViewfinderCircleIcon, CommandLineIcon, FolderIcon, HomeIcon, InboxIcon, UsersIcon, ClipboardDocumentListIcon } from "@heroicons/vue/24/outline";
+import { PlayIcon, WindowIcon, PhotoIcon, InformationCircleIcon, StopIcon, ViewfinderCircleIcon, CommandLineIcon, FolderIcon, ClipboardDocumentListIcon } from "@heroicons/vue/24/outline";
 
 let example = [
   {
@@ -53,18 +53,26 @@ let example = [
         name: "Buttons",
         icon: PlayIcon,
         open: true,
-        children: [
-          { name: "main_style", href: "/example/button/main" },
-        ],
+        children: [{ name: "main_style", href: "/example/button/main" }],
       },
       {
         name: "Modals",
         icon: WindowIcon,
         open: true,
-        children: [
-          { name: "simple", href: "/example/modal/simple" },
-        ],
+        children: [{ name: "simple", href: "/example/modal/simple" }],
       },
+      {
+        name: "Card",
+        icon: StopIcon,
+        open: false,
+        children: [{ name: "simple", href: "/example/card/simple" }],
+      },
+      {
+        name: "Icon",
+        icon: PhotoIcon,
+        open: false,
+        children: [{ name: "simple", href: "/example/icon/simple" }],
+      }
     ],
   },
 ];
