@@ -6,6 +6,9 @@ import Modal from "../../../components/core/modal/Modal.vue";
 
 const open = ref(false);
 const open_withclose = ref(false);
+
+const father = ref(false);
+const child = ref(false);
 </script>
 
 <template>
@@ -28,7 +31,7 @@ const open_withclose = ref(false);
             <template v-slot:body>
               <div class="mt-5">
                 <label>A disable close style modal</label>
-                <p>you can only click buttons below to close modal window</p>
+                <p>you can click buttons or dark space to close modal window</p>
               </div>
             </template>
             <template v-slot:footer>
@@ -39,7 +42,6 @@ const open_withclose = ref(false);
         </div>
       </div>
 
-
       <div class="pt-5 lg:grid lg:grid-cols-3 lg:gap-4">
         <div>
           <label for="username" class="flex">Modal without close</label>
@@ -47,7 +49,7 @@ const open_withclose = ref(false);
           <p>and right top close btn</p>
         </div>
         <div class="lg:col-span-2 mt-2">
-          <button class="btn-primary" @click="open = true">Open Modal Window</button>
+          <button class="btn-primary" @click="open = true">Open Modal Window without close btn</button>
           <Modal v-model:open="open" :disable-close="true">
             <template v-slot:body>
               <div class="mt-5">
@@ -63,7 +65,38 @@ const open_withclose = ref(false);
         </div>
       </div>
 
-
+      <div class="pt-5 lg:grid lg:grid-cols-3 lg:gap-4">
+        <div>
+          <label for="username" class="flex">Modal of father-child</label>
+          <p>A modal window with child</p>
+        </div>
+        <div class="lg:col-span-2 mt-2">
+          <button class="btn-primary" @click="father = true">Open father modal</button>
+          <Modal v-model:open="father">
+            <template v-slot:body>
+              <div class="mt-5">
+                <label>father - child window</label>
+                <p>this is the father window</p>
+              </div>
+            </template>
+            <template v-slot:footer>
+              <button type="button" class="btn-secondary mr-3" @click="father = false">cancel</button>
+              <button type="button" class="btn-primary mr-3" @click="child = true">Open child modal</button>
+            </template>
+          </Modal>
+          <Modal v-model:open="child">
+            <template v-slot:body>
+              <div class="mt-5">
+                <label>father - child window</label>
+                <p>this is the child window</p>
+              </div>
+            </template>
+            <template v-slot:footer>
+              <button type="button" class="btn-secondary mr-3" @click="child = false">Cancel</button>
+            </template>
+          </Modal>
+        </div>
+      </div>
     </div>
   </SidebarLayout>
 </template>
