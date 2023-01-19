@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="jsx">
 import SidebarLayout from "../../../layouts/sidebar/SidebarLayout.vue";
 import { useToast } from "vue-toastification";
 const toast = useToast();
@@ -7,20 +7,23 @@ function show_primary_toast() {
   toast("I'm a toast!", { timeout: 1000 });
 }
 
-const jsx_c = (
-  <div>
-    <h1>My Title</h1>
-    <span>My text</span>
-  </div>
-);
-
 function show_primary_static_toast() {
-  toast(jsx_c, {
+  toast("click me to google", {
     timeout: false,
     onClick: function () {
       window.location = "https://google.com";
     },
   });
+}
+
+function show_primary_jsx_toast() {
+  //<script setup lang="jsx">
+  toast(
+    <div>
+      <label>My Title</label>
+      <p>this is the description test p</p>
+    </div>
+  );
 }
 
 function show_info_toast() {
@@ -67,6 +70,18 @@ function show_err_toast() {
           <div class="btn-secondary" @click="show_primary_static_toast">show primary static toast</div>
         </div>
       </div>
+
+
+      <div class="pt-5 lg:grid lg:grid-cols-3 lg:gap-4">
+        <div>
+          <label for="username" class="flex">Simple primary jsx Toast</label>
+          <p>A jsx toast , lang="jsx" must be set in setup</p>
+        </div>
+        <div class="lg:col-span-2 mt-2">
+          <div class="btn-secondary" @click="show_primary_jsx_toast">show primary jsx toast</div>
+        </div>
+      </div>
+
 
       <div class="pt-5 lg:grid lg:grid-cols-3 lg:gap-4">
         <div>
