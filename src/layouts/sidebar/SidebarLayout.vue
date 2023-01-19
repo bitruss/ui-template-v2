@@ -80,12 +80,6 @@ const sidebarOpen = ref(false);
         <div class="mx-auto px-4 sm:px-6">
           <div class="grid grid-cols-12">
             <div class="col-span-12 xl:col-span-12 lg:pt-0 pt-5">
-              <!-- Global notification live region, render this permanently at the end of the document -->
-              <div aria-live="assertive" class="mt-12 pointer-events-none fixed inset-0 flex items-end px-4 py-6 sm:items-start sm:p-6">
-                <div class="flex w-full flex-col items-center space-y-4 sm:items-end">
-                  <slot name="notification_holder"></slot>
-                </div>
-              </div>
               <slot></slot>
             </div>
           </div>

@@ -32,6 +32,7 @@
 .btn-secondary,
 .btn-info,
 .btn-err {
+    @apply cursor-pointer;
     @apply shadow-sm;
     @apply inline-flex;
     @apply items-center;

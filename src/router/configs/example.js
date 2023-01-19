@@ -77,11 +77,11 @@ var example_router = [
     name: "example_modal_simple",
     component: () => import("../../pages/example/modal/ModalSimplePage.vue"),
   },
-  //notification
+  //toast
   {
-    path: "/example/modal/notification",
-    name: "example_modal_notification",
-    component: () => import("../../pages/example/modal/NotificationPage.vue"),
+    path: "/example/toast/simple",
+    name: "example_toast_simple",
+    component: () => import("../../pages/example/toast/SimplePage.vue"),
   },
   //card
   {

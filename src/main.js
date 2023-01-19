@@ -7,7 +7,10 @@ import router from "./router/Router.vue";
 import VueTippy from "vue-tippy";
 
 import "./assets/main.scss";
-import 'tippy.js/dist/tippy.css' // optional for styling
+import "tippy.js/dist/tippy.css"; // optional for styling
+
+import Toast from "vue-toastification";
+import "vue-toastification/dist/index.css";
 
 const app = createApp(App);
 
@@ -15,6 +18,10 @@ app.use(createPinia());
 app.use(router);
 app.use(VueTippy, {
   defaultProps: { placement: "right" },
+});
+
+app.use(Toast, {
+  // You can set your default toast options here
 });
 
 app.mount("#app");

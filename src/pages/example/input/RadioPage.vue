@@ -1,10 +1,4 @@
 <script setup>
-import { validator } from "@/utils/index.js";
-
-import { ref, computed } from "vue";
-
-import { ExclamationCircleIcon, InformationCircleIcon, CheckIcon } from "@heroicons/vue/24/outline";
-
 import SidebarLayout from "@/layouts/sidebar/SidebarLayout.vue";
 </script>
 

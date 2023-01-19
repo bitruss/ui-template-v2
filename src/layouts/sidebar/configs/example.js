@@ -60,8 +60,15 @@ let example = [
         icon: WindowIcon,
         open: true,
         children: [
-          { name: "simple", href: "/example/modal/simple" },
-          { name: "notification", href: "/example/modal/notification" },
+          { name: "simple", href: "/example/modal/simple" }
+        ],
+      },
+      {
+        name: "Toast",
+        icon: WindowIcon,
+        open: true,
+        children: [
+          { name: "simple", href: "/example/toast/simple" }
         ],
       },
       {
