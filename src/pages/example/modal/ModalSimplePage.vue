@@ -4,11 +4,16 @@ import SidebarLayout from "../../../layouts/sidebar/SidebarLayout.vue";
 import { ref, watch } from "vue";
 import Modal from "../../../components/core/modal/Modal.vue";
 
+import { InformationCircleIcon } from "@heroicons/vue/24/solid";
+
 const open = ref(false);
 const open_withclose = ref(false);
 
 const father = ref(false);
 const child = ref(false);
+
+const info = ref(false);
+const warning = ref(false);
 </script>
 
 <template>
@@ -97,6 +102,63 @@ const child = ref(false);
           </Modal>
         </div>
       </div>
+
+      <div class="pt-5 lg:grid lg:grid-cols-3 lg:gap-4">
+        <div>
+          <label for="username" class="flex">Modal with info style</label>
+          <p>A modal window with information icon</p>
+        </div>
+        <div class="lg:col-span-2 mt-2">
+          <button class="btn-primary" @click="info = true">Open Modal Info Window</button>
+          <Modal v-model:open="info" :disable-close="true">
+            <template v-slot:body>
+              <div class="mt-5 flex">
+                <div class="card-info inline-flex p-3">
+                  <InformationCircleIcon class="icon" />
+                </div>
+                <div class="col-span-4 ml-3">
+                  <label>A info style modal</label>
+                  <p>this is a modal styled with information icon</p>
+                </div>
+              </div>
+            </template>
+            <template v-slot:footer>
+              <button type="button" class="btn-err mr-3" @click="info = false">Deactivate</button>
+              <button type="button" class="btn-secondary mr-3" @click="info = false">Cancel</button>
+            </template>
+          </Modal>
+        </div>
+      </div>
+
+
+      <div class="pt-5 lg:grid lg:grid-cols-3 lg:gap-4">
+        <div>
+          <label for="username" class="flex">Modal with warning style</label>
+          <p>A modal window with warning icon</p>
+        </div>
+        <div class="lg:col-span-2 mt-2">
+          <button class="btn-primary" @click="warning = true">Open Modal warning Window</button>
+          <Modal v-model:open="warning" :disable-close="true">
+            <template v-slot:body>
+              <div class="mt-5 flex">
+                <div class="card-warning inline-flex p-3">
+                  <InformationCircleIcon class="icon" />
+                </div>
+                <div class="col-span-4 ml-3">
+                  <label>A warning style modal</label>
+                  <p>this is a modal styled with warning icon</p>
+                </div>
+              </div>
+            </template>
+            <template v-slot:footer>
+              <button type="button" class="btn-err mr-3" @click="warning = false">Deactivate</button>
+              <button type="button" class="btn-secondary mr-3" @click="warning = false">Cancel</button>
+            </template>
+          </Modal>
+        </div>
+      </div>
+
+
     </div>
   </SidebarLayout>
 </template>

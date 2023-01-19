@@ -1,5 +1,4 @@
 .card {
-    @apply rounded-lg;
     @apply border-gray-300;
     @apply bg-white;
     @apply border;
@@ -25,4 +24,66 @@
     @apply focus-within:border-indigo-600;
     @apply focus-within:ring-1;
     @apply focus-within:ring-indigo-600;
+}
+
+.card-success {
+    @apply bg-green-50;
+    @apply text-green-800;
+    @apply ring-4;
+    @apply ring-white;
+    svg {
+        @apply text-green-400;
+    }
+}
+
+.card-info {
+    @apply bg-sky-50;
+    @apply text-sky-700;
+    @apply ring-4;
+    @apply ring-white;
+    svg {
+        @apply text-blue-400;
+    }
+}
+
+.card-warning {
+    @apply bg-yellow-50;
+    @apply text-yellow-700;
+    @apply ring-4;
+    @apply ring-white;
+    svg {
+        @apply text-yellow-400;
+    }
+}
+
+.card-err {
+    @apply bg-rose-50;
+    @apply text-rose-700;
+    @apply ring-4;
+    @apply ring-white;
+}
+
+.card-primary {
+    @apply bg-indigo-50;
+    @apply text-indigo-700;
+    @apply ring-4;
+    @apply ring-white;
+}
+
+.card-purple {
+    @apply bg-purple-50;
+    @apply text-purple-700;
+    @apply ring-4;
+    @apply ring-white;
+}
+
+.card,
+.card-primary,
+.card-err,
+.card-info,
+.card-purple,
+.card-success,
+.card-warning {
+    @apply rounded-lg;
+    @apply inline-block;
 }

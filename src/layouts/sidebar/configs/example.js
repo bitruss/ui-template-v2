@@ -59,7 +59,10 @@ let example = [
         name: "Modals",
         icon: WindowIcon,
         open: true,
-        children: [{ name: "simple", href: "/example/modal/simple" }],
+        children: [
+          { name: "simple", href: "/example/modal/simple" },
+          { name: "notification", href: "/example/modal/notification" },
+        ],
       },
       {
         name: "Card",
@@ -73,7 +76,8 @@ let example = [
         open: false,
         children: [
           { name: "outline", href: "/example/icon/outline" },
-          { name: "solid", href: "/example/icon/solid" }
+          { name: "solid", href: "/example/icon/solid" },
+          { name: "color", href: "/example/icon/color" }
         ],
       }
     ],

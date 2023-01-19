@@ -77,6 +77,12 @@ var example_router = [
     name: "example_modal_simple",
     component: () => import("../../pages/example/modal/ModalSimplePage.vue"),
   },
+  //notification
+  {
+    path: "/example/modal/notification",
+    name: "example_modal_notification",
+    component: () => import("../../pages/example/modal/NotificationPage.vue"),
+  },
   //card
   {
     path: "/example/card/simple",
@@ -93,6 +99,11 @@ var example_router = [
     path: "/example/icon/solid",
     name: "example_icon_solid",
     component: () => import("../../pages/example/icon/SolidIconPage.vue"),
+  },
+  {
+    path: "/example/icon/color",
+    name: "example_icon_color",
+    component: () => import("../../pages/example/icon/ColorIconPage.vue"),
   }
 ];
 
