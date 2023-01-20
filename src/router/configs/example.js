@@ -89,6 +89,11 @@ var example_router = [
     name: "example_card_simple",
     component: () => import("../../pages/example/card/SimpleCardPage.vue"),
   },
+  {
+    path: "/example/card/grid",
+    name: "example_card_grid",
+    component: () => import("../../pages/example/card/GridCardPage.vue"),
+  },
   //icon
   {
     path: "/example/icon/outline",

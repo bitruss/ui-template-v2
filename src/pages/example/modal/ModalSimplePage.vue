@@ -130,7 +130,6 @@ const warning = ref(false);
         </div>
       </div>
 
-
       <div class="pt-5 lg:grid lg:grid-cols-3 lg:gap-4">
         <div>
           <label for="username" class="flex">Modal with warning style</label>
@@ -157,8 +156,6 @@ const warning = ref(false);
           </Modal>
         </div>
       </div>
-
-
     </div>
   </SidebarLayout>
 </template>

@@ -71,7 +71,10 @@ let example = [
         name: "Card",
         icon: StopIcon,
         open: false,
-        children: [{ name: "simple", href: "/example/card/simple" }],
+        children: [
+          { name: "simple", href: "/example/card/simple" },
+          { name: "grid card", href: "/example/card/grid" },
+        ],
       },
       {
         name: "Icon",
