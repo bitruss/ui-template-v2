@@ -10,6 +10,7 @@ import SidebarLayout from "../../../layouts/sidebar/SidebarLayout.vue";
         <p class="mt-3">card with different sytles</p>
       </div>
 
+      
       <div class="pt-5 lg:grid lg:grid-cols-3 lg:gap-4">
         <div>
           <label for="username" class="flex">Simple card</label>

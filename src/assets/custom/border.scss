@@ -27,7 +27,7 @@
 }
 
 .card-success {
-    @apply bg-green-50;
+    @apply bg-green-100;
     @apply text-green-800;
     @apply ring-4;
     @apply ring-white;
@@ -38,8 +38,9 @@
     }
 }
 
+
 .card-info {
-    @apply bg-sky-50;
+    @apply bg-sky-100;
     @apply text-sky-700;
     @apply ring-4;
     @apply ring-white;
@@ -51,7 +52,7 @@
 }
 
 .card-warning {
-    @apply bg-yellow-50;
+    @apply bg-yellow-100;
     @apply text-yellow-700;
     @apply ring-4;
     @apply ring-white;
@@ -63,7 +64,7 @@
 }
 
 .card-err {
-    @apply bg-rose-50;
+    @apply bg-rose-100;
     @apply text-rose-700;
     @apply ring-4;
     @apply ring-white;
@@ -74,8 +75,7 @@
     }
 }
 
-
-.card-primary{
+.card-primary {
     @apply bg-indigo-500;
     @apply text-white;
     @apply ring-4;
@@ -88,7 +88,7 @@
 }
 
 .card-purple {
-    @apply bg-purple-50;
+    @apply bg-purple-100;
     @apply text-purple-700;
     @apply ring-4;
     @apply ring-white;
@@ -107,5 +107,4 @@
 .card-success,
 .card-warning {
     @apply rounded-lg;
-    @apply inline-block;
 }

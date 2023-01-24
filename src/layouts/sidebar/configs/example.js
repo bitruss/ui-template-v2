@@ -1,4 +1,4 @@
-import { PlayIcon, WindowIcon, ChatBubbleLeftIcon, PhotoIcon, InformationCircleIcon, StopIcon, ViewfinderCircleIcon, CommandLineIcon, FolderIcon, ClipboardDocumentListIcon } from "@heroicons/vue/24/outline";
+import {AdjustmentsHorizontalIcon, PlayIcon, WindowIcon, ChatBubbleLeftIcon, PhotoIcon, InformationCircleIcon, StopIcon, ViewfinderCircleIcon, CommandLineIcon, FolderIcon, ClipboardDocumentListIcon } from "@heroicons/vue/24/outline";
 
 let example = [
   {
@@ -73,7 +73,9 @@ let example = [
         open: false,
         children: [
           { name: "simple", href: "/example/card/simple" },
-          { name: "grid card", href: "/example/card/grid" },
+          { name: "grid card style1", href: "/example/card/gridstyle1" },
+          { name: "grid card style2", href: "/example/card/gridstyle2" },
+          { name: "grid card style3", href: "/example/card/gridstyle3" },
         ],
       },
       {
@@ -85,6 +87,12 @@ let example = [
           { name: "solid", href: "/example/icon/solid" },
           { name: "color", href: "/example/icon/color" },
         ],
+      },
+      {
+        name: "Tab",
+        icon: AdjustmentsHorizontalIcon,
+        open: false,
+        children: [{ name: "style1", href: "/example/tab/style1" }],
       },
     ],
   },

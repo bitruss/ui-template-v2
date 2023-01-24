@@ -90,9 +90,19 @@ var example_router = [
     component: () => import("../../pages/example/card/SimpleCardPage.vue"),
   },
   {
-    path: "/example/card/grid",
-    name: "example_card_grid",
-    component: () => import("../../pages/example/card/GridCardPage.vue"),
+    path: "/example/card/gridstyle1",
+    name: "example_card_gridstyle1",
+    component: () => import("../../pages/example/card/GridCardStyle1Page.vue"),
+  },
+  {
+    path: "/example/card/gridstyle2",
+    name: "example_card_gridstyle2",
+    component: () => import("../../pages/example/card/GridCardStyle2Page.vue"),
+  },
+  {
+    path: "/example/card/gridstyle3",
+    name: "example_card_gridstyle3",
+    component: () => import("../../pages/example/card/GridCardStyle3Page.vue"),
   },
   //icon
   {
@@ -109,7 +119,13 @@ var example_router = [
     path: "/example/icon/color",
     name: "example_icon_color",
     component: () => import("../../pages/example/icon/ColorIconPage.vue"),
-  }
+  },
+  //tab
+  {
+    path: "/example/tab/style1",
+    name: "example_tab_style1",
+    component: () => import("../../pages/example/tab/Style1Page.vue"),
+  },
 ];
 
 export default example_router;
