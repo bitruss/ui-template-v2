@@ -1,4 +1,4 @@
-var auth_router = [
+export default [
   {
     path: "/signin",
     name: "signin",
@@ -10,5 +10,3 @@ var auth_router = [
     component: () => import("../../pages/auth/RegisterPage.vue"),
   },
 ];
-
-export default auth_router

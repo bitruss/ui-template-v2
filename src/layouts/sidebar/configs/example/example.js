@@ -41,7 +41,7 @@ let example = [
       {
         name: "Form",
         icon: ClipboardDocumentListIcon,
-        open: true,
+        open: false,
         children: [
           { name: "style1", href: "/example/form/style1" },
           { name: "style2", href: "/example/form/style2" },
@@ -52,19 +52,19 @@ let example = [
       {
         name: "Buttons",
         icon: PlayIcon,
-        open: true,
+        open: false,
         children: [{ name: "main_style", href: "/example/button/main" }],
       },
       {
         name: "Modals",
         icon: WindowIcon,
-        open: true,
+        open: false,
         children: [{ name: "simple", href: "/example/modal/simple" }],
       },
       {
         name: "Toast",
         icon: ChatBubbleLeftIcon,
-        open: true,
+        open: false,
         children: [{ name: "simple", href: "/example/toast/simple" }],
       },
       {

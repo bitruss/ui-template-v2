@@ -1,10 +1,9 @@
-var example_router = [
+export default [
   {
     path: "/example/tippy",
     name: "example_tippy",
     component: () => import("../../pages/example/tippy/TippyPage.vue"),
   },
-
   //form
   {
     path: "/example/form/style1",
@@ -133,5 +132,3 @@ var example_router = [
     component: () => import("../../pages/example/step/StepTabPage.vue"),
   },
 ];
-
-export default example_router;
