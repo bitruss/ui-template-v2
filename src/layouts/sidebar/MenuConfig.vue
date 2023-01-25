@@ -2,13 +2,13 @@
 <script>
 import { reactive } from "vue";
 
-import example from "./configs/example";
+//import example from "./configs/example";
 import index from "./configs/index"
 
 ///////////do your configs here///////
 
 ///menu config
-let menu_config = [...index,...example];
+let menu_config = index;
 
 ///////////end of menu configs////////////////
 

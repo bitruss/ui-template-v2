@@ -1,7 +1,7 @@
+import { HomeIcon } from "@heroicons/vue/24/outline";
 
-import { CalendarIcon, ChartBarIcon, FolderIcon, HomeIcon, InboxIcon, UsersIcon ,ClipboardDocumentListIcon} from "@heroicons/vue/24/outline";
+import example from './example/example'
 
-
-let index = [{ name: "Welcome", icon: HomeIcon, href: "/" }];
+let index = [{ name: "Welcome", icon: HomeIcon, href: "/" },...example];
 
 export default index;

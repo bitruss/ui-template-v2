@@ -2,7 +2,7 @@ var index_router = [
   {
     path: "/",
     name: "home",
-    component: () => import("../../pages/WelcomePage.vue"),
+    component: () => import("../../pages/example/welcome/WelcomePage.vue"),
   },
 ];
 

@@ -126,6 +126,12 @@ var example_router = [
     name: "example_tab_style1",
     component: () => import("../../pages/example/tab/Style1Page.vue"),
   },
+  //step
+  {
+    path: "/example/step/steptab",
+    name: "example_step_steptab",
+    component: () => import("../../pages/example/step/StepTabPage.vue"),
+  },
 ];
 
 export default example_router;
