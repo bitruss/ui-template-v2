@@ -5,7 +5,7 @@ import App from "./App.vue";
 import router from "./router/Router.vue";
 
 ////language////////////
-import { lang_comp } from "./utils";
+import { lang } from "./utils";
 import VueTippy from "vue-tippy";
 
 import "./assets/main.scss";
@@ -17,7 +17,8 @@ import "vue-toastification/dist/index.css";
 ///////////////////////////
 const app = createApp(App);
 
-app.use(lang_comp);
+app.use(lang);
+app.provide("setLang", lang.setLang);
 app.use(createPinia());
 app.use(router);
 app.use(VueTippy, {

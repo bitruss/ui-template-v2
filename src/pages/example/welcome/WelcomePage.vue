@@ -12,8 +12,8 @@ const { t } = useI18n({ messages: lang_message });
   <SidebarLayout>
     <div class="space-y-8">
       <div>
-        <h1 class="text-2xl leading-6">Welcome</h1>
-        <p class="mt-3">this is a weclome page</p>
+        <h1 class="text-2xl leading-6">{{ t("welcome") }}</h1>
+        <p class="mt-3">{{ t("welcome_page") }}</p>
       </div>
 
       <label>{{ t("msg") }}</label>
