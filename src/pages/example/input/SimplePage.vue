@@ -53,7 +53,7 @@ import SidebarLayout from "../../../layouts/sidebar/SidebarLayout.vue";
         <div class="lg:col-span-2 mt-2">
           <div class="input-wrap">
             <div class="prefix">
-              <EnvelopeIcon class="h-5 w-5 text-gray-400" aria-hidden="true" />
+              <EnvelopeIcon class="icon" />
             </div>
             <input type="email" name="email" id="email" class="rounded pl-10" placeholder="you@example.com" />
           </div>

@@ -6,16 +6,12 @@ import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuIt
 import { Bars3Icon, XMarkIcon } from "@heroicons/vue/24/outline";
 import Footer from "../Footer.vue";
 
-
-
 const props = defineProps({
   pages: {
     type: Array,
     required: true,
   },
 });
-
-
 </script>
 
 <template>
@@ -37,7 +33,7 @@ const props = defineProps({
               <img class="hidden h-8 w-auto lg:block" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="Your Company" />
             </div>
             <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
-              <router-link  :to="page.href"  v-for="page in pages"  v-bind:class="{ ' border-b-2  border-indigo-500': page.active }" class="inline-flex  items-center px-1 pt-1 text-sm font-medium text-gray-900">{{page.name}}</router-link>
+              <router-link :to="page.href" v-for="page in pages" v-bind:class="{ ' border-b-2  border-indigo-500': page.active }" class="inline-flex items-center px-1 pt-1 text-base  text-gray-600">{{ page.name }}</router-link>
             </div>
           </div>
           <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
