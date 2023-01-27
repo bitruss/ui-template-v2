@@ -1,5 +1,5 @@
 <script setup>
-import { EnvelopeIcon, QuestionMarkCircleIcon } from "@heroicons/vue/24/outline";
+import { EnvelopeIcon, QuestionMarkCircleIcon, KeyIcon, PaperAirplaneIcon, ChatBubbleOvalLeftEllipsisIcon } from "@heroicons/vue/24/outline";
 
 import SidebarLayout from "../../../layouts/sidebar/SidebarLayout.vue";
 </script>
@@ -155,6 +155,25 @@ import SidebarLayout from "../../../layouts/sidebar/SidebarLayout.vue";
 
       <div class="pt-5 lg:grid lg:grid-cols-3 lg:gap-4">
         <div>
+          <label for="username" class="flex">Input with right button</label>
+          <p>input with right button</p>
+        </div>
+
+        <div class="lg:col-span-2 mt-2">
+          <div class="btn-input-wrap">
+            <div class="input-wrap">
+              <div class="prefix">
+                <EnvelopeIcon class="icon" />
+              </div>
+              <input type="email" name="email" id="email" class="pl-10" placeholder="your@email" />
+            </div>
+            <div class="btn"><PaperAirplaneIcon class="h-5 w-5"/> Send me the code</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-5 lg:grid lg:grid-cols-3 lg:gap-4">
+        <div>
           <label for="username" class="flex">Multi grouped form</label>
           <p>a form of multi lines</p>
         </div>
@@ -163,6 +182,30 @@ import SidebarLayout from "../../../layouts/sidebar/SidebarLayout.vue";
             <input id="email-address" name="email" type="email" autocomplete="email" class="relative rounded-t" placeholder="Email address" />
             <input id="email-address" name="email" type="text" required="" class="relative" placeholder="mid address" />
             <input id="password" name="password" type="password" autocomplete="current-password" class="relative rounded-b" placeholder="Password" />
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-5 lg:grid lg:grid-cols-3 lg:gap-4">
+        <div>
+          <label for="username" class="flex">Multi grouped form with icon</label>
+          <p>a form of multi lines with icon</p>
+        </div>
+        <div class="lg:col-span-2 mt-2">
+          <div class="-space-y-px mt-3 mb-5">
+            <div class="input-wrap">
+              <div class="prefix">
+                <EnvelopeIcon class="icon" />
+              </div>
+              <input id="email" name="email" type="email" autocomplete="email" class="relative pl-10 rounded-t" placeholder="your email" />
+            </div>
+
+            <div class="input-wrap">
+              <div class="prefix">
+                <KeyIcon class="icon" />
+              </div>
+              <input id="password" name="password" type="password" autocomplete="current-password" class="relative pl-10 rounded-b" placeholder="your password" />
+            </div>
           </div>
         </div>
       </div>

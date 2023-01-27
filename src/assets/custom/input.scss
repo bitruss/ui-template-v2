@@ -131,3 +131,58 @@ input.err {
     @apply focus:border-red-500;
 }
 //////////////////////////
+
+.btn-input-wrap {
+    @apply relative;
+    @apply flex;
+
+    .input-wrap {
+        @apply w-full;
+        @apply inline-flex;
+
+        input {
+            @apply w-full;
+            @apply rounded-none;
+            @apply rounded-l-md;
+        }
+    }
+
+    .btn {
+        @apply border;
+        @apply bg-gray-50;
+        @apply border-gray-300;
+        @apply bg-gray-50;
+        @apply -ml-px;
+        @apply rounded-r;
+        @apply text-gray-700;
+        @apply px-4;
+        @apply whitespace-nowrap;
+        @apply cursor-pointer;
+        @apply hover:bg-gray-100;
+        @apply inline-flex;
+        @apply items-center;
+
+        &.disabled{
+            @apply hover:bg-gray-50;
+            @apply cursor-not-allowed;
+        }
+
+        span{
+            @apply text-gray-700;
+        }
+
+        svg {
+            @apply text-gray-400;
+            @apply inline-flex;
+            @apply h-4;
+            @apply w-4;
+            @apply mr-2;
+        }
+
+        .captcha{
+            width: 10rem;
+            height: 1.5rem;
+            @apply  mt-1;
+        }
+    }
+}

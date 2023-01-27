@@ -193,7 +193,7 @@
         @apply px-2.5;
         @apply py-1.5;
         @apply text-xs;
-
+ 
         &.rounded-full {
             @apply px-3;
             @apply py-1.5;
@@ -231,6 +231,7 @@
         @apply py-2;
         @apply text-sm;
         @apply leading-4;
+        @apply rounded-md;
 
         &.rounded-full {
             @apply px-3.5;
@@ -267,6 +268,7 @@
         @apply px-4;
         @apply py-2;
         @apply text-base;
+        @apply rounded-lg;
 
         &.rounded-full {
             @apply px-5;
