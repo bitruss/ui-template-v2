@@ -4,7 +4,7 @@ import Divider from "../../components/core/divider/Divider.vue";
 import { EnvelopeIcon, LockClosedIcon, CalculatorIcon } from "@heroicons/vue/24/outline";
 import { UserPlusIcon, LockClosedIcon as LockClosedIconSolid } from "@heroicons/vue/20/solid";
 
-import captchaImgUrl from "../../assets/captcha.svg";
+import captchaImgUrl from "../../assets/captcha.png";
 
 const pages = [
   { name: "Dashboard", href: "/", active: false },
@@ -42,8 +42,8 @@ const pages = [
           </div>
           <input type="email" name="email" id="email" class="pl-10" placeholder="input the captcha" />
         </div>
-        <div class="btn">
-          <img class="captcha" src=" " />
+        <div class="btn" v-tippy="{ placement: 'bottom', content: 'click to change captcha' }">
+          <img class="captcha" :src="captchaImgUrl" />
         </div>
       </div>
 

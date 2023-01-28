@@ -162,12 +162,12 @@ input.err {
         @apply inline-flex;
         @apply items-center;
 
-        &.disabled{
+        &.disabled {
             @apply hover:bg-gray-50;
             @apply cursor-not-allowed;
         }
 
-        span{
+        span {
             @apply text-gray-700;
         }
 
@@ -179,10 +179,9 @@ input.err {
             @apply mr-2;
         }
 
-        .captcha{
-            width: 10rem;
-            height: 1.5rem;
-            @apply  mt-1;
+        .captcha {
+            width: 140px;
+            height: 20px;
         }
     }
 }
