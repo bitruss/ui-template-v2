@@ -2,16 +2,17 @@
 import LanMenu from "../topbar/LanMenu.vue";
 import AuthMenu from "../topbar/AuthMenu.vue";
 
-import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/vue";
+import { Disclosure, DisclosureButton, DisclosurePanel} from "@headlessui/vue";
 import { Bars3Icon, XMarkIcon } from "@heroicons/vue/24/outline";
 import Footer from "../Footer.vue";
 
-const props = defineProps({
-  pages: {
-    type: Array,
-    required: true,
-  },
-});
+import logImgUrl from "../../assets/logo.svg";
+
+
+import { useI18n } from "vue-i18n";
+const { t } = useI18n();
+
+const props = defineProps(["pages"]);
 </script>
 
 <template>
@@ -29,11 +30,10 @@ const props = defineProps({
           </div>
           <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
             <div class="flex flex-shrink-0 items-center">
-              <img class="block h-8 w-auto lg:hidden" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="Your Company" />
-              <img class="hidden h-8 w-auto lg:block" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="Your Company" />
+              <img class="hidden h-8 w-auto lg:block" :src="logImgUrl" alt="Your Company" />
             </div>
             <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
-              <router-link :to="page.href" v-for="page in pages" v-bind:class="{ ' border-b-2  border-indigo-500': page.active }" class="inline-flex items-center px-1 pt-1 text-base  text-gray-600">{{ page.name }}</router-link>
+              <router-link :to="page.href" v-for="page in pages" v-bind:class="{ ' border-b-2  border-indigo-500': page.active }" class="inline-flex items-center px-1 pt-1 text-base text-gray-600">{{ t(page.name) }}</router-link>
             </div>
           </div>
           <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
@@ -45,9 +45,9 @@ const props = defineProps({
 
       <DisclosurePanel class="sm:hidden">
         <div class="space-y-1 pt-2 pb-4">
-          <router-link to="/register" class="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700">Register</router-link>
-          <router-link to="/signin" class="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700">Sign in</router-link>
-          <router-link to="/signout" class="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700">Sign out</router-link>
+          <router-link to="/register" class="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700">{{ t("register") }}</router-link>
+          <router-link to="/signin" class="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700">{{ t("sign_in") }}</router-link>
+          <router-link to="/signout" class="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700">{{ t("sign_out") }}</router-link>
         </div>
       </DisclosurePanel>
     </Disclosure>

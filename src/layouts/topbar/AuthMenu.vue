@@ -1,6 +1,16 @@
 <script setup>
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/vue";
 import { UserCircleIcon, UserPlusIcon, PowerIcon, CursorArrowRaysIcon } from "@heroicons/vue/24/outline";
+import useAuthStore from "@/stores/auth";
+import { useI18n } from "vue-i18n";
+const { t } = useI18n();
+
+function signout(){
+  const auth_store = useAuthStore();
+  auth_store.clear()
+  window.location="/signin"
+}
+
 </script>
 
 <template>
@@ -16,19 +26,19 @@ import { UserCircleIcon, UserPlusIcon, PowerIcon, CursorArrowRaysIcon } from "@h
         <MenuItem v-slot="{ active }">
           <router-link to="/register" :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700', 'group flex items-center px-4 py-2 text-sm']">
             <UserPlusIcon class="mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500" aria-hidden="true" />
-            Register
+            {{t("register")}}
           </router-link>
         </MenuItem>
         <MenuItem v-slot="{ active }">
           <router-link to="/signin" :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700', 'group flex items-center px-4 py-2 text-sm']">
             <CursorArrowRaysIcon class="mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500" aria-hidden="true" />
-            Sign in
+            {{t("sign_in")}}
           </router-link>
         </MenuItem>
         <MenuItem v-slot="{ active }">
-          <router-link to="/" :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700', 'group flex items-center px-4 py-2 text-sm']">
+          <router-link @click="signout" to="/" :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700', 'group flex items-center px-4 py-2 text-sm']">
             <PowerIcon class="mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500" aria-hidden="true" />
-            Sign out
+            {{t("sign_out")}}
           </router-link>
         </MenuItem>
       </MenuItems>

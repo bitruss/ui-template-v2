@@ -159,6 +159,10 @@
     @apply text-sm;
     @apply justify-center;
 
+    &.disabled {
+        @apply cursor-not-allowed;
+    }
+
     &.rounded-full {
         @apply px-4;
         @apply py-2;

@@ -5,7 +5,7 @@ import App from "./App.vue";
 import router from "./router/Router.vue";
 
 ////language////////////
-import { lang } from "./utils";
+import lang from "./lang/lang";
 import VueTippy from "vue-tippy";
 
 import "./assets/main.scss";

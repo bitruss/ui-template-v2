@@ -10,11 +10,14 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/vue/24/outline";
 
 import { r_menu_config } from "./MenuConfig.vue";
 
+import SidebarAuthLoader from "./SidebarAuthLoader.vue";
+
 const sidebarOpen = ref(false);
 </script>
 
 <template>
   <div class="min-h-full">
+    <SidebarAuthLoader />
     <TransitionRoot as="template" :show="sidebarOpen">
       <Dialog as="div" class="relative z-40 lg:hidden" @close="sidebarOpen = false">
         <TransitionChild as="template" enter="transition-opacity ease-linear duration-300" enter-from="opacity-0" enter-to="opacity-100" leave="transition-opacity ease-linear duration-300" leave-from="opacity-100" leave-to="opacity-0">

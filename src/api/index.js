@@ -1,4 +1,4 @@
-import user from "./user"
+import user from "./auth/user"
 
 export default {
     user: user

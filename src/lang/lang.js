@@ -1,9 +1,11 @@
 import { createI18n } from "vue-i18n";
+import global_message from "./global_message";
 
 var i18n = createI18n({
   legacy: false,
   locale: getDefaultLang(),
   fallbackLocale: "en",
+  messages:global_message,
 });
 
 i18n.setLang = function (lang) {
