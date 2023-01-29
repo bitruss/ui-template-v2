@@ -27,7 +27,7 @@ const sidebarOpen = ref(false);
           <div class="fixed inset-0 bg-gray-600 bg-opacity-75"></div>
         </TransitionChild>
 
-        <div class="fixed inset-0 z-40 flex" style="z-index:999">
+        <div class="fixed inset-0 z-40 flex">
           <TransitionChild as="template" enter="transition ease-in-out duration-300 transform" enter-from="-translate-x-full" enter-to="translate-x-0" leave="transition ease-in-out duration-300 transform" leave-from="translate-x-0" leave-to="-translate-x-full">
             <DialogPanel class="relative flex w-full max-w-xs flex-1 flex-col bg-white">
               <TransitionChild as="template" enter="ease-in-out duration-300" enter-from="opacity-0" enter-to="opacity-100" leave="ease-in-out duration-300" leave-from="opacity-100" leave-to="opacity-0">
@@ -68,7 +68,7 @@ const sidebarOpen = ref(false);
       </div>
     </div>
     <div class="flex flex-1 flex-col lg:pr-8 lg:pl-80">
-      <div class="sticky top-0 z-10 flex h-16 flex-shrink-0 bg-white " style="z-index:999">
+      <div class="sticky top-0 z-30 flex h-16 flex-shrink-0 bg-white">
         <button type="button" class="px-4 text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 lg:hidden" @click="sidebarOpen = true">
           <!-- <span class="sr-only">Open sidebar</span> -->
           <Bars3Icon class="h-6 w-6" aria-hidden="true" />

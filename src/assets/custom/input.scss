@@ -34,7 +34,7 @@ select {
     @apply relative;
 
     .prefix {
-        z-index: 20;
+        @apply z-20;
         @apply absolute;
         @apply inset-y-0;
         @apply left-0;
@@ -62,7 +62,7 @@ select {
     }
 
     .suffix {
-        z-index: 99;
+        @apply z-20;
         @apply absolute;
         @apply inset-y-0;
         @apply right-0;
