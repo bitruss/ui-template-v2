@@ -28,20 +28,9 @@ export default [
 
   //select
   {
-    path: "/example/select/simple/simple_plain_select",
-    name: "example_select_simple_simple_plain_select",
-    component: () => import("../../pages/example/select/simple/SimplePlainSelectPage.vue"),
-  },
-  {
-    path: "/example/select/simple/simple_status_select",
-    name: "example_select_simple_simple_status_select",
-    component: () => import("../../pages/example/select/simple/SimpleStatusSelectPage.vue"),
-  },
-  //select
-  {
-    path: "/example/select/simple/simple_secondary_select",
-    name: "example_select_simple_simple_secondary_select",
-    component: () => import("../../pages/example/select/simple/SimpleSecondarySelectPage.vue"),
+    path: "/example/select/single_select",
+    name: "example_select_single_select",
+    component: () => import("../../pages/example/select/SingleSelectPage.vue"),
   },
   //input
   {

@@ -31,7 +31,7 @@ import SidebarLayout from "@/layouts/sidebar/SidebarLayout.vue";
           <p>tippy text inside button</p>
         </div>
         <div class="lg:col-span-2 mt-2">
-          <button type="button" class="btn-secondary m-2 sm"><span v-tippy="{ placement: 'bottom', content: 'tippy on button' }">Button</span></button>
+          <button type="button" v-tippy="{ placement: 'bottom', content: 'tippy on button' }" class="btn-secondary m-2 sm">Button</button>
         </div>
       </div>
 

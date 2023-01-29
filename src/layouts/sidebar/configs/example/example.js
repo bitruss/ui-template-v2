@@ -16,16 +16,7 @@ let example = [
         name: "Select",
         icon: ViewfinderCircleIcon,
         open: false,
-        children: [
-          {
-            name: "simple",
-            children: [
-              { name: "simple_plain", href: "/example/select/simple/simple_plain_select" },
-              { name: "simple_secondary", href: "/example/select/simple/simple_secondary_select" },
-              { name: "simple_status", href: "/example/select/simple/simple_status_select" },
-            ],
-          },
-        ],
+        children: [{ name: "single", href: "/example/select/single_select" }],
       },
       {
         name: "Input",
