@@ -128,14 +128,6 @@
                 .name {
                     @apply ml-3;
                     @apply truncate;
-
-                    &.active {
-                        @apply font-semibold;
-                    }
-
-                    &.inactive {
-                        @apply font-normal;
-                    }
                 }
 
                 .secondary {

@@ -3,7 +3,9 @@ import { ref, watch } from "vue";
 import { Listbox, ListboxButton, ListboxOption, ListboxOptions } from "@headlessui/vue";
 import { CheckIcon, ChevronUpDownIcon } from "@heroicons/vue/20/solid";
 
-const props = defineProps(["options", "modelValue", "placeholder"]);
+const props = defineProps(["options", "modelValue"]);
+
+const all_options = [null, ...props.options];
 
 const selected = ref(props.modelValue);
 
@@ -26,7 +28,7 @@ watch(selected, (new_selected) => {
         </template>
         <template v-else>
           <span class="list-header-empty">
-            <span class="truncate">{{ props.placeholder ? props.placeholder : "&nbsp;" }}</span>
+            <span class="truncate">cancel select</span>
           </span>
         </template>
         <span class="list-header-suffix">
@@ -35,18 +37,31 @@ watch(selected, (new_selected) => {
       </ListboxButton>
 
       <ListboxOptions class="list-box-options">
-        <ListboxOption as="template" v-for="option in props.options" :value="option" v-slot="{ active, selected }">
-          <li :class="[active ? 'active' : 'inactive']">
-            <div class="option-row">
-              <span :class="[option.active ? 'active' : 'inactive', 'status']"></span>
-              <span :class="[selected ? 'active' : 'inactive', 'name']">{{ option.name }}</span>
-              <span :class="[active ? 'active' : 'inactive', 'secondary']">{{ option.secondary }}</span>
-              <span v-if="selected" :class="[active ? 'active' : 'inactive', 'suffix']">
-                <CheckIcon />
-              </span>
-            </div>
-          </li>
-        </ListboxOption>
+        <template v-for="option in all_options">
+          <ListboxOption as="template" v-if="option != null" :value="option" v-slot="{ active, selected }">
+            <li :class="[active ? 'active' : 'inactive']">
+              <div class="option-row">
+                <span :class="[option.active ? 'active' : 'inactive', 'status']"></span>
+                <span :class="[selected ? 'active' : 'inactive', 'name']">{{ option.name }}</span>
+                <span :class="[active ? 'active' : 'inactive', 'secondary']">{{ option.secondary }}</span>
+                <span v-if="selected" :class="[active ? 'active' : 'inactive', 'suffix']">
+                  <CheckIcon />
+                </span>
+              </div>
+            </li>
+          </ListboxOption>
+
+          <ListboxOption as="template" v-if="option == null" :value="option" v-slot="{ active, selected }">
+            <li :class="[active ? 'active' : 'inactive']">
+              <div class="option-row">
+                <span :class="[selected ? 'active' : 'inactive', 'name']">cancel select</span>
+                <span v-if="selected" :class="[active ? 'active' : 'inactive', 'suffix']">
+                  <CheckIcon />
+                </span>
+              </div>
+            </li>
+          </ListboxOption>
+        </template>
       </ListboxOptions>
     </div>
   </Listbox>

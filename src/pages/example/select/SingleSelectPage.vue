@@ -10,8 +10,8 @@ var options = [
   { name: "txt3", secondary: "s-3", active: false },
 ];
 
-//const selected = ref(null); //if no selected item yet
-const selected = ref(options[1]);
+const selected = ref(null); //if no selected item yet
+//const selected = ref(options[1]);
 </script>
 
 <template>
@@ -28,7 +28,7 @@ const selected = ref(options[1]);
           <p>{{ selected ? selected : "not selected" }}</p>
         </div>
         <div class="lg:col-span-2 mt-2">
-          <SimpleSecondarySelect :options="options" v-model="selected" :placeholder="'please select'"></SimpleSecondarySelect>
+          <SimpleSecondarySelect :options="options" v-model="selected"></SimpleSecondarySelect>
         </div>
       </div>
     </div>
