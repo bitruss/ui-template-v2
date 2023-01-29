@@ -1,4 +1,8 @@
 <script setup>
+import { useToast } from "vue-toastification";
+import api from "@/api";
+import useAuthStore from "@/stores/auth";
+import useOverlayStore from "@/stores/overlay";
 import TopbarNavLayout from "../../layouts/topbar/TopbarNavLayout.vue";
 import Divider from "../../components/core/divider/Divider.vue";
 import { EnvelopeIcon, LockClosedIcon, CalculatorIcon, CheckIcon } from "@heroicons/vue/24/outline";
@@ -12,6 +16,8 @@ import { useI18n } from "vue-i18n";
 import lang from "./auth_lang";
 const { t } = useI18n({ messages: lang });
 
+const toast = useToast();
+
 /////input ///////
 let email = ref("");
 let validate_email = computed(() => {
@@ -23,6 +29,42 @@ let password = ref("");
 let validate_password = computed(() => {
   return password.value == "" ? true : validator.validatePassword(password.value);
 });
+
+///
+let captcha = ref("");
+////
+let validate_signin_ready = computed(() => {
+  if (validate_email.value && email.value != "" && validate_password.value && password.value != "" && captcha.value !== "") {
+    return true;
+  }
+  return false;
+});
+
+//////
+async function submit_signin() {
+  if (!validate_signin_ready.value) {
+    return;
+  }
+
+  const overlay_store = useOverlayStore();
+  overlay_store.showLoader();
+  let resp = await api.user.login(email.value, password.value, captcha.value);
+  overlay_store.hideLoader();
+
+  if (resp.err != null) {
+    toast.error(resp.err);
+    return;
+  }
+
+  if (resp.result.meta_status < 0) {
+    toast.error(resp.result.meta_msg);
+    return;
+  }
+
+  const auth_store = useAuthStore();
+  auth_store.setToken(resp.result.token);
+  window.location = "/";
+}
 </script>
 
 <template>
@@ -59,16 +101,16 @@ let validate_password = computed(() => {
           <div class="prefix">
             <CalculatorIcon class="icon" />
           </div>
-          <input type="text" name="captcha" id="captcha" class="pl-10"  :placeholder="t('input_captcha')" />
+          <input type="text" name="captcha" id="captcha" v-model="captcha" class="pl-10" :placeholder="t('input_captcha')" />
         </div>
-        <div class="btn" v-tippy="{ placement: 'bottom', content:t('change_captcha') }">
+        <div class="btn" v-tippy="{ placement: 'bottom', content: t('change_captcha') }">
           <img class="captcha" :src="captchaImgUrl" />
         </div>
       </div>
 
       <router-link to="/resetpass" class="a-primary">{{ t("forget_pass") }}</router-link>
 
-      <div class="btn-primary w-full relative mt-3 mb-3"><LockClosedIconSolid class="icon dark absolute left-3" />{{ t("sign_in") }}</div>
+      <div @click="submit_signin" :class="[validate_signin_ready ? '' : 'disabled', ' btn-primary w-full relative mt-3 mb-3']"><LockClosedIconSolid class="icon dark absolute left-3" />{{ t("sign_in") }}</div>
 
       <Divider>{{ t("or") }}</Divider>
 

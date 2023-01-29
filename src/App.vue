@@ -1,6 +1,6 @@
 <script setup>
 import { RouterView } from "vue-router";
-import Spinner from "@/components/core/overlay/Spinner.vue";
+import Spinner from "@/layouts/overlay/Spinner.vue";
 </script>
 
 <template>

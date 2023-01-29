@@ -22,7 +22,7 @@ setTimeout(() => {
     </div>
   </TransitionRoot>
 
-  <TransitionRoot appear :show="!overlay_store.loader_visable" enter="transition-opacity duration-500" enter-from="opacity-0" enter-to="opacity-100" leave="transition-opacity duration-500" leave-from="opacity-100" leave-to="opacity-0">
+  <div v-show="!overlay_store.loader_visable">
     <slot></slot>
-  </TransitionRoot>
+  </div>
 </template>

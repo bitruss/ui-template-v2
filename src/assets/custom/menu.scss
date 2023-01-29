@@ -41,6 +41,7 @@
             @apply px-4;
             @apply py-2;
             @apply text-sm;
+            @apply cursor-pointer;
 
             &:hover {
                 @apply bg-gray-100;

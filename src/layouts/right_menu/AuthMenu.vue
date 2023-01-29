@@ -6,8 +6,9 @@ import { useI18n } from "vue-i18n";
 import lang from "./auth_lang";
 const { t } = useI18n({ messages: lang });
 
+const auth_store = useAuthStore();
+
 function signout() {
-  const auth_store = useAuthStore();
   auth_store.clear();
   window.location = "/signin";
 }
@@ -20,24 +21,30 @@ function signout() {
     </MenuButton>
 
     <MenuItems class="menu-items">
-      <MenuItem>
-        <router-link to="/register" class="link">
-          <UserPlusIcon class="left-icon" />
-          {{ t("register") }}
-        </router-link>
-      </MenuItem>
-      <MenuItem>
-        <router-link to="/signin" class="link">
-          <CursorArrowRaysIcon class="left-icon" />
-          {{ t("sign_in") }}
-        </router-link>
-      </MenuItem>
-      <MenuItem>
-        <router-link @click="signout" to="/" class="link">
-          <PowerIcon class="left-icon" />
-          {{ t("sign_out") }}
-        </router-link>
-      </MenuItem>
+      <div v-if="auth_store.token == null">
+        <MenuItem>
+          <router-link to="/register" class="link">
+            <UserPlusIcon class="left-icon" />
+            {{ t("register") }}
+          </router-link>
+        </MenuItem>
+
+        <MenuItem>
+          <router-link to="/signin" class="link">
+            <CursorArrowRaysIcon class="left-icon" />
+            {{ t("sign_in") }}
+          </router-link>
+        </MenuItem>
+      </div>
+
+      <div v-if="auth_store.token != null">
+        <MenuItem>
+          <a @click="signout" class="link">
+            <PowerIcon class="left-icon" />
+            {{ t("sign_out") }}
+          </a>
+        </MenuItem>
+      </div>
     </MenuItems>
   </Menu>
 </template>

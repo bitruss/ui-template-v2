@@ -1,5 +1,5 @@
 <script setup>
-import Fade from "@/components/core/overlay/Fade.vue";
+import Fade from "@/layouts/overlay/Fade.vue";
 
 import logImgUrl from "../../assets/logo.svg";
 

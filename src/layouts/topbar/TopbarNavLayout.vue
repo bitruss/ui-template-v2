@@ -1,7 +1,7 @@
 <script setup>
 import router from "@/router/Router.vue";
 
-import Fade from "@/components/core/overlay/Fade.vue";
+import Fade from "@/layouts/overlay/Fade.vue";
 
 import LanMenu from "../right_menu/LanMenu.vue";
 import AuthMenu from "../right_menu/AuthMenu.vue";

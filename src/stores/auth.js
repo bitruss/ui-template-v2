@@ -7,6 +7,7 @@ let useAuthStore = defineStore("auth", {
   actions: {
     setToken(token) {
       this.token = token;
+      localStorage.setItem("token",token);
     },
     setUser(user) {
       this.user = user;
