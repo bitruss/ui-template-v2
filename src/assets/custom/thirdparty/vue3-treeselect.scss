@@ -1,0 +1,29 @@
+.vue-treeselect {
+    .vue-treeselect__control {
+        height: 38px !important;
+    }
+    .vue-treeselect__input {
+        &:focus {
+            box-shadow: none;
+        }
+    }
+    .vue-treeselect__multi-value {
+        margin: 0px;
+    }
+
+    .vue-treeselect__multi-value-item,
+    .vue-treeselect__value-remove {
+        @apply bg-indigo-600;
+        @apply text-white;
+        @apply hover:text-white;
+        @apply hover:bg-indigo-700;
+        @apply focus:ring-indigo-500;
+        @apply border-none;
+    }
+
+    .vue-treeselect__multi-value-item:hover {
+        .vue-treeselect__value-remove {
+            @apply text-white;
+        }
+    }
+}

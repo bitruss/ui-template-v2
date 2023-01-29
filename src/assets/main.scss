@@ -3,4 +3,8 @@
 @import "tailwindcss/utilities";
 @import "/src/assets/custom/custom.scss";
 @import "/src/assets/custom/transition.scss";
- 
+
+//thirdparty
+@import "tippy.js/dist/tippy.css"; // optional for styling
+@import "vue-toastification/dist/index.css";
+@import "vue3-treeselect/dist/vue3-treeselect.css"

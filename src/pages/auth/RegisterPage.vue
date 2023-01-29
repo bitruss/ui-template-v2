@@ -100,7 +100,7 @@ async function submit_reg() {
           <div class="prefix">
             <LockClosedIcon class="icon" />
           </div>
-          <input id="password" name="password" type="password" v-model="password" v-tippy="{ placement: 'right', content: t('password_rule'), trigger: 'focus' }" :class="[validate_password ? '' : 'err', 'relative pl-10 rounded-t']" autocomplete="current-password" :placeholder="t('password')" />
+          <input id="password" name="password" type="password" v-model="password" v-tippy="{ placement: 'bottom', content: t('password_rule'), trigger: 'focus' }" :class="[validate_password ? '' : 'err', 'relative pl-10 rounded-t']" autocomplete="current-password" :placeholder="t('password')" />
 
           <div :class="validate_password && password != '' ? 'visible' : 'invisible'" class="suffix">
             <CheckIcon class="h-5 w-5 text-success" />

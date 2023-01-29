@@ -32,6 +32,12 @@ export default [
     name: "example_select_single_select",
     component: () => import("../../pages/example/select/SingleSelectPage.vue"),
   },
+  //multi-select
+  {
+    path: "/example/select/multi_select",
+    name: "example_select_multi_select",
+    component: () => import("../../pages/example/select/MultiSelectPage.vue"),
+  },
   //input
   {
     path: "/example/input/simple",
