@@ -1,4 +1,6 @@
 <script setup>
+import router from "@/router/Router.vue";
+
 import Fade from "@/components/core/overlay/Fade.vue";
 
 import LanMenu from "../right_menu/LanMenu.vue";
@@ -11,10 +13,21 @@ import Footer from "../Footer.vue";
 import logImgUrl from "../../assets/logo.svg";
 
 import { useI18n } from "vue-i18n";
-import lang_message from "./topbar_lang"
-const { t } = useI18n({messages:lang_message});
+import lang_message from "./topbar_lang";
+const { t } = useI18n({ messages: lang_message });
 
-const props = defineProps(["pages"]);
+const pages = [
+  { name: "sign_in", href: "/signin", active: false },
+  { name: "register", href: "/register", active: false },
+  { name: "reset_pass", href: "/resetpass", active: false },
+];
+function page_active(href) {
+  if (router.currentRoute.value.path == href) {
+    return true;
+  } else {
+    return false;
+  }
+}
 </script>
 
 <template>
@@ -31,10 +44,10 @@ const props = defineProps(["pages"]);
 
         <div class="middle">
           <div class="logo">
-            <img  :src="logImgUrl" />
+            <img :src="logImgUrl" />
           </div>
           <div class="text-wrap">
-            <router-link :to="page.href" v-for="page in pages" v-bind:class="{ ' border-b-2  border-indigo-500': page.active }" class="link">{{ t(page.name) }}</router-link>
+            <router-link :to="page.href" v-for="page in pages" :class="[page_active(page.href) ? 'border-b-2  border-indigo-500' : '', 'link']">{{ t(page.name) }}</router-link>
           </div>
         </div>
 
@@ -45,9 +58,7 @@ const props = defineProps(["pages"]);
       </div>
 
       <DisclosurePanel class="mobile-menu">
-        <router-link to="/register" class="link">{{ t("register") }}</router-link>
-        <router-link to="/signin" class="link">{{ t("sign_in") }}</router-link>
-        <router-link to="/signout" class="link">{{ t("sign_out") }}</router-link>
+        <router-link v-for="page in pages" :to="page.href" class="link">{{ t(page.name) }}</router-link>
       </DisclosurePanel>
     </Disclosure>
 

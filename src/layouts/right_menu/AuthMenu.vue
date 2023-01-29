@@ -3,7 +3,8 @@ import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/vue";
 import { UserCircleIcon, UserPlusIcon, PowerIcon, CursorArrowRaysIcon } from "@heroicons/vue/24/outline";
 import useAuthStore from "@/stores/auth";
 import { useI18n } from "vue-i18n";
-const { t } = useI18n();
+import lang from "./auth_lang";
+const { t } = useI18n({ messages: lang });
 
 function signout() {
   const auth_store = useAuthStore();

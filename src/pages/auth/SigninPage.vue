@@ -9,13 +9,8 @@ import { validator } from "@/utils/index.js";
 
 import captchaImgUrl from "../../assets/captcha.png";
 import { useI18n } from "vue-i18n";
-const { t } = useI18n();
-
-const pages = [
-  { name: "sign_in", href: "/signin", active: true },
-  { name: "register", href: "/register", active: false },
-  { name: "reset_pass", href: "/resetpass", active: false },
-];
+import lang from "./auth_lang";
+const { t } = useI18n({ messages: lang });
 
 /////input ///////
 let email = ref("");
@@ -31,10 +26,10 @@ let validate_password = computed(() => {
 </script>
 
 <template>
-  <TopbarNavLayout :pages="pages">
+  <TopbarNavLayout>
     <div class="max-w-lg m-auto items-center justify-center px-6 py-12 lg:mt-12">
       <h3 class="text-2xl text-gray-500">{{ t("sign_in") }}</h3>
-      <p class="mb-5 text-gray-400">Welcome to login page</p>
+      <p class="mb-5 text-gray-400">{{ t("welcome_signin") }}</p>
 
       <div class="-space-y-px mt-3 mb-3">
         <div class="input-wrap">
@@ -51,10 +46,7 @@ let validate_password = computed(() => {
           <div class="prefix">
             <LockClosedIcon class="icon" />
           </div>
-          <input id="password" name="password" type="password" v-model="password" 
-          v-tippy="{ placement: 'right', content: t('password_rule'), trigger: 'focus' }"
-           :class="[validate_password ? '' : 'err', 'relative pl-10 rounded-b']" 
-           autocomplete="current-password" placeholder="your password" />
+          <input id="password" name="password" type="password" v-model="password" v-tippy="{ placement: 'right', content: t('password_rule'), trigger: 'focus' }" :class="[validate_password ? '' : 'err', 'relative pl-10 rounded-b']" autocomplete="current-password" placeholder="your password" />
 
           <div :class="validate_password && password != '' ? 'visible' : 'invisible'" class="suffix">
             <CheckIcon class="h-5 w-5 text-success" />
@@ -67,14 +59,14 @@ let validate_password = computed(() => {
           <div class="prefix">
             <CalculatorIcon class="icon" />
           </div>
-          <input type="email" name="email" id="email" class="pl-10" placeholder="input the captcha" />
+          <input type="text" name="captcha" id="captcha" class="pl-10"  :placeholder="t('input_captcha')" />
         </div>
-        <div class="btn" v-tippy="{ placement: 'bottom', content: 'click to change captcha' }">
+        <div class="btn" v-tippy="{ placement: 'bottom', content:t('change_captcha') }">
           <img class="captcha" :src="captchaImgUrl" />
         </div>
       </div>
 
-      <router-link to="/resetpass" class="a-primary">Forgot your password?</router-link>
+      <router-link to="/resetpass" class="a-primary">{{ t("forget_pass") }}</router-link>
 
       <div class="btn-primary w-full relative mt-3 mb-3"><LockClosedIconSolid class="icon dark absolute left-3" />{{ t("sign_in") }}</div>
 
@@ -82,7 +74,7 @@ let validate_password = computed(() => {
 
       <router-link to="/register" class="mt-3 btn-secondary w-full relative">
         <UserPlusIcon class="icon dark absolute left-3" />
-        no account yet? register a new account
+        {{ t("no_account_yet") }}
       </router-link>
     </div>
   </TopbarNavLayout>

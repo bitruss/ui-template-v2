@@ -95,6 +95,4 @@ const sidebarOpen = ref(false);
       </main>
     </div>
   </div>
-
-  <Footer></Footer>
 </template>
