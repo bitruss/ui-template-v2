@@ -1,9 +1,9 @@
 <script setup>
-import { ref, watch, defineEmits } from "vue";
+import { ref, watch } from "vue";
 import { Listbox, ListboxButton, ListboxLabel, ListboxOption, ListboxOptions } from "@headlessui/vue";
 import { CheckIcon, ChevronUpDownIcon } from "@heroicons/vue/20/solid";
 
-const props = defineProps(["options", "modelValue","placeholder"]);
+const props = defineProps(["options", "modelValue", "placeholder"]);
 
 const selected = ref(props.modelValue);
 
@@ -18,8 +18,8 @@ watch(selected, (new_selected) => {
     <div class="relative mt-1">
       <ListboxButton class="relative w-full cursor-default rounded-md border border-gray-300 bg-white py-2 pl-3 pr-10 text-left shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:text-sm">
         <span class="flex items-center">
-          <template v-if="selected==null">
-            <span class="ml-3 block truncate">{{props.placeholder? props.placeholder:'&nbsp;'}}</span>
+          <template v-if="selected == null">
+            <span class="ml-3 block truncate">{{ props.placeholder ? props.placeholder : "&nbsp;" }}</span>
           </template>
           <template v-else>
             <span :aria-label="selected.active ? 'active' : 'inactive'" :class="[selected.active ? 'bg-green-400' : 'bg-gray-200', 'inline-block h-2 w-2 flex-shrink-0 rounded-full']" />
