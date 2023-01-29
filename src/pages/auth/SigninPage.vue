@@ -49,15 +49,16 @@ async function submit_signin() {
   const overlay_store = useOverlayStore();
   overlay_store.showLoader();
   let resp = await api.user.login(email.value, password.value, captcha.value);
-  overlay_store.hideLoader();
-
+ 
   if (resp.err != null) {
     toast.error(resp.err);
+    overlay_store.hideLoader();
     return;
   }
 
   if (resp.result.meta_status < 0) {
     toast.error(resp.result.meta_msg);
+    overlay_store.hideLoader();
     return;
   }
 

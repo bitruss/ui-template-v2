@@ -20,7 +20,6 @@ import { useI18n } from "vue-i18n";
 import lang from "./auth_lang";
 const { t } = useI18n({ messages: lang });
 
-
 const toast = useToast();
 
 /////input ///////
@@ -60,18 +59,17 @@ async function submit_reg() {
 
   const overlay_store = useOverlayStore();
   overlay_store.showLoader();
-
   let resp = await api.user.register(email.value, password.value, captcha.value, vcode.value);
-
-  overlay_store.hideLoader();
 
   if (resp.err != null) {
     toast.error(resp.err);
+    overlay_store.hideLoader();
     return;
   }
 
   if (resp.result.meta_status < 0) {
     toast.error(resp.result.meta_msg);
+    overlay_store.hideLoader();
     return;
   }
 
@@ -91,7 +89,6 @@ async function submit_reg() {
         <div class="prefix">
           <EnvelopeIcon class="icon" />
         </div>
-
         <input id="email" name="email" type="email" autocomplete="email" v-model="email" :class="[validate_email ? '' : 'err', 'rounded relative pl-10']" placeholder="email" />
         <div :class="validate_email && email != '' ? 'visible' : 'invisible'" class="suffix">
           <CheckIcon class="h-5 w-5 text-success" />
@@ -114,7 +111,7 @@ async function submit_reg() {
           <div class="prefix">
             <LockClosedIcon class="icon" />
           </div>
-          <input id="password_again" name="password_again" type="password" v-model="password_again" autocomplete="current-password" :class="[validate_password_again ? '' : 'err', 'relative pl-10 rounded-b']"  :placeholder="t('password_again')"/>
+          <input id="password_again" name="password_again" type="password" v-model="password_again" autocomplete="current-password" :class="[validate_password_again ? '' : 'err', 'relative pl-10 rounded-b']" :placeholder="t('password_again')" />
           <div :class="validate_password_again && password_again != '' ? 'visible' : 'invisible'" class="suffix">
             <CheckIcon class="h-5 w-5 text-success" />
           </div>
@@ -126,7 +123,7 @@ async function submit_reg() {
           <div class="prefix">
             <CalculatorIcon class="icon" />
           </div>
-          <input type="text" name="captcha" id="captcha" v-model="captcha" class="pl-10"  :placeholder="t('input_captcha')" />
+          <input type="text" name="captcha" id="captcha" v-model="captcha" class="pl-10" :placeholder="t('input_captcha')" />
         </div>
         <div class="btn" v-tippy="{ placement: 'bottom', content: t('change_captcha') }">
           <img class="captcha" :src="captchaImgUrl" />
@@ -140,10 +137,12 @@ async function submit_reg() {
           </div>
           <input type="text" name="vcode" id="vcode" v-model="vcode" class="pl-10" placeholder="input your v-code" />
         </div>
-        <div class="btn" v-tippy="{ placement: 'bottom', content: t('send_vcode_to_email') }"><PaperAirplaneIcon /><span>{{ t('send') }}</span></div>
+        <div class="btn" v-tippy="{ placement: 'bottom', content: t('send_vcode_to_email') }">
+          <PaperAirplaneIcon /><span>{{ t("send") }}</span>
+        </div>
       </div>
 
-      <div @click="submit_reg" :class="[validate_register_ready ? '' : 'disabled', ' btn-primary w-full relative mt-3 mb-3']"><UserPlusIcon class="icon dark absolute left-3" />{{t("register")}}</div>
+      <div @click="submit_reg" :class="[validate_register_ready ? '' : 'disabled', ' btn-primary w-full relative mt-3 mb-3']"><UserPlusIcon class="icon dark absolute left-3" />{{ t("register") }}</div>
 
       <Divider>{{ t("or") }}</Divider>
 
