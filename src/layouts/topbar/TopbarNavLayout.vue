@@ -11,55 +11,51 @@ import Footer from "../Footer.vue";
 import logImgUrl from "../../assets/logo.svg";
 
 import { useI18n } from "vue-i18n";
-const { t } = useI18n();
+import lang_message from "./topbar_lang"
+const { t } = useI18n({messages:lang_message});
 
 const props = defineProps(["pages"]);
 </script>
 
 <template>
-  <div class="min-h-full">
-    <Disclosure as="nav" class="bg-white shadow" v-slot="{ open }">
-      <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-        <div class="relative flex h-16 justify-between">
-          <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
-            <!-- Mobile menu button -->
-            <DisclosureButton class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
-              <span class="sr-only">Open main menu</span>
-              <Bars3Icon v-if="!open" class="block h-6 w-6" aria-hidden="true" />
-              <XMarkIcon v-else class="block h-6 w-6" aria-hidden="true" />
-            </DisclosureButton>
+  <div class="topbar">
+    <Disclosure as="nav" class="nav" v-slot="{ open }">
+      <div class="top-wrap">
+        <div class="mobile-top">
+          <!-- Mobile menu button -->
+          <DisclosureButton class="btn-wrap">
+            <Bars3Icon v-if="!open" />
+            <XMarkIcon v-else />
+          </DisclosureButton>
+        </div>
+
+        <div class="middle">
+          <div class="logo">
+            <img  :src="logImgUrl" />
           </div>
-          <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-            <div class="flex flex-shrink-0 items-center">
-              <img class="hidden h-8 w-auto lg:block" :src="logImgUrl" alt="Your Company" />
-            </div>
-            <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
-              <router-link :to="page.href" v-for="page in pages" v-bind:class="{ ' border-b-2  border-indigo-500': page.active }" class="inline-flex items-center px-1 pt-1 text-base text-gray-600">{{ t(page.name) }}</router-link>
-            </div>
+          <div class="text-wrap">
+            <router-link :to="page.href" v-for="page in pages" v-bind:class="{ ' border-b-2  border-indigo-500': page.active }" class="link">{{ t(page.name) }}</router-link>
           </div>
-          <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-            <LanMenu />
-            <AuthMenu />
-          </div>
+        </div>
+
+        <div class="right">
+          <LanMenu />
+          <AuthMenu />
         </div>
       </div>
 
-      <DisclosurePanel class="sm:hidden">
-        <div class="space-y-1 pt-2 pb-4">
-          <router-link to="/register" class="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700">{{ t("register") }}</router-link>
-          <router-link to="/signin" class="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700">{{ t("sign_in") }}</router-link>
-          <router-link to="/signout" class="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700">{{ t("sign_out") }}</router-link>
-        </div>
+      <DisclosurePanel class="mobile-menu">
+        <router-link to="/register" class="link">{{ t("register") }}</router-link>
+        <router-link to="/signin" class="link">{{ t("sign_in") }}</router-link>
+        <router-link to="/signout" class="link">{{ t("sign_out") }}</router-link>
       </DisclosurePanel>
     </Disclosure>
 
-    <div class="py-10">
-      <fade>
-        <main>
-          <slot></slot>
-        </main>
-      </fade>
-    </div>
+    <fade>
+      <main>
+        <slot></slot>
+      </main>
+    </fade>
   </div>
   <Footer></Footer>
 </template>

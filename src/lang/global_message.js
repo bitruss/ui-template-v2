@@ -3,10 +3,6 @@
 
 export default {
   en: {
-    sign_in: "Sign in",
-    sign_out: "Sign out",
-    register: "Register",
-    reset_pass: "Reset password",
     password_rule: "password length should between 5 and 30",
 
     confirm: "Confirm",
@@ -17,10 +13,6 @@ export default {
     or: "Or",
   },
   zh: {
-    sign_in: "登陆",
-    sign_out: "退出",
-    register: "注册",
-    reset_pass: "重置密码",
     password_rule: "密码长度应在5和30之间",
 
     confirm: "确认",
