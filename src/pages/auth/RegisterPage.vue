@@ -1,10 +1,12 @@
 <script setup>
-
-import api from "@/api"
+import api from "@/api";
 import useAuthStore from "@/stores/auth";
- 
 
-import TopbarNavLayout from "../../layouts/auth/TopbarNavLayout.vue";
+import useOverlayStore from "@/stores/overlay";
+
+import { useToast } from "vue-toastification";
+
+import TopbarNavLayout from "../../layouts/topbar/TopbarNavLayout.vue";
 import Divider from "../../components/core/divider/Divider.vue";
 
 import { UserPlusIcon, CursorArrowRaysIcon } from "@heroicons/vue/24/solid";
@@ -16,6 +18,8 @@ import { validator } from "@/utils/index.js";
 
 import { useI18n } from "vue-i18n";
 const { t } = useI18n();
+
+const toast = useToast();
 
 const pages = [
   { name: "sign_in", href: "/signin", active: false },
@@ -46,10 +50,7 @@ let captcha = ref("");
 let vcode = ref("");
 //
 let validate_register_ready = computed(() => {
-  if (validate_email.value && email.value != "" &&
-   validate_password.value && password.value != "" &&
-    validate_password_again.value && password_again.value != "" &&
-     captcha.value !== "" && vcode.value !== "") {
+  if (validate_email.value && email.value != "" && validate_password.value && password.value != "" && validate_password_again.value && password_again.value != "" && captcha.value !== "" && vcode.value !== "") {
     return true;
   }
   return false;
@@ -57,16 +58,31 @@ let validate_register_ready = computed(() => {
 ////
 
 async function submit_reg() {
-  let resp = await api.user.register(email.value, password.value, captcha.value, vcode.value);
-    if (resp.err != null || resp.result.meta_status < 0) {
-      console.log(resp)
-    } else {
-      const auth_store = useAuthStore();
-      auth_store.setToken(resp.result.token);
-      window.location = "/";
-    }
-}
+  if (!validate_register_ready.value) {
+    return;
+  }
 
+  const overlay_store = useOverlayStore();
+  overlay_store.showLoader();
+
+  let resp = await api.user.register(email.value, password.value, captcha.value, vcode.value);
+
+  overlay_store.hideLoader();
+
+  if (resp.err != null) {
+    toast.error(resp.err);
+    return;
+  }
+
+  if (resp.result.meta_status < 0) {
+    toast.error(resp.result.meta_msg);
+    return;
+  }
+
+  const auth_store = useAuthStore();
+  auth_store.setToken(resp.result.token);
+  window.location = "/";
+}
 </script>
 
 <template>

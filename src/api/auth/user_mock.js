@@ -1,10 +1,7 @@
-import axios from "axios";
+import mock  from "../mock";
 import config from "@/config";
-import MockAdapter from "axios-mock-adapter";
-
+ 
 ////////////////////////////////////////////
-//let mock be global which also used for other project
-let mock = new MockAdapter(axios);
 
 if (config.plugins.mock.enable) {
 

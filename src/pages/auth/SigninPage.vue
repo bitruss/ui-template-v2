@@ -1,5 +1,5 @@
 <script setup>
-import TopbarNavLayout from "../../layouts/auth/TopbarNavLayout.vue";
+import TopbarNavLayout from "../../layouts/topbar/TopbarNavLayout.vue";
 import Divider from "../../components/core/divider/Divider.vue";
 import { EnvelopeIcon, LockClosedIcon, CalculatorIcon, CheckIcon } from "@heroicons/vue/24/outline";
 import { UserPlusIcon, LockClosedIcon as LockClosedIconSolid } from "@heroicons/vue/20/solid";

@@ -1,13 +1,14 @@
 <script setup>
-import LanMenu from "../topbar/LanMenu.vue";
-import AuthMenu from "../topbar/AuthMenu.vue";
+import Fade from "@/components/core/overlay/Fade.vue";
 
-import { Disclosure, DisclosureButton, DisclosurePanel} from "@headlessui/vue";
+import LanMenu from "../right_menu/LanMenu.vue";
+import AuthMenu from "../right_menu/AuthMenu.vue";
+
+import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/vue";
 import { Bars3Icon, XMarkIcon } from "@heroicons/vue/24/outline";
 import Footer from "../Footer.vue";
 
 import logImgUrl from "../../assets/logo.svg";
-
 
 import { useI18n } from "vue-i18n";
 const { t } = useI18n();
@@ -53,11 +54,11 @@ const props = defineProps(["pages"]);
     </Disclosure>
 
     <div class="py-10">
-      <main>
-        <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
+      <fade>
+        <main>
           <slot></slot>
-        </div>
-      </main>
+        </main>
+      </fade>
     </div>
   </div>
   <Footer></Footer>

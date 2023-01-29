@@ -1,7 +1,10 @@
 <script setup>
-import Footer from "../Footer.vue";
-import LanMenu from "../topbar/LanMenu.vue";
-import AuthMenu from "../topbar/AuthMenu.vue";
+import Fade from "@/components/core/overlay/Fade.vue";
+
+import logImgUrl from "../../assets/logo.svg";
+
+import LanMenu from "../right_menu/LanMenu.vue";
+import AuthMenu from "../right_menu/AuthMenu.vue";
 
 import { ref } from "vue";
 import { Dialog, DialogPanel, TransitionChild, TransitionRoot } from "@headlessui/vue";
@@ -30,14 +33,14 @@ const sidebarOpen = ref(false);
               <TransitionChild as="template" enter="ease-in-out duration-300" enter-from="opacity-0" enter-to="opacity-100" leave="ease-in-out duration-300" leave-from="opacity-100" leave-to="opacity-0">
                 <div class="absolute top-0 right-0 -mr-12 pt-2">
                   <button type="button" class="ml-1 flex h-10 w-10 items-center justify-center rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" @click="sidebarOpen = false">
-                    <span class="sr-only">Close sidebar</span>
-                    <XMarkIcon class="h-6 w-6 text-white" aria-hidden="true" />
+                    <!-- <span class="sr-only">Close sidebar</span> -->
+                    <XMarkIcon class="h-6 w-6 text-white" />
                   </button>
                 </div>
               </TransitionChild>
               <div class="h-0 flex-1 overflow-y-auto pt-5 pb-4">
                 <div class="flex flex-shrink-0 items-center px-4">
-                  <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="Your Company" />
+                  <img class="h-8 w-auto" :src="logImgUrl" />
                 </div>
                 <nav class="mt-5 space-y-1 px-2">
                   <SidebarMenu :navigation="r_menu_config" />
@@ -56,7 +59,7 @@ const sidebarOpen = ref(false);
       <div class="flex min-h-0 flex-1 flex-col">
         <div class="flex flex-1 flex-col overflow-y-auto pt-5 pb-4">
           <div class="flex flex-shrink-0 items-center px-4">
-            <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="Your Company" />
+            <img class="h-8 w-auto" :src="logImgUrl" />
           </div>
           <nav class="mt-5 flex-1 space-y-1 bg-white px-2">
             <SidebarMenu :navigation="r_menu_config" />
@@ -67,7 +70,7 @@ const sidebarOpen = ref(false);
     <div class="flex flex-1 flex-col lg:pr-8 lg:pl-80">
       <div class="sticky top-0 z-10 flex h-16 flex-shrink-0 bg-white">
         <button type="button" class="px-4 text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 lg:hidden" @click="sidebarOpen = true">
-          <span class="sr-only">Open sidebar</span>
+          <!-- <span class="sr-only">Open sidebar</span> -->
           <Bars3Icon class="h-6 w-6" aria-hidden="true" />
         </button>
         <div class="flex flex-1 justify-between px-4">
@@ -83,7 +86,9 @@ const sidebarOpen = ref(false);
         <div class="mx-auto px-4 sm:px-6">
           <div class="grid grid-cols-12">
             <div class="col-span-12 xl:col-span-12 lg:pt-0 pt-5">
-              <slot></slot>
+              <fade>
+                <slot></slot>
+              </fade>
             </div>
           </div>
         </div>

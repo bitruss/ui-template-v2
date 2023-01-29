@@ -1,7 +1,7 @@
 <script setup>
 import { reactive } from "vue";
 
-import TopbarNavLayout from "../../layouts/auth/TopbarNavLayout.vue";
+import TopbarNavLayout from "../../layouts/topbar/TopbarNavLayout.vue";
 import Divider from "../../components/core/divider/Divider.vue";
 
 import { UserPlusIcon, CursorArrowRaysIcon } from "@heroicons/vue/24/solid";

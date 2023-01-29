@@ -1,6 +1,6 @@
 <script setup>
 import { ref, watch, defineEmits } from "vue";
-import { Listbox, ListboxButton, ListboxLabel, ListboxOption, ListboxOptions } from "@headlessui/vue";
+import { Listbox, ListboxButton, ListboxOption, ListboxOptions } from "@headlessui/vue";
 import { CheckIcon, ChevronUpDownIcon } from "@heroicons/vue/20/solid";
 
 const props = defineProps(["options", "modelValue", "placeholder"]);

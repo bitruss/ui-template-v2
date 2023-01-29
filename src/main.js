@@ -18,7 +18,6 @@ import "vue-toastification/dist/index.css";
 const app = createApp(App);
 
 app.use(lang);
-app.provide("setLang", lang.setLang);
 app.use(createPinia());
 app.use(router);
 app.use(VueTippy, {
