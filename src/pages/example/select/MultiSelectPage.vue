@@ -55,7 +55,16 @@ const options = [
   },
 ];
 
-let value = ref(null);
+let value = ref([]);
+
+/////
+const options2 = ["aaa", "bbb", "ccc", "ddd", "eee"].map((id) => ({
+  id,
+  label: `${id}`,
+}));
+
+let value2 = ref([]);
+let value3 = ref(["aaa"]);
 </script>
 
 <template>
@@ -68,13 +77,33 @@ let value = ref(null);
 
       <div class="pt-5 lg:grid lg:grid-cols-3 lg:gap-4">
         <div>
-          <label for="username" class="flex"> Multi select </label>
+          <label for="username" class="flex"> Multi complex select </label>
           <p>value:{{ value }}</p>
         </div>
         <div class="lg:col-span-2 mt-2">
           <treeselect v-model="value" :multiple="true" :options="options" />
         </div>
       </div>
+
+      <div class="pt-5 lg:grid lg:grid-cols-3 lg:gap-4">
+        <div>
+          <label for="username" class="flex"> Multi simple select </label>
+          <p>value:{{ value2 }}</p>
+        </div>
+        <div class="lg:col-span-2 mt-2">
+          <treeselect v-model="value2" :multiple="true" :options="options2" />
+        </div>
+      </div>
+
+      <div class="pt-5 lg:grid lg:grid-cols-3 lg:gap-4">
+        <div>
+          <label for="username" class="flex"> Multi disabled select </label>
+        </div>
+        <div class="lg:col-span-2 mt-2">
+          <treeselect  v-model="value3" :multiple="true" :options="options2" :disabled="true"/>
+        </div>
+      </div>
+
     </div>
   </SidebarLayout>
 </template>

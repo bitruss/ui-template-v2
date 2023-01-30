@@ -79,7 +79,7 @@
         @apply overflow-auto;
         @apply rounded-md;
         @apply bg-white;
-        @apply py-1;
+        @apply py-0;
         @apply text-base;
         @apply shadow-lg;
         @apply ring-1;
@@ -95,6 +95,7 @@
             @apply py-2;
             @apply pl-3;
             @apply pr-9;
+            @apply cursor-pointer;
 
             &.active {
                 @apply text-white;
