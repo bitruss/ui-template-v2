@@ -125,5 +125,11 @@ export default [
     path: "/example/step/steptab",
     name: "example_step_steptab",
     component: () => import("../../pages/example/step/StepTabPage.vue"),
+  },  
+  //table
+  {
+    path: "/example/table/simple",
+    name: "example_table/simple",
+    component: () => import("../../pages/example/table/SimpleTablePage.vue"),
   },
 ];

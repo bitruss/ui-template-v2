@@ -76,7 +76,7 @@
 //
 .vue-treeselect__multi-value,
 .vue-treeselect__value-container {
-    vertical-align:auto;
+    vertical-align: auto;
 }
 
 ////
@@ -96,15 +96,18 @@
         border-color: #e0e0e0;
         background-color: #f7f7f7;
     }
+
+    .vue-treeselect__option.vue-treeselect__option--disabled {
+        .vue-treeselect__label {
+            color: #a0a0a0;
+        }
+    }
 }
 
 .vue-treeselect {
     .vue-treeselect__option.vue-treeselect__option--disabled.vue-treeselect__option--highlight:hover,
     .vue-treeselect__option.vue-treeselect__option--disabled.vue-treeselect__option--selected:hover {
         background-color: #f7f7f7;
-        .vue-treeselect__label {
-            @apply text-gray-900;
-        }
     }
 }
 

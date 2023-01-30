@@ -19,6 +19,7 @@ import { EnvelopeIcon as EnvelopeOutlineIcon } from "@heroicons/vue/24/outline";
           <p>Primary button of purple color</p>
         </div>
         <div class="lg:col-span-2 mt-2">
+          <button type="button" class="btn-primary xs m-2">Button text</button>
           <button type="button" class="btn-primary sm m-2">Button text</button>
           <button type="button" class="btn-primary md m-2">Button text</button>
           <button type="button" class="btn-primary m-2">Button text</button>
@@ -33,6 +34,7 @@ import { EnvelopeIcon as EnvelopeOutlineIcon } from "@heroicons/vue/24/outline";
           <p>Primary button with prefix-icon</p>
         </div>
         <div class="lg:col-span-2 mt-2">
+          <button type="button" class="btn-primary xs m-2"><EnvelopeIcon class="prefix-icon" />Button text</button>
           <button type="button" class="btn-primary sm m-2"><EnvelopeIcon class="prefix-icon" />Button text</button>
           <button type="button" class="btn-primary md m-2"><EnvelopeIcon class="prefix-icon" />Button text</button>
           <button type="button" class="btn-primary m-2"><EnvelopeIcon class="prefix-icon" />Button text</button>
@@ -63,6 +65,7 @@ import { EnvelopeIcon as EnvelopeOutlineIcon } from "@heroicons/vue/24/outline";
           <p>Err button with prefix-icon</p>
         </div>
         <div class="lg:col-span-2 mt-2">
+          <button type="button" class="btn-err xs m-2"><EnvelopeIcon class="prefix-icon" />Button text</button>
           <button type="button" class="btn-err sm m-2"><EnvelopeIcon class="prefix-icon" />Button text</button>
           <button type="button" class="btn-err md m-2"><EnvelopeIcon class="prefix-icon" />Button text</button>
           <button type="button" class="btn-err m-2"><EnvelopeIcon class="prefix-icon" />Button text</button>
@@ -78,6 +81,7 @@ import { EnvelopeIcon as EnvelopeOutlineIcon } from "@heroicons/vue/24/outline";
           <p>Success button with prefix-icon</p>
         </div>
         <div class="lg:col-span-2 mt-2">
+          <button type="button" class="btn-success xs m-2"><EnvelopeIcon class="prefix-icon" />Button text</button>
           <button type="button" class="btn-success sm m-2"><EnvelopeIcon class="prefix-icon" />Button text</button>
           <button type="button" class="btn-success md m-2"><EnvelopeIcon class="prefix-icon" />Button text</button>
           <button type="button" class="btn-success m-2"><EnvelopeIcon class="prefix-icon" />Button text</button>
@@ -93,6 +97,7 @@ import { EnvelopeIcon as EnvelopeOutlineIcon } from "@heroicons/vue/24/outline";
           <p>Warning button with prefix-icon</p>
         </div>
         <div class="lg:col-span-2 mt-2">
+          <button type="button" class="btn-warning xs m-2"><EnvelopeIcon class="prefix-icon" />Button text</button>
           <button type="button" class="btn-warning sm m-2"><EnvelopeIcon class="prefix-icon" />Button text</button>
           <button type="button" class="btn-warning md m-2"><EnvelopeIcon class="prefix-icon" />Button text</button>
           <button type="button" class="btn-warning m-2"><EnvelopeIcon class="prefix-icon" />Button text</button>
@@ -108,6 +113,7 @@ import { EnvelopeIcon as EnvelopeOutlineIcon } from "@heroicons/vue/24/outline";
           <p>Info button with prefix-icon</p>
         </div>
         <div class="lg:col-span-2 mt-2">
+          <button type="button" class="btn-info xs m-2"><EnvelopeIcon class="prefix-icon" />Button text</button>
           <button type="button" class="btn-info sm m-2"><EnvelopeIcon class="prefix-icon" />Button text</button>
           <button type="button" class="btn-info md m-2"><EnvelopeIcon class="prefix-icon" />Button text</button>
           <button type="button" class="btn-info m-2"><EnvelopeIcon class="prefix-icon" />Button text</button>
@@ -123,6 +129,7 @@ import { EnvelopeIcon as EnvelopeOutlineIcon } from "@heroicons/vue/24/outline";
           <p>Primary button with suffix-icon</p>
         </div>
         <div class="lg:col-span-2 mt-2">
+          <button type="button" class="btn-primary xs m-2">Button text<EnvelopeIcon class="suffix-icon" /></button>
           <button type="button" class="btn-primary sm m-2">Button text<EnvelopeIcon class="suffix-icon" /></button>
           <button type="button" class="btn-primary md m-2">Button text<EnvelopeIcon class="suffix-icon" /></button>
           <button type="button" class="btn-primary m-2">Button text<EnvelopeIcon class="suffix-icon" /></button>
@@ -137,6 +144,7 @@ import { EnvelopeIcon as EnvelopeOutlineIcon } from "@heroicons/vue/24/outline";
           <p>secondary button with prefix-icon</p>
         </div>
         <div class="lg:col-span-2 mt-2">
+          <button type="button" class="btn-secondary xs m-2"><EnvelopeOutlineIcon class="prefix-icon" />Button text</button>
           <button type="button" class="btn-secondary sm m-2"><EnvelopeOutlineIcon class="prefix-icon" />Button text</button>
           <button type="button" class="btn-secondary md m-2"><EnvelopeOutlineIcon class="prefix-icon" />Button text</button>
           <button type="button" class="btn-secondary m-2"><EnvelopeOutlineIcon class="prefix-icon" />Button text</button>
@@ -151,6 +159,7 @@ import { EnvelopeIcon as EnvelopeOutlineIcon } from "@heroicons/vue/24/outline";
           <p>blue info button</p>
         </div>
         <div class="lg:col-span-2 mt-2">
+          <button type="button" class="btn-info xs m-2">Button text</button>
           <button type="button" class="btn-info sm m-2">Button text</button>
           <button type="button" class="btn-info md m-2">Button text</button>
           <button type="button" class="btn-info m-2">Button text</button>
@@ -165,6 +174,7 @@ import { EnvelopeIcon as EnvelopeOutlineIcon } from "@heroicons/vue/24/outline";
           <p>round button of secondary style</p>
         </div>
         <div class="lg:col-span-2 mt-2">
+          <button type="button" class="btn-secondary inline-flex rounded-full xs m-2">Button text</button>
           <button type="button" class="btn-secondary inline-flex rounded-full sm m-2">Button text</button>
           <button type="button" class="btn-secondary inline-flex rounded-full md m-2">Button text</button>
           <button type="button" class="btn-secondary inline-flex rounded-full m-2">Button text</button>
@@ -179,6 +189,7 @@ import { EnvelopeIcon as EnvelopeOutlineIcon } from "@heroicons/vue/24/outline";
           <p>secondary button with no text only icon</p>
         </div>
         <div class="lg:col-span-2 mt-2">
+          <button type="button" class="btn-secondary rounded-full no-text xs m-2"><EnvelopeOutlineIcon class="icon" /></button>
           <button type="button" class="btn-secondary rounded-full no-text sm m-2"><EnvelopeOutlineIcon class="icon" /></button>
           <button type="button" class="btn-secondary rounded-full no-text md m-2"><EnvelopeOutlineIcon class="icon" /></button>
           <button type="button" class="btn-secondary rounded-full no-text m-2"><EnvelopeOutlineIcon class="icon" /></button>
@@ -193,6 +204,7 @@ import { EnvelopeIcon as EnvelopeOutlineIcon } from "@heroicons/vue/24/outline";
           <p>primary button with no text only icon</p>
         </div>
         <div class="lg:col-span-2 mt-2">
+          <button type="button" class="btn-primary rounded-full no-text xs m-2"><PlusIcon class="icon" /></button>
           <button type="button" class="btn-primary rounded-full no-text sm m-2"><PlusIcon class="icon" /></button>
           <button type="button" class="btn-primary rounded-full no-text md m-2"><PlusIcon class="icon" /></button>
           <button type="button" class="btn-primary rounded-full no-text m-2"><PlusIcon class="icon" /></button>

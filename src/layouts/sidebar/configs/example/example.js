@@ -1,4 +1,4 @@
-import { AdjustmentsHorizontalIcon, ChevronDoubleRightIcon, PlayIcon, WindowIcon, ChatBubbleLeftIcon, PhotoIcon, InformationCircleIcon, StopIcon, ViewfinderCircleIcon, CommandLineIcon, FolderIcon, ClipboardDocumentListIcon } from "@heroicons/vue/24/outline";
+import { TableCellsIcon, AdjustmentsHorizontalIcon, ChevronDoubleRightIcon, PlayIcon, WindowIcon, ChatBubbleLeftIcon, PhotoIcon, InformationCircleIcon, StopIcon, ViewfinderCircleIcon, CommandLineIcon, FolderIcon, ClipboardDocumentListIcon } from "@heroicons/vue/24/outline";
 
 let example = [
   {
@@ -93,6 +93,12 @@ let example = [
         icon: ChevronDoubleRightIcon,
         open: false,
         children: [{ name: "step tab", href: "/example/step/steptab" }],
+      },
+      {
+        name: "Table",
+        icon: TableCellsIcon,
+        open: false,
+        children: [{ name: "simple table", href: "/example/table/simple" }],
       },
     ],
   },
