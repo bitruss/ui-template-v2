@@ -1,4 +1,5 @@
 <script setup>
+import { LOAD_ROOT_OPTIONS } from "vue3-treeselect";
 import SidebarLayout from "../../../layouts/sidebar/SidebarLayout.vue";
 import { ref } from "vue";
 import Treeselect from "vue3-treeselect";
@@ -10,8 +11,8 @@ const options = [
     children: [
       {
         id: "apple",
-        label: "Apple 🍎",
-        isNew: true,
+        label: "apple",
+        isDisabled: true,
       },
       {
         id: "grapes",
@@ -55,7 +56,9 @@ const options = [
   },
 ];
 
-let value = ref([]);
+let value = ref(["apple"]);
+
+let complex_value = ref("apple");
 
 /////
 const options2 = ["aaa", "bbb", "ccc", "ddd", "eee"].map((id) => ({
@@ -64,7 +67,20 @@ const options2 = ["aaa", "bbb", "ccc", "ddd", "eee"].map((id) => ({
 }));
 
 let value2 = ref([]);
-let value3 = ref(["aaa"]);
+
+///////
+let remote_options = ref(null);
+const sleep = (d) => new Promise((r) => setTimeout(r, d));
+async function loadOptions({ action /*, callback*/ }) {
+  if (action === LOAD_ROOT_OPTIONS) {
+    // Second try: simulate a successful loading.
+    await sleep(2000);
+    remote_options.value = ["a", "b", "c", "d", "e"].map((id) => ({
+      id,
+      label: `option-${id}`,
+    }));
+  }
+}
 </script>
 
 <template>
@@ -81,7 +97,17 @@ let value3 = ref(["aaa"]);
           <p>value:{{ value }}</p>
         </div>
         <div class="lg:col-span-2 mt-2">
-          <treeselect v-model="value" :multiple="true" :options="options" />
+          <treeselect v-model="value" :multiple="true" :options="options" :disable-branch-nodes="true" />
+        </div>
+      </div>
+
+      <div class="pt-5 lg:grid lg:grid-cols-3 lg:gap-4">
+        <div>
+          <label for="username" class="flex"> single complex select </label>
+          <p>value:{{ complex_value }}</p>
+        </div>
+        <div class="lg:col-span-2 mt-2">
+          <treeselect :searchable="false" :disable-branch-nodes="true" :show-count="true" :default-expand-level="1" v-model="complex_value" :multiple="false" :options="options" />
         </div>
       </div>
 
@@ -100,10 +126,18 @@ let value3 = ref(["aaa"]);
           <label for="username" class="flex"> Multi disabled select </label>
         </div>
         <div class="lg:col-span-2 mt-2">
-          <treeselect  v-model="value3" :multiple="true" :options="options2" :disabled="true"/>
+          <treeselect :multiple="true" :disabled="true" />
         </div>
       </div>
 
+      <div class="pt-5 lg:grid lg:grid-cols-3 lg:gap-4">
+        <div>
+          <label for="username" class="flex"> Multi remote loading select </label>
+        </div>
+        <div class="lg:col-span-2 mt-2">
+          <treeselect :load-options="loadOptions" :options="remote_options" :auto-load-root-options="false" :multiple="true" placeholder="Open the menu..." />
+        </div>
+      </div>
     </div>
   </SidebarLayout>
 </template>
