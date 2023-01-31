@@ -132,4 +132,9 @@ export default [
     name: "example_table/simple",
     component: () => import("../../pages/example/table/SimpleTablePage.vue"),
   },
+  {
+    path: "/example/table/remote",
+    name: "example_table/remote",
+    component: () => import("../../pages/example/table/RemoteTablePage.vue"),
+  },
 ];

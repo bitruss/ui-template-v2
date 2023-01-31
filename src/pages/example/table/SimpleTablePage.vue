@@ -1,8 +1,9 @@
 <script setup>
 import SidebarLayout from "../../../layouts/sidebar/SidebarLayout.vue";
 
+import { ref } from "vue";
+
 import { VueGoodTable } from "vue-good-table-next";
-import { EnvelopeOpenIcon } from "@heroicons/vue/24/outline";
 
 const columns = [
   {
@@ -30,10 +31,6 @@ const columns = [
     field: "score",
     type: "percentage",
   },
-  {
-    label: "Action1",
-    field: "action1",
-  },
 ];
 
 const rows = [
@@ -44,6 +41,15 @@ const rows = [
   { id: 5, name: "Dan", age: 40, createdAt: "2011-10-21", score: 0.03343 },
   { id: 6, name: "John", age: 20, createdAt: "2011-10-31", score: 0.03343 },
 ];
+
+const open_row_data = ref(null);
+const edit_m_open = ref(false);
+
+function edit_row(row_line) {
+  edit_m_open.value = true;
+  const line_data = rows[row_line];
+  open_row_data.value = line_data;
+}
 </script>
 
 <template>
@@ -101,12 +107,7 @@ const rows = [
           </template>
 
           <template #table-row="props">
-            <span v-if="props.column.field === 'action1'">
-              <button type="button" class="btn-secondary xs "><EnvelopeOpenIcon class="prefix-icon" />Open</button>
-            </span>
-
-            <!-- Column: Common -->
-            <span v-else>{{ props.row[props.column.field] }}</span>
+            <span>{{ props.row[props.column.field] }}</span>
           </template>
         </vue-good-table>
       </div>

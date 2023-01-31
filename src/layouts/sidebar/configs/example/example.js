@@ -98,7 +98,10 @@ let example = [
         name: "Table",
         icon: TableCellsIcon,
         open: false,
-        children: [{ name: "simple table", href: "/example/table/simple" }],
+        children: [
+          { name: "simple local table", href: "/example/table/simple" },
+          { name: "simple remote table", href: "/example/table/remote" },
+        ],
       },
     ],
   },

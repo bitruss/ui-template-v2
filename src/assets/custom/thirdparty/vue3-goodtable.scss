@@ -36,11 +36,10 @@
             @apply px-5;
             float: none !important;
             margin: 0px;
-      
         }
 
         .vgt-global-search__input {
-            float: none !important; 
+            float: none !important;
             width: 100%;
             @apply px-5;
             @apply mb-2;
@@ -139,4 +138,12 @@
     .footer__navigation__page-info {
         @apply text-base;
     }
+}
+
+.vgt-loading__content {
+    @apply bg-gray-100;
+    @apply border;
+    @apply border-gray-200;
+    @apply text-gray-500;
+    @apply shadow;
 }
