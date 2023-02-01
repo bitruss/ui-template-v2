@@ -50,6 +50,12 @@ function edit_row(row_line) {
   const line_data = rows[row_line];
   open_row_data.value = line_data;
 }
+
+///
+function onSelectedRows(params) {
+  console.log(params.selectedRows.length);
+}
+
 </script>
 
 <template>
@@ -64,26 +70,15 @@ function edit_row(row_line) {
         <vue-good-table
           :search-options="{
             enabled: true,
-            trigger: 'enter',
             skipDiacritics: true,
-            searchFn: mySearchFn,
             placeholder: 'Search this table',
-            externalQuery: searchQuery,
           }"
           :pagination-options="{
             enabled: true,
             mode: 'records',
             perPage: 5,
-            position: 'bottom',
             perPageDropdown: [3, 7, 9],
-            dropdownAllowAll: false,
             setCurrentPage: 1,
-            nextLabel: 'next',
-            prevLabel: 'prev',
-            rowsPerPageLabel: 'Rows/Page',
-            ofLabel: 'of',
-            pageLabel: 'page', // for 'pages' mode
-            allLabel: 'All',
           }"
           :select-options="{
             enabled: true,
@@ -96,6 +91,7 @@ function edit_row(row_line) {
           }"
           :columns="columns"
           :rows="rows"
+          v-on:selected-rows-change="onSelectedRows"
         >
           <template #selected-row-actions>
             <button class="btn-primary sm">selection Action 1</button>

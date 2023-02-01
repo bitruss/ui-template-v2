@@ -59,6 +59,11 @@ export default [
     name: "example_input_radio",
     component: () => import("../../pages/example/input/RadioPage.vue"),
   },
+  {
+    path: "/example/input/datetime",
+    name: "example_input_datetime",
+    component: () => import("../../pages/example/input/DateTimePage.vue"),
+  },
   //button
   {
     path: "/example/button/main",

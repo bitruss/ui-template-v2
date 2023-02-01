@@ -30,6 +30,7 @@ let example = [
           { name: "validator", href: "/example/input/validator" },
           { name: "checkbox", href: "/example/input/checkbox" },
           { name: "radio", href: "/example/input/radio" },
+          { name: "date_time", href: "/example/input/datetime" },
         ],
       },
       {

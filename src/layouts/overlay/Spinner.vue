@@ -3,15 +3,11 @@ import { TransitionRoot } from "@headlessui/vue";
 
 import useOverlayStore from "@/stores/overlay";
 const overlay_store = useOverlayStore();
-
-setTimeout(() => {
-  overlay_store.hideLoader();
-}, 1000);
 </script>
 
 <template>
   <TransitionRoot appear :show="overlay_store.loader_visable" enter="transition-opacity duration-500" enter-from="opacity-0" enter-to="opacity-100" leave="transition-opacity duration-500" leave-from="opacity-100" leave-to="opacity-0">
-    <div class="w-full h-full absolute bg-white z-100">
+    <div class="w-full h-full absolute bg-white z-50">
       <div class="absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gray-100 border border-gray-200 shadow text-black rounded py-2 px-5 flex">
         <svg viewBox="0 0 24 24" fill="none" class="w-4 h-4 animate animate-spin">
           <circle cx="12" cy="12" r="10" class="stroke-slate-300" stroke-width="4" />

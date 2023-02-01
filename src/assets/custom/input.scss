@@ -33,6 +33,19 @@ select {
 .input-wrap {
     @apply relative;
 
+    &.sm {
+        input {
+            @apply pt-1.5;
+            @apply pb-1.5;
+            @apply text-sm;
+        }
+
+        .prefix,
+        .suffix {
+            @apply text-sm;
+        }
+    }
+
     .prefix {
         @apply z-20;
         @apply absolute;

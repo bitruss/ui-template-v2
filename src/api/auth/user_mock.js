@@ -47,7 +47,7 @@ if (config.plugins.mock.enable) {
             },
           ]);
         }
-      }, 5000); //5 seconds delay
+      }, 2000); //2 seconds delay
     });
   });
 }
@@ -101,7 +101,7 @@ if (config.plugins.mock.enable) {
             },
           },
         ]);
-      }, 5000); //5 seconds delay
+      }, 2000); //5 seconds delay
     });
   });
 }

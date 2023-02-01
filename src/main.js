@@ -8,13 +8,13 @@ import router from "./router/Router.vue";
 import lang from "./lang/lang";
 import VueTippy from "vue-tippy";
 import Toast from "vue-toastification";
+import VCalendar from "v-calendar";
 
 //
 import "./assets/main.scss";
 
 ///////////////////////////
 const app = createApp(App);
-
 app.use(lang);
 app.use(createPinia());
 app.use(router);
@@ -25,5 +25,8 @@ app.use(VueTippy, {
 app.use(Toast, {
   // You can set your default toast options here
 });
+
+// Use plugin with defaults
+app.use(VCalendar, {});
 
 app.mount("#app");
