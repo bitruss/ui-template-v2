@@ -52,18 +52,6 @@
             .input__icon {
                 display: none;
             }
-
-            // .magnifying-glass {
-            //     margin-top: -8px;
-            //     margin-left: 12px;
-            //     width: 12px;
-            //     height: 12px;
-            //     border: 2px solid #88898a;
-
-            //     &::before {
-            //         background: #88898a;
-            //     }
-            // }
         }
     }
 
@@ -83,6 +71,7 @@
                     background: none;
                     @apply bg-slate-50;
                     @apply font-medium;
+                    text-align: center;
                 }
             }
 
@@ -120,6 +109,7 @@
             .footer__navigation__page-btn,
             .footer__navigation__page-info {
                 display: inline-flex !important;
+                font-size: 15px;
             }
             .footer__navigation__page-btn {
                 span {

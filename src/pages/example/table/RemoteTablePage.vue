@@ -4,7 +4,7 @@ import SidebarLayout from "../../../layouts/sidebar/SidebarLayout.vue";
 import { VueGoodTable } from "vue-good-table-next";
 
 import Modal from "@/components/core/modal/Modal.vue";
-import { PencilSquareIcon, MagnifyingGlassIcon, CalendarDaysIcon } from "@heroicons/vue/24/outline";
+import { PencilSquareIcon, MagnifyingGlassIcon, CalendarDaysIcon, ArrowPathIcon } from "@heroicons/vue/24/outline";
 
 import { ref } from "vue";
 
@@ -54,13 +54,13 @@ function edit(row) {
 }
 async function submitUpdate() {
   console.log("submitupdate");
-  edit_m_loader_open.value=true;
+  edit_m_loader_open.value = true;
   //simulate remote submit
   await rt_mgr.sleep(2000);
   toast.success("update success");
-  edit_m_open.value=false;
-  edit_m_loader_open.value=false;
-  rt_mgr.loadItems();//reload table after success
+  edit_m_open.value = false;
+  edit_m_loader_open.value = false;
+  rt_mgr.loadItems(); //reload table after success
 }
 
 //selection
@@ -163,6 +163,7 @@ rt_mgr.loadItems();
           </template>
 
           <template #table-actions>
+            <button type="button" @click="rt_mgr.loadItems" class="btn-secondary sm mr-3"><ArrowPathIcon class="prefix-icon" />Refresh</button>
             <button type="button" @click="search_open = !search_open" class="btn-secondary sm"><MagnifyingGlassIcon class="prefix-icon" />Open Search</button>
 
             <div v-if="search_open" class="p-3 mt-1 bg-white border-1 border rounded">

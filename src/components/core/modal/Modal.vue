@@ -2,7 +2,7 @@
 import { Dialog, DialogPanel, TransitionChild, TransitionRoot } from "@headlessui/vue";
 import { XMarkIcon } from "@heroicons/vue/24/outline";
 
-const props = defineProps(["open", "marginClose","showLoader"]);
+const props = defineProps(["open", "marginClose", "showLoader"]);
 const emit = defineEmits(["update:open"]);
 function margin_close() {
   if (props.marginClose) {
@@ -36,7 +36,7 @@ function close() {
                 </div>
               </div>
 
-              <div v-if="$slots.header" class="text-base py-4 px-8 bg-gray-50 border-gray-100 border-b text-gray-500">
+              <div v-if="$slots.header" class="text-base py-4 px-4 lg:px-6  bg-gray-50 border-gray-100 border-b text-gray-500">
                 <slot name="header"></slot>
               </div>
 
@@ -45,10 +45,10 @@ function close() {
                   <XMarkIcon class="h-6 w-6" />
                 </button>
               </div>
-              <div class="bg-white px-8 pt-3 pb-4">
+              <div class="bg-white px-4 lg:px-6 pt-3 pb-4">
                 <slot name="body"></slot>
               </div>
-              <div v-if="$slots.footer" class="bg-gray-50 px-4 py-3 flex-row-reverse flex">
+              <div v-if="$slots.footer" class="bg-gray-50 px-4 lg:px-6  py-3 flex-row-reverse flex">
                 <slot name="footer"></slot>
               </div>
             </DialogPanel>
