@@ -38,10 +38,10 @@ const open = ref(false);
               <div class="mt-4 md:mt-6">
                 <tab v-model:header="tabs_header" />
                 <div class="pt-5 pb-10">
-                  <div :class="[tabs_header[0].active ? '' : 'hidden']">Applied content</div>
-                  <div :class="[tabs_header[1].active ? '' : 'hidden']">Interview content</div>
-                  <div :class="[tabs_header[2].active ? '' : 'hidden']">Offer content</div>
-                  <div :class="[tabs_header[3].active ? '' : 'hidden']">Disqualified content</div>
+                  <div v-show="tabs_header[0].active">Applied content</div>
+                  <div v-show="tabs_header[1].active">Interview content</div>
+                  <div v-show="tabs_header[2].active">Offer content</div>
+                  <div v-show="tabs_header[3].active">Disqualified content</div>
                 </div>
               </div>
             </template>

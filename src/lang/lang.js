@@ -5,7 +5,9 @@ var i18n = createI18n({
   legacy: false,
   locale: getDefaultLang(),
   fallbackLocale: "en",
-  messages:global_message,
+  messages: global_message,
+  fallbackWarn: false,
+  missingWarn: false,
 });
 
 i18n.setLang = function (lang) {

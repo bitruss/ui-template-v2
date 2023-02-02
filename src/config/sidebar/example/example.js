@@ -1,4 +1,4 @@
-import { TableCellsIcon,FlagIcon, AdjustmentsHorizontalIcon, ChevronDoubleRightIcon, PlayIcon, WindowIcon, ChatBubbleLeftIcon, PhotoIcon, InformationCircleIcon, StopIcon, ViewfinderCircleIcon, CommandLineIcon, FolderIcon, ClipboardDocumentListIcon } from "@heroicons/vue/24/outline";
+import { TableCellsIcon,ChartBarIcon, FlagIcon, AdjustmentsHorizontalIcon, ChevronDoubleRightIcon, PlayIcon, WindowIcon, ChatBubbleLeftIcon, PhotoIcon, InformationCircleIcon, StopIcon, ViewfinderCircleIcon, CommandLineIcon, FolderIcon, ClipboardDocumentListIcon } from "@heroicons/vue/24/outline";
 
 let example = [
   {
@@ -115,6 +115,12 @@ let example = [
           { name: "simple local table", href: "/example/table/simple" },
           { name: "simple remote table", href: "/example/table/remote" },
         ],
+      },
+      {
+        name: "Chart",
+        icon: ChartBarIcon,
+        open: false,
+        children: [{ name: "bar", href: "/example/chart/bar" }],
       },
     ],
   },

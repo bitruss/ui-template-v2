@@ -29,4 +29,6 @@ app.use(Toast, {
 // Use plugin with defaults
 app.use(VCalendar, {});
 
+app.config.warnHandler = () => null;
+
 app.mount("#app");

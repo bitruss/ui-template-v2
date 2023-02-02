@@ -20,12 +20,12 @@ const tabs_header = reactive([
         <h1 class="text-2xl leading-6">Tab</h1>
         <p class="mt-3">demo of a tab</p>
       </div>
-      
+
       <tab v-model:header="tabs_header" />
-      <div :class="[tabs_header[0].active ? '' : 'hidden']">Applied content</div>
-      <div :class="[tabs_header[1].active ? '' : 'hidden']">Interview content</div>
-      <div :class="[tabs_header[2].active ? '' : 'hidden']">Offer content</div>
-      <div :class="[tabs_header[3].active ? '' : 'hidden']">Disqualified content</div>
+      <div v-show="tabs_header[0].active">Applied content</div>
+      <div v-show="tabs_header[1].active">Interview content</div>
+      <div v-show="tabs_header[2].active">Offer content</div>
+      <div v-show="tabs_header[3].active">Disqualified content</div>
     </div>
   </SidebarLayout>
 </template>
