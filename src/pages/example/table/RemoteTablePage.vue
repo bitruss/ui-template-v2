@@ -49,8 +49,8 @@ let rt_mgr = NewRemoteTableMgr(colums, search_fn);
 const edit_m_open = ref(false);
 const edit_m_loader_open = ref(false);
 function edit(row) {
-  edit_m_open.value = true;
   rt_mgr.setCurrentRowData(row);
+  edit_m_open.value = true;
 }
 async function submitUpdate() {
   console.log("submitupdate");
@@ -120,8 +120,6 @@ async function search_fn() {
 /////////////////////////////////////////////
 //inital loading
 rt_mgr.loadItems();
-
-
 </script>
 
 <template>
