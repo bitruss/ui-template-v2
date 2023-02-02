@@ -35,7 +35,7 @@ const open = ref(false);
 
           <Modal v-model:open="open" :margin-close="true">
             <template v-slot:body>
-              <div class="mt-8">
+              <div class="mt-4 md:mt-6">
                 <tab v-model:header="tabs_header" />
                 <div class="pt-5 pb-10">
                   <div :class="[tabs_header[0].active ? '' : 'hidden']">Applied content</div>
