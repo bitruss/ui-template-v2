@@ -1,4 +1,4 @@
-import { TableCellsIcon, AdjustmentsHorizontalIcon, ChevronDoubleRightIcon, PlayIcon, WindowIcon, ChatBubbleLeftIcon, PhotoIcon, InformationCircleIcon, StopIcon, ViewfinderCircleIcon, CommandLineIcon, FolderIcon, ClipboardDocumentListIcon } from "@heroicons/vue/24/outline";
+import { TableCellsIcon,FlagIcon, AdjustmentsHorizontalIcon, ChevronDoubleRightIcon, PlayIcon, WindowIcon, ChatBubbleLeftIcon, PhotoIcon, InformationCircleIcon, StopIcon, ViewfinderCircleIcon, CommandLineIcon, FolderIcon, ClipboardDocumentListIcon } from "@heroicons/vue/24/outline";
 
 let example = [
   {
@@ -6,6 +6,15 @@ let example = [
     icon: FolderIcon,
     open: true,
     children: [
+      {
+        name: "Admin Visable",
+        icon: FlagIcon,
+        open: false,
+        href: "/example/adminv",
+        auth: function (user) {
+          return user.roles.includes("admin");
+        },
+      },
       {
         name: "Tippy",
         icon: InformationCircleIcon,

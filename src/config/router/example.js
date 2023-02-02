@@ -1,5 +1,11 @@
 export default [
   {
+    path: "/example/adminv",
+    name: "example_adminv",
+    component: () => import("../../pages/example/admin/AdminVisablePage.vue"),
+  },
+  //
+  {
     path: "/example/tippy",
     name: "example_tippy",
     component: () => import("../../pages/example/tippy/TippyPage.vue"),

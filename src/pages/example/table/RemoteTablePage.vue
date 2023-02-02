@@ -120,6 +120,8 @@ async function search_fn() {
 /////////////////////////////////////////////
 //inital loading
 rt_mgr.loadItems();
+
+
 </script>
 
 <template>

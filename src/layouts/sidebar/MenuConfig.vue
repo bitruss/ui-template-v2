@@ -13,7 +13,6 @@ let menu_config = index;
 
 export default menu_config
 
-
 let m_counter = 0;
 function assign_menu_id(mconfig, p_mid) {
   mconfig.forEach(function (item, index) {
