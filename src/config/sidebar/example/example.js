@@ -87,7 +87,10 @@ let example = [
         name: "Tab",
         icon: AdjustmentsHorizontalIcon,
         open: false,
-        children: [{ name: "style1", href: "/example/tab/style1" }],
+        children: [
+          { name: "style1", href: "/example/tab/style1" },
+          { name: "modal", href: "/example/tab/modal" },
+        ],
       },
       {
         name: "Step",

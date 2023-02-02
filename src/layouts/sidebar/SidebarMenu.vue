@@ -2,7 +2,7 @@
 import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/vue";
 import { set_active } from "./MenuConfig.vue";
 import { useI18n } from "vue-i18n";
-import sidebar_message from "./configs/lang";
+import sidebar_message from "@/config/sidebar/lang";
 const { t } = useI18n({ messages: sidebar_message });
 
 defineProps(["navigation"]);

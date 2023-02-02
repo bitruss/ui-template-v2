@@ -2,8 +2,7 @@
 <script>
 import { reactive } from "vue";
 
-//import example from "./configs/example";
-import index from "./configs/index"
+import index from "@/config/sidebar/index"
 
 ///////////do your configs here///////
 

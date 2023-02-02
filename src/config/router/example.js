@@ -125,6 +125,11 @@ export default [
     name: "example_tab_style1",
     component: () => import("../../pages/example/tab/Style1Page.vue"),
   },
+  {
+    path: "/example/tab/modal",
+    name: "example_tab_modal",
+    component: () => import("../../pages/example/tab/ModalTabPage.vue"),
+  },
   //step
   {
     path: "/example/step/steptab",

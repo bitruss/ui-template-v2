@@ -1,5 +1,5 @@
 import mock from "../mock";
-import config from "@/config";
+import config from "@/config/config";
 
 ////////////////////////////////////////////
 
