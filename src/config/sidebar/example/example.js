@@ -1,4 +1,4 @@
-import { ViewColumnsIcon,TableCellsIcon, ChartBarIcon, FlagIcon, AdjustmentsHorizontalIcon, ChevronDoubleRightIcon, PlayIcon, WindowIcon, ChatBubbleLeftIcon, PhotoIcon, InformationCircleIcon, StopIcon, ViewfinderCircleIcon, CommandLineIcon, FolderIcon, ClipboardDocumentListIcon } from "@heroicons/vue/24/outline";
+import { CodeBracketIcon, ArrowsPointingOutIcon, ViewColumnsIcon, TableCellsIcon, ChartBarIcon, FlagIcon, AdjustmentsHorizontalIcon, ChevronDoubleRightIcon, PlayIcon, WindowIcon, ChatBubbleLeftIcon, PhotoIcon, InformationCircleIcon, StopIcon, ViewfinderCircleIcon, CommandLineIcon, FolderIcon, ClipboardDocumentListIcon } from "@heroicons/vue/24/outline";
 
 let example = [
   {
@@ -99,13 +99,8 @@ let example = [
         children: [
           { name: "style1", href: "/example/tab/style1" },
           { name: "modal", href: "/example/tab/modal" },
+          { name: "step", href: "/example/tab/step" },
         ],
-      },
-      {
-        name: "Step",
-        icon: ChevronDoubleRightIcon,
-        open: false,
-        children: [{ name: "step tab", href: "/example/step/steptab" }],
       },
       {
         name: "Table",
@@ -130,6 +125,19 @@ let example = [
         icon: AdjustmentsHorizontalIcon,
         open: false,
         children: [{ name: "progress", href: "/example/progress/progress" }],
+      },
+      {
+        name: "Loader",
+        icon: ArrowsPointingOutIcon,
+        open: false,
+        children: [{ name: "loader", href: "/example/loader/loader" }],
+      },
+
+      {
+        name: "Code",
+        icon: CodeBracketIcon,
+        open: false,
+        children: [{ name: "code", href: "/example/code/code" }],
       },
     ],
   },

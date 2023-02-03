@@ -37,7 +37,7 @@ const open = ref(false);
             <template v-slot:body>
               <div class="mt-4 md:mt-6">
                 <tab v-model:header="tabs_header" />
-                <div class="pt-5 pb-10">
+                <div class="pt-5 pb-10" style="min-height: 400px;">
                   <div v-show="tabs_header[0].active">Applied content</div>
                   <div v-show="tabs_header[1].active">Interview content</div>
                   <div v-show="tabs_header[2].active">Offer content</div>

@@ -110,10 +110,9 @@ export default [
     path: "/example/tab/modal",
     component: () => import("../../pages/example/tab/ModalTabPage.vue"),
   },
-  //step
   {
-    path: "/example/step/steptab",
-    component: () => import("../../pages/example/step/StepTabPage.vue"),
+    path: "/example/tab/step",
+    component: () => import("../../pages/example/tab/StepPage.vue"),
   },  
   //table
   {
@@ -138,5 +137,15 @@ export default [
     path: "/example/progress/progress",
     component: () => import("../../pages/example/progress/ProgressPage.vue"),
   },
+  {
+    path: "/example/loader/loader",
+    component: () => import("../../pages/example/loader/LoaderPage.vue"),
+  },
+  //
+  {
+    path: "/example/code/code",
+    component: () => import("../../pages/example/code/CodePage.vue"),
+  },
+
 
 ];
