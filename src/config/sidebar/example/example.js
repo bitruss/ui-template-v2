@@ -1,4 +1,4 @@
-import { TableCellsIcon,ChartBarIcon, FlagIcon, AdjustmentsHorizontalIcon, ChevronDoubleRightIcon, PlayIcon, WindowIcon, ChatBubbleLeftIcon, PhotoIcon, InformationCircleIcon, StopIcon, ViewfinderCircleIcon, CommandLineIcon, FolderIcon, ClipboardDocumentListIcon } from "@heroicons/vue/24/outline";
+import { ViewColumnsIcon,TableCellsIcon, ChartBarIcon, FlagIcon, AdjustmentsHorizontalIcon, ChevronDoubleRightIcon, PlayIcon, WindowIcon, ChatBubbleLeftIcon, PhotoIcon, InformationCircleIcon, StopIcon, ViewfinderCircleIcon, CommandLineIcon, FolderIcon, ClipboardDocumentListIcon } from "@heroicons/vue/24/outline";
 
 let example = [
   {
@@ -94,7 +94,7 @@ let example = [
       },
       {
         name: "Tab",
-        icon: AdjustmentsHorizontalIcon,
+        icon: ViewColumnsIcon,
         open: false,
         children: [
           { name: "style1", href: "/example/tab/style1" },
@@ -120,7 +120,16 @@ let example = [
         name: "Chart",
         icon: ChartBarIcon,
         open: false,
-        children: [{ name: "bar", href: "/example/chart/bar" }],
+        children: [
+          { name: "bar", href: "/example/chart/bar" },
+          { name: "line", href: "/example/chart/line" },
+        ],
+      },
+      {
+        name: "Progress",
+        icon: AdjustmentsHorizontalIcon,
+        open: false,
+        children: [{ name: "progress", href: "/example/progress/progress" }],
       },
     ],
   },

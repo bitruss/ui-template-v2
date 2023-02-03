@@ -1,6 +1,4 @@
 <script setup>
-import { EnvelopeIcon, QuestionMarkCircleIcon, KeyIcon, PaperAirplaneIcon, ChatBubbleOvalLeftEllipsisIcon } from "@heroicons/vue/24/outline";
-
 import SidebarLayout from "../../../layouts/sidebar/SidebarLayout.vue";
 </script>
 

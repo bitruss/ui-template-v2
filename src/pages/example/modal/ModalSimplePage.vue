@@ -1,7 +1,7 @@
 <script setup>
 import SidebarLayout from "../../../layouts/sidebar/SidebarLayout.vue";
 
-import { ref, watch } from "vue";
+import { ref } from "vue";
 import Modal from "../../../components/core/modal/Modal.vue";
 
 import { InformationCircleIcon } from "@heroicons/vue/24/solid";

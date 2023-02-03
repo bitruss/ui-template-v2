@@ -72,6 +72,7 @@
                     @apply bg-slate-50;
                     @apply font-medium;
                     text-align: center;
+                    vertical-align: inherit;
                 }
             }
 
@@ -80,9 +81,12 @@
                     border-right: 0px;
                     background: none;
                     @apply bg-slate-50;
+                    vertical-align: baseline;
+        
                 }
 
                 td {
+                    vertical-align: baseline;
                     border-right: 0px;
                 }
             }

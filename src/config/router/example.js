@@ -129,5 +129,14 @@ export default [
     path: "/example/chart/bar",
     component: () => import("../../pages/example/chart/BarChartPage.vue"),
   },
+  {
+    path: "/example/chart/line",
+    component: () => import("../../pages/example/chart/LineChartPage.vue"),
+  },
+  //
+  {
+    path: "/example/progress/progress",
+    component: () => import("../../pages/example/progress/ProgressPage.vue"),
+  },
 
 ];

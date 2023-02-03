@@ -10,6 +10,8 @@ import { ref } from "vue";
 
 import { NewRemoteTableMgr } from "@/utils/table";
 
+import ProgressBar from "../../../components/core/progress/ProgressBar.vue";
+
 import { useToast } from "vue-toastification";
 const toast = useToast();
 
@@ -18,6 +20,10 @@ const colums = [
   {
     label: "Name",
     field: "name",
+  },
+  {
+    label: "Email",
+    field: "email",
   },
   {
     label: "Age",
@@ -107,12 +113,12 @@ async function search_fn() {
     result: {
       total_count: 1000,
       data: [
-        { id: 1, name: "John", age: 20, createdAt: "2011-10-31", score: 0.03343 },
-        { id: 2, name: "Jane", age: 24, createdAt: "2011-10-31", score: 0.03343 },
-        { id: 3, name: "Susan", age: 16, createdAt: "2011-10-30", score: 0.03343 },
-        { id: 4, name: "Chris", age: 55, createdAt: "2011-10-11", score: 0.03343 },
-        { id: 5, name: "Dan", age: 40, createdAt: "2011-10-21", score: 0.03343 },
-        { id: 6, name: "John", age: 20, createdAt: "2011-10-31", score: 0.03343 },
+        { id: 1, name: "John", email: "john@gmail.com", age: 20, createdAt: "2011-10-31", score: 33.43 },
+        { id: 2, name: "Jane", email: "jane@gmail.com", age: 24, createdAt: "2011-10-31", score: 30.43 },
+        { id: 3, name: "Susan", email: "crikck@gmail.com", age: 16, createdAt: "2011-10-30", score: 3.343 },
+        { id: 4, name: "Chris", email: "jos@gmail.com", age: 55, createdAt: "2011-10-11", score: 43 },
+        { id: 5, name: "Dan", email: "dan@gmail.com", age: 40, createdAt: "2011-10-21", score: 10 },
+        { id: 6, name: "John", email: "xxx@gmail.com", age: 20, createdAt: "2011-10-31", score: 95 },
       ],
     },
   };
@@ -136,7 +142,6 @@ rt_mgr.loadItems();
             enabled: true,
             mode: 'records',
             perPage: rt_mgr.server_params.per_page,
-            position: 'bottom',
             perPageDropdown: [20, 50, 100],
             setCurrentPage: rt_mgr.server_params.page,
             dropdownAllowAll: false,
@@ -144,8 +149,6 @@ rt_mgr.loadItems();
           :select-options="{
             enabled: true,
             selectOnCheckboxOnly: true, // only select when checkbox is clicked instead of the row
-            disableSelectInfo: false, // disable the select info panel on top
-            selectAllByGroup: false, // when used in combination with a grouped table, add a checkbox in the header row to check/uncheck the entire group
           }"
           :columns="rt_mgr.columns"
           :rows="rt_mgr.rows.value"
@@ -209,6 +212,8 @@ rt_mgr.loadItems();
             <span v-if="props.column.field === 'action1'">
               <button type="button" @click="edit(props.row)" class="btn-secondary xs"><PencilSquareIcon class="prefix-icon" />Edit</button>
             </span>
+
+            <ProgressBar class="sm" v-else-if="props.column.field === 'score'" tippy="score:" :percent="props.row[props.column.field]" />
             <!-- Column: Common -->
             <span v-else>{{ props.row[props.column.field] }}</span>
           </template>

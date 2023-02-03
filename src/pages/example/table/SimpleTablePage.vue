@@ -55,7 +55,6 @@ function edit_row(row_line) {
 function onSelectedRows(params) {
   console.log(params.selectedRows.length);
 }
-
 </script>
 
 <template>
@@ -70,8 +69,7 @@ function onSelectedRows(params) {
         <vue-good-table
           :search-options="{
             enabled: true,
-            skipDiacritics: true,
-            placeholder: 'Search this table',
+            placeholder: 'search table',
           }"
           :pagination-options="{
             enabled: true,
@@ -83,11 +81,6 @@ function onSelectedRows(params) {
           :select-options="{
             enabled: true,
             selectOnCheckboxOnly: true, // only select when checkbox is clicked instead of the row
-            selectionInfoClass: 'custom-class',
-            selectionText: 'rows selected',
-            clearSelectionText: 'clear',
-            disableSelectInfo: false, // disable the select info panel on top
-            selectAllByGroup: false, // when used in combination with a grouped table, add a checkbox in the header row to check/uncheck the entire group
           }"
           :columns="columns"
           :rows="rows"
@@ -98,8 +91,8 @@ function onSelectedRows(params) {
           </template>
 
           <template #table-actions>
-            <button class="btn-primary sm mr-3">Action 2</button>
-            <button class="btn-primary sm mr-3">Action 2</button>
+            <button class="btn-secondary sm mr-3">Action 2</button>
+            <button class="btn-secondary sm mr-3">Action 2</button>
           </template>
 
           <template #table-row="props">
