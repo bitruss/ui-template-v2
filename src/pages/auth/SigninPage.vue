@@ -109,7 +109,7 @@ async function submit_signin() {
         </div>
       </div>
 
-      <router-link to="/resetpass" class="a-primary">{{ t("forget_pass") }}</router-link>
+      <router-link to="/resetpass" class="a-primary font-medium">{{ t("forget_pass") }}</router-link>
 
       <div @click="submit_signin" :class="[validate_signin_ready ? '' : 'disabled', ' btn-primary w-full relative mt-3 mb-3']"><LockClosedIconSolid class="icon dark absolute left-3" />{{ t("sign_in") }}</div>
 

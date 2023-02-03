@@ -113,7 +113,7 @@ export default [
   {
     path: "/example/tab/step",
     component: () => import("../../pages/example/tab/StepPage.vue"),
-  },  
+  },
   //table
   {
     path: "/example/table/simple",
@@ -146,6 +146,9 @@ export default [
     path: "/example/code/code",
     component: () => import("../../pages/example/code/CodePage.vue"),
   },
-
-
+  //
+  {
+    path: "/example/list/simple",
+    component: () => import("../../pages/example/list/SimpleListPage.vue"),
+  },
 ];

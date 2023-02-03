@@ -27,7 +27,7 @@ import { ArrowDownIcon, ArrowUpIcon, UsersIcon, EnvelopeOpenIcon, CursorArrowRay
             </div>
           </div>
           <div class="bg-gray-50 px-4 py-3 sm:px-6 rounded-b-lg">
-            <a href="#" class="a-primary"> View all</a>
+            <a href="#" class="a-primary font-medium"> View all</a>
           </div>
         </div>
 
@@ -46,7 +46,7 @@ import { ArrowDownIcon, ArrowUpIcon, UsersIcon, EnvelopeOpenIcon, CursorArrowRay
             </div>
           </div>
           <div class="bg-gray-50 px-4 py-3 sm:px-6 rounded-b-lg">
-            <a href="#" class="a-primary"> View all</a>
+            <a href="#" class="a-primary font-medium"> View all</a>
           </div>
         </div>
 
@@ -65,7 +65,7 @@ import { ArrowDownIcon, ArrowUpIcon, UsersIcon, EnvelopeOpenIcon, CursorArrowRay
             </div>
           </div>
           <div class="bg-gray-50 px-4 py-3 sm:px-6 rounded-b-lg">
-            <a href="#" class="a-primary"> View all</a>
+            <a href="#" class="a-primary font-medium"> View all</a>
           </div>
         </div>
 

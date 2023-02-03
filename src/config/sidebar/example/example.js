@@ -1,4 +1,4 @@
-import { CodeBracketIcon, ArrowsPointingOutIcon, ViewColumnsIcon, TableCellsIcon, ChartBarIcon, FlagIcon, AdjustmentsHorizontalIcon, ChevronDoubleRightIcon, PlayIcon, WindowIcon, ChatBubbleLeftIcon, PhotoIcon, InformationCircleIcon, StopIcon, ViewfinderCircleIcon, CommandLineIcon, FolderIcon, ClipboardDocumentListIcon } from "@heroicons/vue/24/outline";
+import { ListBulletIcon,CodeBracketIcon, ArrowsPointingOutIcon, ViewColumnsIcon, TableCellsIcon, ChartBarIcon, FlagIcon, AdjustmentsHorizontalIcon, ChevronDoubleRightIcon, PlayIcon, WindowIcon, ChatBubbleLeftIcon, PhotoIcon, InformationCircleIcon, StopIcon, ViewfinderCircleIcon, CommandLineIcon, FolderIcon, ClipboardDocumentListIcon } from "@heroicons/vue/24/outline";
 
 let example = [
   {
@@ -52,6 +52,12 @@ let example = [
           { name: "style3", href: "/example/form/style3" },
           { name: "style4", href: "/example/form/style4" },
         ],
+      },
+      {
+        name: "List",
+        icon: ListBulletIcon,
+        open: false,
+        children: [{ name: "list", href: "/example/list/simple" }],
       },
       {
         name: "Buttons",
@@ -132,7 +138,6 @@ let example = [
         open: false,
         children: [{ name: "loader", href: "/example/loader/loader" }],
       },
-
       {
         name: "Code",
         icon: CodeBracketIcon,

@@ -20,12 +20,15 @@ span {
     @apply text-sm;
 }
 
-a{
-    &.a-primary {
-        @apply text-indigo-600;
-        @apply hover:text-indigo-500;
-        @apply font-medium;
-    }
+.a-primary,
+.href-primary {
+    @apply text-indigo-600;
+    @apply hover:text-indigo-500;
+}
+
+.a,
+.href {
+    @apply hover:text-indigo-500;
 }
 
 ///////
