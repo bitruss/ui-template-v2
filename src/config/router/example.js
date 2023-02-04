@@ -10,20 +10,8 @@ export default [
   },
   //form
   {
-    path: "/example/form/style1",
-    component: () => import("../../pages/example/form/Style1Page.vue"),
-  },
-  {
-    path: "/example/form/style2",
-    component: () => import("../../pages/example/form/Style2Page.vue"),
-  },
-  {
-    path: "/example/form/style3",
-    component: () => import("../../pages/example/form/Style3Page.vue"),
-  },
-  {
-    path: "/example/form/style4",
-    component: () => import("../../pages/example/form/Style4Page.vue"),
+    path: "/example/form/form",
+    component: () => import("../../pages/example/form/FormPage.vue"),
   },
   //select
   {
@@ -55,6 +43,10 @@ export default [
   {
     path: "/example/input/datetime",
     component: () => import("../../pages/example/input/DateTimePage.vue"),
+  },
+  {
+    path: "/example/input/switch",
+    component: () => import("../../pages/example/input/SwitchPage.vue"),
   },
   //button
   {

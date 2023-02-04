@@ -38,7 +38,6 @@
     }
 }
 
-
 .card-info {
     @apply bg-sky-100;
     @apply text-sky-700;
@@ -107,4 +106,19 @@
 .card-success,
 .card-warning {
     @apply rounded;
+}
+
+.card-new {
+    @apply rounded-md;
+    @apply border-2;
+    @apply border-dashed;
+    @apply border-gray-300;
+
+    &:hover {
+        @apply hover:border-gray-400;
+        @apply focus:outline-none;
+        @apply focus:ring-2;
+        @apply focus:ring-indigo-500;
+        @apply focus:ring-offset-2;
+    }
 }

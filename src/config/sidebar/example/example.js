@@ -1,4 +1,4 @@
-import { ListBulletIcon,CodeBracketIcon, ArrowsPointingOutIcon, ViewColumnsIcon, TableCellsIcon, ChartBarIcon, FlagIcon, AdjustmentsHorizontalIcon, ChevronDoubleRightIcon, PlayIcon, WindowIcon, ChatBubbleLeftIcon, PhotoIcon, InformationCircleIcon, StopIcon, ViewfinderCircleIcon, CommandLineIcon, FolderIcon, ClipboardDocumentListIcon } from "@heroicons/vue/24/outline";
+import { ListBulletIcon, CodeBracketIcon, ArrowsPointingOutIcon, ViewColumnsIcon, TableCellsIcon, ChartBarIcon, FlagIcon, AdjustmentsHorizontalIcon, ChevronDoubleRightIcon, PlayIcon, WindowIcon, ChatBubbleLeftIcon, PhotoIcon, InformationCircleIcon, StopIcon, ViewfinderCircleIcon, CommandLineIcon, FolderIcon, ClipboardDocumentListIcon } from "@heroicons/vue/24/outline";
 
 let example = [
   {
@@ -40,18 +40,14 @@ let example = [
           { name: "checkbox", href: "/example/input/checkbox" },
           { name: "radio", href: "/example/input/radio" },
           { name: "date_time", href: "/example/input/datetime" },
+          { name: "switch", href: "/example/input/switch" },
         ],
       },
       {
         name: "Form",
         icon: ClipboardDocumentListIcon,
         open: false,
-        children: [
-          { name: "style1", href: "/example/form/style1" },
-          { name: "style2", href: "/example/form/style2" },
-          { name: "style3", href: "/example/form/style3" },
-          { name: "style4", href: "/example/form/style4" },
-        ],
+        children: [{ name: "form", href: "/example/form/form" }],
       },
       {
         name: "List",

@@ -6,10 +6,11 @@ import Modal from "../../../components/core/modal/Modal.vue";
 
 import { InformationCircleIcon } from "@heroicons/vue/24/solid";
 
-const open = ref(false);
-const open_withclose = ref(false);
+const open_m_close = ref(false); //margin close
 
 const open_overlay = ref(false);
+
+const open = ref(false);
 
 const father = ref(false);
 const child = ref(false);
@@ -28,13 +29,13 @@ const warning = ref(false);
 
       <div class="pt-5 lg:grid lg:grid-cols-3 lg:gap-4">
         <div>
-          <label for="username" class="flex">Modal with close</label>
+          <label for="username" class="flex">Modal with margin_close</label>
           <p>A modal window with margin-click close</p>
           <p>and right top close btn</p>
         </div>
         <div class="lg:col-span-2 mt-2">
-          <button class="btn-primary" @click="open_withclose = true">Open Closable Modal Window</button>
-          <Modal v-model:open="open_withclose">
+          <button class="btn-primary" @click="open_m_close = true">Open Modal Window</button>
+          <Modal v-model:open="open_m_close" margin-close="true">
             <template v-slot:body>
               <div class="mt-5">
                 <label>A disable close style modal</label>
@@ -42,8 +43,8 @@ const warning = ref(false);
               </div>
             </template>
             <template v-slot:footer>
-              <button type="button" class="btn-err mr-3" @click="open_withclose = false">Deactivate</button>
-              <button type="button" class="btn-secondary mr-3" @click="open_withclose = false">Cancel</button>
+              <button type="button" class="btn-err mr-3" @click="open_m_close = false">Deactivate</button>
+              <button type="button" class="btn-secondary mr-3" @click="open_m_close = false">Cancel</button>
             </template>
           </Modal>
         </div>
@@ -68,12 +69,12 @@ const warning = ref(false);
 
       <div class="pt-5 lg:grid lg:grid-cols-3 lg:gap-4">
         <div>
-          <label for="username" class="flex">Modal without close</label>
+          <label for="username" class="flex">Modal without margin close</label>
           <p>A modal window without margin-click close</p>
           <p>and right top close btn</p>
         </div>
         <div class="lg:col-span-2 mt-2">
-          <button class="btn-primary" @click="open = true">Open Modal Window without close btn</button>
+          <button class="btn-primary" @click="open = true">Open Modal Window without margin click close</button>
           <Modal v-model:open="open" :disable-close="true">
             <template v-slot:body>
               <div class="mt-5">
