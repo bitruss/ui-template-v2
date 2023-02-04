@@ -8,10 +8,10 @@ import Tab from "@/components/core/tab/Tab.vue";
 import Modal from "@/components/core/modal/Modal.vue";
 
 const tabs_header = reactive([
-  { name: "Applied", href: "#", icon: UserIcon, count: "52", active: true },
-  { name: "Interview", href: "#", icon: UsersIcon, count: "4", active: false },
-  { name: "Offer", href: "#", icon: CreditCardIcon, count: "1999", active: false },
-  { name: "Disqualified", href: "#", icon: CreditCardIcon, count: "0", active: false },
+  { name: "Applied", href: "#", icon: UserIcon, suffix: "52", active: true },
+  { name: "Interview", href: "#", icon: UsersIcon, suffix: "4", active: false },
+  { name: "Offer", href: "#", icon: CreditCardIcon, suffix: "1999", active: false },
+  { name: "Disqualified", href: "#", icon: CreditCardIcon, suffix: "0", active: false },
 ]);
 
 const open = ref(false);

@@ -9,11 +9,12 @@
         @apply items-center;
         @apply py-4;
         @apply pr-4;
-        //@apply pl-2;
+        @apply pl-1;
         @apply md:pl-2;
         @apply border-b-2;
         @apply font-medium;
         @apply text-sm;
+        min-width: 100px;
 
         &.active {
             @apply border-indigo-500;

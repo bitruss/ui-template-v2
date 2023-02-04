@@ -1,3 +1,21 @@
+<script setup>
+import { watch, ref } from "vue";
+import { Switch } from "@headlessui/vue";
+
+const props = defineProps(["modelValue", "readOnly"]);
+const emit = defineEmits(["update:modelValue"]);
+
+let enabled = null;
+if (typeof props.readOnly !== "undefined" && (props.readOnly == true || props.readOnly == "true" || props.readOnly == "")) {
+  enabled = props.modelValue;
+} else {
+  enabled = ref(props.modelValue);
+}
+watch(enabled, (new_enabled) => {
+  emit("update:modelValue", new_enabled);
+});
+</script>
+
 <template>
   <Switch v-model="enabled" :class="[enabled ? 'enable' : 'disable', 'switch']">
     <span :class="[enabled ? 'enable' : 'disable', 'move-block']">
@@ -14,10 +32,3 @@
     </span>
   </Switch>
 </template>
-
-<script setup>
-import { ref } from "vue";
-import { Switch } from "@headlessui/vue";
-
-const enabled = ref(false);
-</script>

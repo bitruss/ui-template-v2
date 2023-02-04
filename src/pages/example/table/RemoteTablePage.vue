@@ -1,6 +1,8 @@
 <script setup>
 import SidebarLayout from "../../../layouts/sidebar/SidebarLayout.vue";
 
+import Switch from "../../../components/core/switch/Switch.vue";
+
 import { VueGoodTable } from "vue-good-table-next";
 
 import Modal from "@/components/core/modal/Modal.vue";
@@ -29,6 +31,11 @@ const colums = [
     label: "Age",
     field: "age",
     type: "number",
+  },
+  {
+    label: "Married",
+    field: "married",
+    type: "bool",
   },
   {
     label: "Created On",
@@ -113,12 +120,12 @@ async function search_fn() {
     result: {
       total_count: 1000,
       data: [
-        { id: 1, name: "John", email: "john@gmail.com", age: 20, createdAt: "2011-10-31", score: 33.43 },
-        { id: 2, name: "Jane", email: "jane@gmail.com", age: 24, createdAt: "2011-10-31", score: 30.43 },
-        { id: 3, name: "Susan", email: "crikck@gmail.com", age: 16, createdAt: "2011-10-30", score: 3.343 },
-        { id: 4, name: "Chris", email: "jos@gmail.com", age: 55, createdAt: "2011-10-11", score: 43 },
-        { id: 5, name: "Dan", email: "dan@gmail.com", age: 40, createdAt: "2011-10-21", score: 10 },
-        { id: 6, name: "John", email: "xxx@gmail.com", age: 20, createdAt: "2011-10-31", score: 95 },
+        { id: 1, name: "John", email: "john@gmail.com", married: true, age: 20, createdAt: "2011-10-31", score: 33.43 },
+        { id: 2, name: "Jane", email: "jane@gmail.com", married: false, age: 24, createdAt: "2011-10-31", score: 30.43 },
+        { id: 3, name: "Susan", email: "crikck@gmail.com", married: true, age: 16, createdAt: "2011-10-30", score: 3.343 },
+        { id: 4, name: "Chris", email: "jos@gmail.com", married: false, age: 55, createdAt: "2011-10-11", score: 43 },
+        { id: 5, name: "Dan", email: "dan@gmail.com", married: false, age: 40, createdAt: "2011-10-21", score: 10 },
+        { id: 6, name: "John", email: "xxx@gmail.com", married: true, age: 20, createdAt: "2011-10-31", score: 95 },
       ],
     },
   };
@@ -211,6 +218,10 @@ rt_mgr.loadItems();
           <template #table-row="props">
             <span v-if="props.column.field === 'action1'">
               <button type="button" @click="edit(props.row)" class="btn-secondary xs"><PencilSquareIcon class="prefix-icon" />Edit</button>
+            </span>
+
+            <span v-else-if="props.column.field === 'married'">
+              <Switch class="sm" v-model="props.row[props.column.field]" read-only></Switch>
             </span>
 
             <ProgressBar class="sm" v-else-if="props.column.field === 'score'" tippy="score:" :percent="props.row[props.column.field]" />

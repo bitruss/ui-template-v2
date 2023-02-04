@@ -72,7 +72,7 @@
                     @apply bg-slate-50;
                     @apply font-medium;
                     text-align: center;
-                    vertical-align: inherit;
+                    vertical-align: middle;
                 }
             }
 
@@ -81,12 +81,11 @@
                     border-right: 0px;
                     background: none;
                     @apply bg-slate-50;
-                    vertical-align: baseline;
-        
+                    vertical-align: middle;
                 }
 
                 td {
-                    vertical-align: baseline;
+                    vertical-align: middle;
                     border-right: 0px;
                 }
             }
@@ -140,4 +139,10 @@
     @apply border-gray-200;
     @apply text-gray-500;
     @apply shadow;
+}
+
+.vgt-right-align,
+.vgt-left-align {
+    text-align: center;
+    vertical-align: middle;
 }

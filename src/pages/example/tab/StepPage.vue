@@ -1,15 +1,16 @@
 <script setup>
 import SidebarLayout from "../../../layouts/sidebar/SidebarLayout.vue";
-import { CreditCardIcon } from "@heroicons/vue/24/outline";
+import { ChevronRightIcon } from "@heroicons/vue/24/outline";
+import { DotIcon } from "@/components/core/icon/solid";
 import { reactive } from "vue";
 
 import Tab from "@/components/core/tab/Tab.vue";
 
 const tabs_header = reactive([
-  { name: "Step1", href: "#", icon: CreditCardIcon, active: true },
-  { name: "Step2", href: "#", icon: CreditCardIcon, active: false },
-  { name: "Step3", href: "#", icon: CreditCardIcon, active: false },
-  { name: "Step4", href: "#", icon: CreditCardIcon, active: false },
+  { name: "Step1", href: "#", active: true },
+  { name: "Step2", href: "#", active: false },
+  { name: "Step3", href: "#", active: false },
+  { name: "Step4", href: "#", active: false },
 ]);
 </script>
 

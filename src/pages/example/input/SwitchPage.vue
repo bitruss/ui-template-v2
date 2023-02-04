@@ -1,6 +1,14 @@
 <script setup>
 import SidebarLayout from "@/layouts/sidebar/SidebarLayout.vue";
 import Switch from "../../../components/core/switch/Switch.vue";
+
+import { ref } from "vue";
+
+const switch_open_sm = ref(false);
+const switch_open = ref(false);
+const switch_open_lg = ref(false);
+//
+const switch_open_readonly = false;
 </script>
 
 <template>
@@ -13,13 +21,23 @@ import Switch from "../../../components/core/switch/Switch.vue";
 
       <div class="pt-5 lg:grid lg:grid-cols-3 lg:gap-4">
         <div>
-          <label for="username" class="flex">Switch</label>
-          <p>different sizes of switch :[sm default lg]</p>
+          <label for="username" class="flex">Switch different sizes [sm default lg]</label>
+          <p>[{{ switch_open_sm }},{{ switch_open }},{{ switch_open_lg }}]</p>
         </div>
         <div class="lg:col-span-2 mt-2 flex items-center">
-          <Switch class="sm mr-3" />
-          <Switch />
-          <Switch class="lg ml-3" />
+          <Switch v-model="switch_open_sm" class="sm mr-3" />
+          <Switch v-model="switch_open" />
+          <Switch v-model="switch_open_lg" class="lg ml-3" />
+        </div>
+      </div>
+
+      <div class="pt-5 lg:grid lg:grid-cols-3 lg:gap-4">
+        <div>
+          <label for="username" class="flex">ReadOnly Switch</label>
+          <p>readonly mode of swtich :{{ switch_open_readonly }}</p>
+        </div>
+        <div class="lg:col-span-2 mt-2 flex items-center">
+          <Switch v-model="switch_open_readonly" read-only />
         </div>
       </div>
     </div>
