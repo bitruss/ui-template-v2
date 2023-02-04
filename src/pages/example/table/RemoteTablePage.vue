@@ -220,6 +220,10 @@ rt_mgr.loadItems();
               <button type="button" @click="edit(props.row)" class="btn-secondary xs"><PencilSquareIcon class="prefix-icon" />Edit</button>
             </span>
 
+            <span v-else-if="props.column.field === 'email'">
+              <span  class="badge secondary">{{ props.row[props.column.field] }}</span>
+            </span>
+
             <span v-else-if="props.column.field === 'married'">
               <Switch class="sm" v-model="props.row[props.column.field]" read-only></Switch>
             </span>

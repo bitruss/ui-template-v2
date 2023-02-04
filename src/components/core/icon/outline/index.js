@@ -1,3 +1,3 @@
-import InstagramIcon from "./Instagram";
+import InstagramIcon from "./InstagramIcon";
 
 export { InstagramIcon as InstagramIcon };

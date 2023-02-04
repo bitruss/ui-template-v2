@@ -1,4 +1,4 @@
-import { ListBulletIcon, CodeBracketIcon, ArrowsPointingOutIcon, ViewColumnsIcon, TableCellsIcon, ChartBarIcon, FlagIcon, AdjustmentsHorizontalIcon, ChevronDoubleRightIcon, PlayIcon, WindowIcon, ChatBubbleLeftIcon, PhotoIcon, InformationCircleIcon, StopIcon, ViewfinderCircleIcon, CommandLineIcon, FolderIcon, ClipboardDocumentListIcon } from "@heroicons/vue/24/outline";
+import { TagIcon, ListBulletIcon, CodeBracketIcon, ArrowsPointingOutIcon, ViewColumnsIcon, TableCellsIcon, ChartBarIcon, FlagIcon, AdjustmentsHorizontalIcon, ChevronDoubleRightIcon, PlayIcon, WindowIcon, ChatBubbleLeftIcon, PhotoIcon, InformationCircleIcon, StopIcon, ViewfinderCircleIcon, CommandLineIcon, FolderIcon, ClipboardDocumentListIcon } from "@heroicons/vue/24/outline";
 
 let example = [
   {
@@ -62,6 +62,12 @@ let example = [
         children: [{ name: "main_style", href: "/example/button/main" }],
       },
       {
+        name: "Badge",
+        icon: TagIcon,
+        open: false,
+        children: [{ name: "badge", href: "/example/badge/badge" }],
+      },
+      {
         name: "Modals",
         icon: WindowIcon,
         open: false,
@@ -91,6 +97,7 @@ let example = [
         children: [
           { name: "outline", href: "/example/icon/outline" },
           { name: "solid", href: "/example/icon/solid" },
+          { name: "custom", href: "/example/icon/custom" },
           { name: "color", href: "/example/icon/color" },
         ],
       },

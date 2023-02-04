@@ -53,6 +53,11 @@ export default [
     path: "/example/button/main",
     component: () => import("../../pages/example/button/MainButtonPage.vue"),
   },
+  //button
+  {
+    path: "/example/badge/badge",
+    component: () => import("../../pages/example/badge/BadgePage.vue"),
+  },
   //modal
   {
     path: "/example/modal/simple",
@@ -88,6 +93,10 @@ export default [
   {
     path: "/example/icon/solid",
     component: () => import("../../pages/example/icon/SolidIconPage.vue"),
+  },
+  {
+    path: "/example/icon/custom",
+    component: () => import("../../pages/example/icon/CustomPage.vue"),
   },
   {
     path: "/example/icon/color",
