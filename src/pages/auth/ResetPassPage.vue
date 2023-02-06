@@ -92,8 +92,11 @@ async function submit_reset_pass() {
     return;
   }
 
-  toast.success("success");
-  window.location = "/signin";
+  //delay 2 secs for toast display
+  toast.success("reset password success, redirect to login");
+  setTimeout(function () {
+    window.location = "/signin";
+  }, 2000);
 }
 </script>
 
