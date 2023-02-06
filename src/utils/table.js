@@ -19,46 +19,39 @@ function NewRemoteTableMgr(colums, query_server_fn) {
   ///////////////////
   rt_mgr.rows = ref([]);
   rt_mgr.totalRecords = ref(0);
+  rt_mgr.page = 1;
+  rt_mgr.per_page = 10;
+  rt_mgr.sort = [];
 
-  rt_mgr.server_params = {
-    page: 1, //current page
-    per_page: 10,
-  };
-
-  rt_mgr.updateParams = function (new_props) {
-    rt_mgr.server_params = Object.assign({}, rt_mgr.server_params, new_props);
+  rt_mgr.getLimitOffset = function () {
+    return {
+      limit: rt_mgr.per_page,
+      offset: (rt_mgr.page - 1) * rt_mgr.per_page,
+    };
   };
 
   rt_mgr.onPageChange = function (params) {
-    rt_mgr.updateParams({ page: params.currentPage });
+    rt_mgr.page = params.currentPage;
     rt_mgr.loadItems();
   };
 
   rt_mgr.onPerPageChange = function (params) {
-    rt_mgr.updateParams({ page: 1, per_page: params.currentPerPage });
+    rt_mgr.page = 1;
+    rt_mgr.per_page = params.currentPerPage;
     rt_mgr.loadItems();
   };
 
   rt_mgr.onSortChange = function (params) {
     if (params[0].type == "none") {
-      rt_mgr.updateParams({
-        sort: [],
-      });
+      rt_mgr.sort = [];
     } else {
-      rt_mgr.updateParams({
-        sort: [
-          {
-            type: params[0].type,
-            field: params[0].field,
-          },
-        ],
-      });
+      rt_mgr.sort = [
+        {
+          type: params[0].type,
+          field: params[0].field,
+        },
+      ];
     }
-    rt_mgr.loadItems();
-  };
-
-  rt_mgr.onColumnFilter = function (params) {
-    rt_mgr.updateParams(params);
     rt_mgr.loadItems();
   };
 
@@ -67,24 +60,13 @@ function NewRemoteTableMgr(colums, query_server_fn) {
     rt_mgr.isLoading.value = true;
     rt_mgr.getFromServer().then((response) => {
       rt_mgr.isLoading.value = false;
-      rt_mgr.totalRecords.value = response.result.total_count;
-      rt_mgr.rows.value = response.result.data;
+      rt_mgr.totalRecords.value = response.total_count;
+      rt_mgr.rows.value = response.data;
     });
   };
 
   //simulate remote query sleep
   rt_mgr.sleep = (d) => new Promise((r) => setTimeout(r, d));
-
-  rt_mgr.server_params_tidy = function () {
-    let result_condition = {};
-    for (const [key, value] of Object.entries(rt_mgr.server_params)) {
-      if (value == null || value === "") {
-      } else {
-        result_condition[key] = value;
-      }
-    }
-    return result_condition;
-  };
   ///////////////////////////////////////////////////
 
   return rt_mgr;

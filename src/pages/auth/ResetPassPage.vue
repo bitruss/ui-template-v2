@@ -2,21 +2,24 @@
 import api from "@/api";
 import useOverlayStore from "@/stores/overlay";
 import { ref, computed } from "vue";
-import { validator } from "@/utils/index.js";
+import validator from "@/utils/validator.js";
+
+import { useToast } from "vue-toastification";
 
 import TopbarNavLayout from "../../layouts/topbar/TopbarNavLayout.vue";
 import Divider from "../../components/core/divider/Divider.vue";
 
- 
-
 import { UserPlusIcon, CursorArrowRaysIcon } from "@heroicons/vue/24/solid";
 import { EnvelopeIcon, KeyIcon, PaperAirplaneIcon, CalculatorIcon, LockClosedIcon, CheckIcon } from "@heroicons/vue/24/outline";
 
+import { NewCaptchaMgr } from "@/utils/user/captcha.js";
+import { NewVcodeMgr } from "@/utils/user/vcode.js";
 
-import captchaImgUrl from "../../assets/captcha.png";
 import { useI18n } from "vue-i18n";
 import lang from "./auth_lang";
 const { t } = useI18n({ messages: lang });
+
+const toast = useToast();
 
 /////input ///////
 let email = ref("");
@@ -36,12 +39,30 @@ let validate_password_again = computed(() => {
 });
 
 //
-let captcha = ref("");
+let captcha_mgr = NewCaptchaMgr();
+captcha_mgr.refresh_captcha();
 //
-let vcode = ref("");
+//vcode
+let send_vcode_ready = computed(() => {
+  if (validate_email.value && email.value != "" && captcha_mgr.captcha.value !== "") {
+    return true;
+  } else {
+    return false;
+  }
+});
+let vcode_mgr = NewVcodeMgr("reset_password");
+let send_vcode = function () {
+  if (send_vcode_ready.value != true) {
+    return;
+  }
+
+  vcode_mgr.getEmailVCode(email.value, captcha_mgr.captchaId, captcha_mgr.captcha);
+  vcode_mgr.resetLoader();
+};
+
 //
 let validate_reset_pass_ready = computed(() => {
-  if (validate_email.value && email.value != "" && validate_password.value && password.value != "" && validate_password_again.value && password_again.value != "" && captcha.value !== "" && vcode.value !== "") {
+  if (validate_email.value && email.value != "" && validate_password.value && password.value != "" && validate_password_again.value && password_again.value != "" && vcode_mgr.vcode.value !== "") {
     return true;
   }
   return false;
@@ -53,9 +74,11 @@ async function submit_reset_pass() {
     return;
   }
 
+  //console.log("submit_reset_pass", [email.value, password.value, vcode_mgr.vcode.value]);
+
   const overlay_store = useOverlayStore();
   overlay_store.showLoader();
-  let resp = await api.user.reset_pass(email.value, password.value, captcha.value, vcode.value);
+  let resp = await api.user.resetPassword(email.value, password.value, vcode_mgr.vcode.value);
 
   if (resp.err != null) {
     toast.error(resp.err);
@@ -69,6 +92,7 @@ async function submit_reset_pass() {
     return;
   }
 
+  toast.success("success");
   window.location = "/signin";
 }
 </script>
@@ -116,10 +140,12 @@ async function submit_reset_pass() {
           <div class="prefix">
             <CalculatorIcon class="icon" />
           </div>
-          <input type="text" name="captcha" id="captcha" v-model="captcha" class="pl-10" :placeholder="t('input_captcha')" />
+          <input type="text" v-model="captcha_mgr.captcha.value" class="pl-10" :placeholder="t('input_captcha')" />
         </div>
-        <div class="btn" v-tippy="{ placement: 'bottom', content: t('change_captcha') }">
-          <img class="captcha" :src="captchaImgUrl" />
+
+        <div class="btn" v-tippy="{ placement: 'bottom', content: t('change_captcha') }" @click="captcha_mgr.refresh_captcha">
+          <img v-if="captcha_mgr.captchaBase64.value !== ''" class="captcha" :src="captcha_mgr.captchaBase64.value" />
+          <p v-else><ArrowPathIcon />loading.......</p>
         </div>
       </div>
 
@@ -128,14 +154,16 @@ async function submit_reset_pass() {
           <div class="prefix">
             <KeyIcon class="icon" />
           </div>
-          <input type="text" name="vcode" id="vcode" v-model="vcode" class="pl-10" placeholder="input your v-code" />
+          <input type="text" name="vcode" id="vcode" v-model="vcode_mgr.vcode.value" class="pl-10" placeholder="input your v-code" />
         </div>
-        <div class="btn" v-tippy="{ placement: 'bottom', content: t('send_vcode_to_email') }">
+
+        <div v-if="vcode_mgr.loader_secs.value == 0" :class="[send_vcode_ready ? '' : 'disabled', 'btn']" class="btn" v-tippy="{ placement: 'bottom', content: send_vcode_ready ? t('send_vcode_to_email') : t('complete_vcode_to_email') }" @click="send_vcode">
           <PaperAirplaneIcon /><span>{{ t("send") }}</span>
         </div>
+        <div v-if="vcode_mgr.loader_secs.value != 0" class="btn">
+          <ArrowPathIcon /><span>{{ vcode_mgr.loader_secs.value }}(s)</span>
+        </div>
       </div>
-
-      <!-- <div class="btn-primary w-full relative mt-3 mb-3"><UserPlusIcon class="icon dark absolute left-3" />{{ t("submit") }}</div> -->
 
       <div @click="submit_reset_pass" :class="[validate_reset_pass_ready ? '' : 'disabled', ' btn-primary w-full relative mt-3 mb-3']"><UserPlusIcon class="icon dark absolute left-3" />{{ t("submit") }}</div>
 
