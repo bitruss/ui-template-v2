@@ -56,7 +56,7 @@ let send_vcode = function () {
     return;
   }
 
-  vcode_mgr.getEmailVCode(email.value, captcha_mgr.captchaId, captcha_mgr.captcha);
+  vcode_mgr.getEmailVCode(email.value, captcha_mgr.captchaId, captcha_mgr.captcha.value);
   vcode_mgr.resetLoader();
 };
 
