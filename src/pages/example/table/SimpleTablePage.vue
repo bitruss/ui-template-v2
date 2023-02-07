@@ -73,7 +73,7 @@ function onSelectedRows(params) {
           }"
           :pagination-options="{
             enabled: true,
-            mode: 'records',
+            mode: 'pages',
             perPage: 5,
             perPageDropdown: [3, 7, 9],
             setCurrentPage: 1,

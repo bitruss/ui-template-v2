@@ -133,7 +133,7 @@ rt_mgr.loadItems();
         <vue-good-table
           :pagination-options="{
             enabled: true,
-            mode: 'records',
+            mode: 'pages',
             perPage: rt_mgr.per_page,
             perPageDropdown: [20, 50, 100],
             setCurrentPage: rt_mgr.page,
