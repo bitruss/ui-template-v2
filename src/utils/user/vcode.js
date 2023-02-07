@@ -35,8 +35,8 @@ function NewVcodeMgr(id) {
       return false;
     }
 
-    toast.success("success");
-      return true;
+    toast.success("vcode has been sent to your email");
+    return true;
   };
 
   ///////
