@@ -35,12 +35,18 @@ function show_success_toast() {
 }
 
 function show_warning_toast() {
-  toast.warning("I'm a success toast!");
+  toast.warning("I'm a warning toast!");
 }
 
 function show_err_toast() {
-  toast.error("I'm a success toast!");
+  toast.error("I'm a error toast!");
 }
+
+
+function show_long_err_toast(){
+  toast.error("I'm a long  long long long long long long long long long long long long toast!");
+}
+
 </script>
 
 <template>
@@ -122,6 +128,17 @@ function show_err_toast() {
           <div class="btn-secondary" @click="show_err_toast">show error toast</div>
         </div>
       </div>
+
+      <div class="pt-5 lg:grid lg:grid-cols-3 lg:gap-4">
+        <div>
+          <label for="username" class="flex">Long error Toast</label>
+          <p>A long text error toast</p>
+        </div>
+        <div class="lg:col-span-2 mt-2">
+          <div class="btn-secondary" @click="show_long_err_toast">show long error toast</div>
+        </div>
+      </div>
+
     </div>
   </SidebarLayout>
 </template>
