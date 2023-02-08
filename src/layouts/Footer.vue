@@ -4,6 +4,9 @@ import InstagramIcon from "@/components/core/icon/solid/InstagramIcon.js";
 import TwitterIcon from "@/components/core/icon/solid/TwitterIcon.js";
 import GithubIcon from "@/components/core/icon/solid/GithubIcon.js";
 import MediumIcon from "@/components/core/icon/solid/MediumIcon.js";
+import DiscordIcon from "@/components/core/icon/solid/DiscordIcon.js";
+import YoutubeIcon from "@/components/core/icon/solid/YoutubeIcon.js";
+import LinkedInIcon from "@/components/core/icon/solid/LinkedInIcon.js";
 
 const navigation = [
   {
@@ -30,6 +33,21 @@ const navigation = [
     name: "Medium",
     href: "#",
     icon: MediumIcon,
+  },
+  {
+    name: "Discord",
+    href: "#",
+    icon: DiscordIcon,
+  },
+  {
+    name: "Youtube",
+    href: "#",
+    icon: YoutubeIcon,
+  },
+  {
+    name: "LinkedIn",
+    href: "#",
+    icon: LinkedInIcon,
   },
 ];
 </script>
